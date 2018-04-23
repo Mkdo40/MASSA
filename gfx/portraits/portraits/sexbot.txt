@@ -1,0 +1,20 @@
+##############################################################
+###	PORTRAITS SETTINGS
+###
+### Which portraits are used is set in 
+### common\species_classes\00_species_classes.txt
+###
+###	This file configures how portraits and planet backgrounds are built.
+###	Default position orientation is lower left.
+##############################################################
+
+portraits = {	
+	# Humanoid Sexbot
+	sexbot_humanoid_01 = { 
+		entity = "portrait_human_female_04_entity"
+		clothes_selector = "humanoid_sexbot_clothes"						
+		hair_selector = "humanoid_sexbot_hair"
+		greeting_sound = "robot_human_greetings" 
+		character_textures = {"gfx/models/portraits/sexbot/humanoid_sexbot_body.dds"}
+	}
+}

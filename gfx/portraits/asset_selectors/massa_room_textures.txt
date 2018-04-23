@@ -1,0 +1,45 @@
+room_selector = {
+	#default = "d_room"	#point to textures that end with "_room.dds" but remove the file ending
+
+	#default = "default_room"	#point to textures that end with "_room.dds" but remove the file ending
+
+	#will run with a limited country scope. species and government is set but the country does not actually exist
+	
+	game_setup = {	
+	
+	}
+
+	#leader scope
+	ruler = {
+		"science_gone_wrong_room" = {}
+		"toad_gangbang_room" = {}
+		"xeno_cosensual_sex_room" = {}
+		"incubator_room" = {}
+		"bound_baby_oven_room" = {}
+		"diplo_test_room" = {}
+		"diplo_test_2_room" = {}
+		"futa_sadists_room" = {}
+		"bound_woman_dildo_room" = {}
+		"bound_rape_room" = {}
+		"sadist_abduction_raid_room" = {}
+		"sadist_raiding_party_room" = {}
+		"raunchy_titan_room" = {}
+		"titanic_sex_scared_room" = {}
+		"large_xeno_sex_room" = {}
+		"titanic_sex_fun_room" = {}
+		"masochistic_fun_room" = {}
+		"xeno_clients_room" = {}
+		"slug_sex_room" = {}
+		"probing_droids_room" = {}
+		"breeding_experiments_room" = {}
+		"probing_continued_room" = {}
+		"masochistic_tendencies_room" = {}
+		"breeding_experiments_2_room" = {}
+		"breeding_experiments_end_room" = {}
+		"invasive_copulation_room" ={}
+		"breeding_season_room" = {}
+		"sexy_modification_room" = {}
+		"robot_spider_sex_room" = {}
+		"xeno_prostitutes_room" = {}
+	}
+}
