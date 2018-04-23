@@ -1,0 +1,43 @@
+﻿l_english:
+
+ ####################################
+ # Massa Neighbor Events
+ ####################################
+ 
+###########################################################################
+############# Written by Darkspleen for Make Space Sexy Again #############
+###########################################################################
+
+# §Ywords§ = Yellow Words
+# §Rwords§ = Red Words
+# §Gwords§ = Green Words
+# §Bwords§ = Blue Words
+# §Swords§ = Orange Words
+# \n£blocker = Blocker Picture
+# \n£society = Society Picture
+# \n£engineering = Engineering Picture
+# \n£physics = Physics Picture
+# \n£energy = Energy Picture
+# \n£minerals = Minerals Picture
+
+
+#TEMPLATE
+#youranomalyhere_category: "Name of beginning event"
+#youranomalyhere_category_desc: "Desc of beginning event"
+#youranomalyhere.1.name: "Name of event"
+#youranomalyhere.1.desc: "Desc of event"
+#youranomalyhere.1.a: "first answer"
+#youranomalyhere.1.b: "second answer"
+
+sexy_neighbor_prositution.1.name: "Xeno Clients"
+sexy_neighbor_prositution.1.desc: "The prostitutes of our country have found an open market in [event_target:neighbor_target.GetName] and have been taking full advantage of it. There has been a mix of tourists from [event_target:neighbor_target.GetName] employing our prostitutes while her or our prositutes traveling to [event_target:neighbor_target.GetName] in search of clientele. Regardless of where exactly the business has been occuring one thing is clear: we've seen an increase in tax revenue."
+sexy_neighbor_prositution.1.a: "Sweet."
+sexy_neighbor_prositution.1.b: "Awesome!"
+sexy_neighbor_prositution.1.c: "This ends now."
+sexy_neighbor_prositution.1.d: "Naturally those of lower upbringing would engage in these act."
+sexy_neighbor_prositution.1.e: "This is exactly why we use our slaves for prostitution."
+
+sexy_neighbor_prositution.2.name: "Money Can Buy Happiness"
+sexy_neighbor_prositution.2.desc: "Recently we have seen an influx of prostitutes from [event_target:neighbor_target.GetName] plying their trade in our cities. This increase in the number of workers in the sex industry has increased the happiness of the general populace, but is resulting in some of our wealth being siphoned off to [event_target:neighbor_target.GetName]."
+sexy_neighbor_prositution.2.a: "Sweet."
+sexy_neighbor_prositution.2.b: "Crack down on this illegal act"

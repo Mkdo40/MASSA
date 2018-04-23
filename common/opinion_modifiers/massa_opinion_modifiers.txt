@@ -1,0 +1,604 @@
+opinion_xenophobes = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = -10
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+			FROM = { has_ethic = "ethic_xenophobe" }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+			NOT = { is_same_species_class = FROM }
+		}
+		modifier = {
+			add = -5
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+			FROM = { has_ethic = "ethic_xenophobe" }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+			is_same_species_class = FROM
+			NOT = { is_same_species = FROM }
+			NOT = { is_subspecies = FROM }
+		}		
+		
+		modifier = {
+			add = -10
+			NOT = { has_ethic = "ethic_fanatic_xenophobe" }
+			NOT = { has_ethic = "ethic_xenophobe" }
+			FROM = { has_ethic = "ethic_xenophobe" }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+			NOT = { is_same_species_class = FROM }
+		}
+		modifier = {
+			add = -5
+			NOT = { has_ethic = "ethic_fanatic_xenophobe" }
+			NOT = { has_ethic = "ethic_xenophobe" }
+			FROM = { has_ethic = "ethic_xenophobe" }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+			is_same_species_class = FROM
+			NOT = { is_same_species = FROM }
+			NOT = { is_subspecies = FROM }
+		}
+		
+		modifier = {
+			add = -20
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+			FROM = { has_ethic = "ethic_fanatic_xenophobe" }
+			NOT = { is_same_species_class = FROM }
+		}
+		modifier = {
+			add = -10
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+			FROM = { has_ethic = "ethic_fanatic_xenophobe" }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+			is_same_species_class = FROM
+			NOT = { is_same_species = FROM }
+			NOT = { is_subspecies = FROM }
+		}			
+		
+		modifier = {
+			add = -20
+			NOT = { has_ethic = "ethic_fanatic_xenophobe" }
+			NOT = { has_ethic = "ethic_xenophobe" }
+			FROM = { has_ethic = "ethic_fanatic_xenophobe" }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+			NOT = { is_same_species_class = FROM }
+		}
+		modifier = {
+			add = -10
+			NOT = { has_ethic = "ethic_fanatic_xenophobe" }
+			NOT = { has_ethic = "ethic_xenophobe" }
+			FROM = { has_ethic = "ethic_fanatic_xenophobe" }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+			is_same_species_class = FROM
+			NOT = { is_same_species = FROM }
+			NOT = { is_subspecies = FROM }
+		}
+	}
+}
+
+opinion_xenophobia = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = -20
+			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
+			has_ethic = "ethic_xenophobe"
+			NOT = { is_same_species_class = FROM }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+		}
+		modifier = {
+			add = -10
+			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
+			has_ethic = "ethic_xenophobe"
+			is_same_species_class = FROM
+			NOT = { is_same_species = FROM }
+			NOT = { is_subspecies = FROM }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+		}
+		modifier = {
+			add = -5
+			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
+			has_ethic = "ethic_xenophobe"
+			is_same_species_class = FROM
+			NOT = { is_same_species = FROM }
+			is_subspecies = FROM
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+		}
+		
+		modifier = {
+			add = -40
+			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
+			has_ethic = "ethic_fanatic_xenophobe"
+			NOT = { is_same_species_class = FROM }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+		}
+		modifier = {
+			add = -20
+			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
+			has_ethic = "ethic_fanatic_xenophobe"
+			is_same_species_class = FROM
+			NOT = { is_same_species = FROM }
+			NOT = { is_subspecies = FROM }
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+		}
+		modifier = {
+			add = -10
+			NOT = { has_valid_civic = civic_fanatic_purifiers } #handled elsewhere
+			has_ethic = "ethic_fanatic_xenophobe"
+			is_same_species_class = FROM
+			NOT = { is_same_species = FROM }
+			is_subspecies = FROM
+			FROM = {
+				NOT = {
+					has_valid_civic = civic_orgasmic_diplomats
+				}
+			}
+		}
+	}
+}
+
+### Civic Opinions
+
+opinion_orgasmic_diplomats_civic = {
+	TRIGGER = {
+		FROM = {
+			has_valid_civic = civic_orgasmic_diplomats
+		}
+		ROOT = {
+			NOT = {
+				is_country_type = fallen_empire
+			}
+		}
+	}
+	opinion = {
+		base = 0
+		modifier = {
+			add = 20
+			FROM = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+				has_valid_civic = civic_orgasmic_diplomats
+			}
+			is_country_type = default
+			NOR = {
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_xenophile
+			}
+		}
+		modifier = {
+			add = 25
+			FROM = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+				has_valid_civic = civic_orgasmic_diplomats				
+			}
+			is_country_type = default
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			add = 30
+			FROM = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+				has_valid_civic = civic_orgasmic_diplomats
+			}
+			is_country_type = default
+			has_ethic = ethic_fanatic_xenophile
+		}		
+	}
+}
+
+opinion_invasive_copulation_evolution_civic ={
+	TRIGGER = {
+		FROM = {
+			has_valid_civic = civic_invasive_copulation_evolution
+		}
+		ROOT = {
+			NOT = {
+				is_country_type = fallen_empire
+			}
+		}
+	}
+	
+	opinion = {
+		base = 0
+		modifier = {
+			add = -100
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		modifier = {
+			add = 10
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			add = 25
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+}
+
+
+
+#Apparently these don't work
+
+### Opinions of public nudity policies
+
+# Public nudity allowed
+opinion_allow_public_nudity = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = 5
+			OR = {	
+				has_policy_flag = nudity_authorized
+				has_policy_flag = nudity_supported
+				has_policy_flag = nudity_idolized
+			}
+			from = {
+				OR = {	
+					has_policy_flag = nudity_authorized
+					has_policy_flag = nudity_supported
+				}			
+			}
+		}
+		
+
+		modifier = {
+			add = -5
+			has_policy_flag = nudity_prohibited
+			from = {
+				OR = {	
+					has_policy_flag = nudity_authorized
+					has_policy_flag = nudity_supported
+					has_policy_flag = nudity_idolized
+				}			
+			}
+		}
+	}
+}
+
+# Public nudity idolized
+opinion_allow_idolized_nudity = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = 10
+			has_policy_flag = nudity_idolized
+			from = {	
+				has_policy_flag = nudity_idolized		
+			}
+		}
+	}
+}
+
+# Public nudity prohibited
+opinion_prohibited_public_nudity = {
+	opinion = {
+		base = 0
+
+		modifier = {
+			add = -5
+			has_policy_flag = nudity_supported
+			from = {
+				has_policy_flag = nudity_prohibited		
+			}
+		}
+		
+		modifier = {
+			add = -10
+			has_policy_flag = nudity_idolized
+			from = {	
+				has_policy_flag = nudity_prohibited		
+			}
+		}
+	}
+}
+
+
+### Opinions of prostitution policies
+
+# Prostitution allowed
+opinion_allow_prostitution = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = 5
+			OR = {	
+				has_policy_flag = prostitution_authorized
+				has_policy_flag = prostitution_supported
+				has_policy_flag = prostitution_industrialized
+			}
+			from = {
+				OR = {	
+					has_policy_flag = prostitution_authorized
+					has_policy_flag = prostitution_supported
+				}			
+			}
+		}
+		
+		modifier = {
+			add = -5
+			has_policy_flag = prostitution_prohibited
+			from = {
+				OR = {	
+					has_policy_flag = prostitution_authorized
+					has_policy_flag = prostitution_supported
+					has_policy_flag = prostitution_industrialized
+				}			
+			}
+		}
+	}
+}
+
+# Prostitution industrialized
+opinion_industrialized_prostitution = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = 10
+			has_policy_flag = prostitution_industrialized
+			from = {	
+				has_policy_flag = prostitution_industrialized		
+			}
+		}
+	}
+}
+
+# Prostitution prohibited
+opinion_prohibited_prostitution = {
+	opinion = {
+		base = 0
+
+		modifier = {
+			add = -5
+			has_policy_flag = prostitution_supported
+			from = {
+				has_policy_flag = prostitution_prohibited		
+			}
+		}
+		
+		modifier = {
+			add = -10
+			has_policy_flag = prostitution_industrialized
+			from = {	
+				has_policy_flag = prostitution_prohibited		
+			}
+		}
+	}
+}
+
+# Prostitution slavery
+opinion_slavery_prostitution = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = 10
+			has_policy_flag = prostitution_slavery
+			from = {	
+				has_policy_flag = prostitution_slavery		
+			}
+		}
+		modifier = {
+			add = -10
+			allows_slavery = no
+			from = {	
+				has_policy_flag = prostitution_slavery	
+			}
+		}
+	}
+}
+
+
+### Opinions of sexual relationships policies
+
+# Sexual relationships controlled
+opinion_sexual_relationships_controlled = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = -10
+			OR = {
+				has_ethic = "ethic_egalitarian"
+				has_ethic = "ethic_fanatic_egalitarian"
+			}
+			from = {	
+				has_policy_flag = sexual_relationships_controlled			
+			}
+		}
+	}
+}
+
+# Sexual relationships restricted
+opinion_sexual_relationships_restricted = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = -5
+			OR = {
+				has_ethic = "ethic_egalitarian"
+				has_ethic = "ethic_fanatic_egalitarian"
+			}
+			from = {	
+				has_policy_flag = sexual_relationships_restricted		
+			}
+		}
+	}
+}
+
+
+### Opinions of interspecies copulation policies
+
+# Interspecies copulation prohibited
+opinion_interspecies_copulation_prohibited = {
+	opinion = {
+		base = 0
+
+		modifier = {
+			add = -5
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+			from = {
+				has_policy_flag = interspecies_copulation_prohibited			
+			}
+		}
+		
+		modifier = {
+			add = -10
+			has_policy_flag = interspecies_copulation_supported
+			from = {	
+				has_policy_flag = interspecies_copulation_prohibited		
+			}
+		}
+	}
+}
+
+# Interspecies copulation allowed
+opinion_interspecies_copulation_allowed = {
+	opinion = {
+		base = 0
+
+		modifier = {
+			add = 5
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+			from = {
+				OR = {
+					has_policy_flag = interspecies_copulation_authorized
+					has_policy_flag = interspecies_copulation_encouraged
+				}					
+			}
+		}		
+		
+		modifier = {
+			add = -5
+			OR = {
+				has_ethic = "ethic_xenophobe"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+			from = {
+				OR = {
+					has_policy_flag = interspecies_copulation_authorized
+					has_policy_flag = interspecies_copulation_encouraged
+				}					
+			}
+		}	
+	}
+}
+
+# Interspecies copulation supported
+opinion_interspecies_copulation_supported = {
+	opinion = {
+		base = 0
+		
+		modifier = {
+			add = 10
+			has_policy_flag = interspecies_copulation_supported
+			from = {	
+				has_policy_flag = interspecies_copulation_supported			
+			}
+		}
+		
+		modifier = {
+			add = 5
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"	
+			}
+			from = {
+				has_policy_flag = interspecies_copulation_supported			
+			}
+		}	
+		
+		modifier = {
+			add = -10
+			OR = {
+				has_ethic = "ethic_xenophobe"
+				has_ethic = "ethic_fanatic_xenophobe"
+				has_policy_flag = interspecies_copulation_prohibited
+			}
+			from = {	
+				has_policy_flag = interspecies_copulation_supported		
+			}
+		}
+	}
+}

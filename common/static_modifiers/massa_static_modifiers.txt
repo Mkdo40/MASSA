@@ -1,0 +1,145 @@
+#icon_frame = 1 # green frame
+#icon_frame = 2 # yellow frame
+#icon_frame = 3 # red frame
+
+##########################################################################
+# Planet Modifiers
+##########################################################################
+
+tentacled_lifeforms = {
+	tile_resource_society_research_mult = 0.20
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_Tentacle_Modifier.dds"
+	icon_frame = 2
+}
+
+aggressive_tentacled_lifeforms = {
+	pop_environment_tolerance = -0.10
+	pop_happiness = -0.1
+	tile_resource_society_research_mult = 0.05
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_Tentacle_Modifier.dds"
+	icon_frame = 3
+}
+
+coexisting_tentacled_lifeforms = {
+	pop_environment_tolerance = 0.20
+	pop_growth_speed = -0.10 
+	tile_resource_society_research_mult = 0.20
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_Tentacle_Modifier.dds"
+	icon_frame = 1
+}
+
+festival_of_love = {
+	pop_growth_speed = 0.10 
+	pop_happiness = 0.20
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
+	icon_frame = 1
+}
+
+##########################################################################
+# Empire Modifiers
+##########################################################################
+
+biology_insights = {
+	tile_resource_society_research_mult = 0.05
+}
+
+futa_outlawed = {
+	pop_happiness = -0.1
+}
+
+contraceptive_boom = {
+	tile_resource_energy_mult = 0.15
+}
+
+festival_of_love_outlawed = {
+	pop_happiness = -0.15
+}
+
+military_recreational_sex_study = {
+	tile_resource_society_research_mult = 0.05
+}
+
+xeno_businesses_accepted = {
+	pop_happiness = 0.10
+	planet_migration_all_pull = 0.10
+}
+
+booming_prostitution_industry = {
+	pop_happiness = 0.10
+	tile_resource_energy_mult = 0.10
+}
+
+xeno_prostitution = {
+	pop_happiness = 0.05
+	tile_resource_energy_mult = -0.05
+}
+
+booming_xeno_prostitution = {
+	pop_happiness = 0.10
+	tile_resource_energy_mult = -0.10
+}
+
+##########################################################################
+# Ship Modifiers
+##########################################################################
+
+embarrassed_crew = {
+	ship_anomaly_research_speed_mult = -0.10
+	ship_anomaly_fail_risk = 0.10
+	science_ship_survey_speed = -0.10
+}
+
+horrified_crew = {
+	ship_anomaly_research_speed_mult = -0.30
+	ship_anomaly_fail_risk = 0.10
+	science_ship_survey_speed = -0.30
+	ship_anomaly_generation_chance_mult = -0.20
+}
+
+##########################################################################
+# Pop Modifiers
+##########################################################################
+
+xeno_beast_rape = {
+	pop_happiness = -0.25
+}
+
+xeno_beast_fun = {
+	pop_happiness = 0.25
+}
+
+sadomasochist_fun = {
+	pop_happiness = 0.25
+}
+
+abused_by_sadist = {
+	pop_happiness = -0.25
+}
+
+# Parthenogenesis (mother pop modifier)
+adaptive_cross_fertilised = {
+	pop_growth_speed = 0.10
+}
+
+adaptive_cross_fertilised_xphi = {
+	pop_growth_speed = 0.25
+}
+
+sex_slave = {
+	pop_happiness = 0.10
+}
+
+in_heat = {
+	pop_happiness = 0.05
+	pop_growth_speed = 2
+	tile_resource_engineering_research_mult = -0.1
+	tile_resource_physics_research_mult = -0.1
+	tile_resource_society_research_mult = -0.1
+	tile_resource_unity_mult = 0.2
+	tile_resource_energy_mult = -0.1
+	tile_resource_minerals_mult = -0.1
+}

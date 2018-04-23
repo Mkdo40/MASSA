@@ -1,0 +1,76 @@
+
+
+#Synthetic sexual selection planetary edict
+planet_edict = {
+   name = "synthetic_sexual_selection"
+   cost = { influence = 100 }
+   length = 365
+ 
+    potential ={
+		AND = {			
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					is_being_purged = no
+					has_population_control = no
+					is_enslaved = no
+				}
+				count > 0
+			}
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					OR = {
+						is_being_purged = yes
+						has_population_control = yes
+					}
+				}
+				count > 0
+			}
+			Owner = {
+				has_technology = tech_gene_tailoring 
+			}
+		}
+   }
+   
+   effect = {
+		Hidden_effect = {
+			set_timed_planet_flag = {
+				flag = synthetic_sexual_selection
+				days = 365
+			}
+			planet_event = { id = neuter_purge_event.1 }
+		}
+	
+   }
+   ai_weight = {
+       weight = 0
+   }
+}
+
+#Repopulation effort edict
+planet_edict = {
+   name = "repopulation_effort_edict"
+   cost = { influence = 100 }
+   length = 365
+ 
+    potential ={
+		Owner = {
+			has_technology = tech_repopulation_effort
+		}
+	}
+   
+ 	modifier = {
+		pop_growth_speed = 0.5	
+		pop_resource_output = -0.5
+	}
+	
+   effect = {
+	
+	}
+   ai_weight = {
+       weight = 0
+	}
+}

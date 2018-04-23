@@ -1,0 +1,9 @@
+spriteTypes = {	
+	### PLANET MODIFIERS
+	
+	spriteType = {
+		name = "GFX_pm_tentacle_modifier"
+		texturefile = "gfx/interface/icons/planet_modifiers/pm_tentacle_modifier.dds"
+	}
+
+}

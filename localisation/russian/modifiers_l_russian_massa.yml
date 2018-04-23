@@ -1,0 +1,58 @@
+﻿l_russian:
+
+ ###########################################################################
+ ############# Written by Darkspleen for Make Space Sexy Again #############
+ ###########################################################################
+
+ ####################################
+ # Empire Modifiers 
+ ####################################
+ 
+ biology_insights: "Прирожденные биологи"
+ futa_outlawed: "Трансгендеры вне закона"
+ contraceptive_boom: "Контрацептический бум"
+ festival_of_love_outlawed: "Фестиваль любви запрещен"
+ military_recreational_sex_study: "Воеенное обучение сексуальному развлечению"
+ xeno_businesses_accepted: "Ксено бизнес разрешен"
+ booming_prostitution_industry: "Бум индустрии проституции"
+ 
+ ####################################
+ # Planet Modifiers 
+ ####################################
+ 
+ tentacled_lifeforms: "Тентаклевые виды"
+ tentacled_lifeforms_desc: " В этом мире обитают формы жизни с потрясающими щупальцами."
+ aggressive_tentacled_lifeforms: "Агрессывные тентаклевые виды"
+ aggressive_tentacled_lifeforms_desc: "На этой планете обитают враждебные тентаклевые виды."
+ coexisting_tentacled_lifeforms: "Мирные тентаклевые виды"
+ coexisting_tentacled_lifeforms_desc: "На этой планете обитают тентаклевые виды дружественные людям."
+ festival_of_love: "Фестиваль любви"
+ festival_of_love_desc: " Граждане этой планеты участвуют в планетарной оргии."
+ 
+ ####################################
+ # Ship/Fleet Modifiers 
+ ####################################
+ 
+ embarrassed_crew: "Смущенный экипаж"
+ horrified_crew: "Ужасный экипаж "
+ 
+ ####################################
+ # Pop Modifiers
+ ####################################
+ xeno_beast_rape: "Изнасильванные ксено зверьми"
+ xeno_beast_fun: "Развлекаются с ксено зверьми"
+ sadomasochist_fun: "Любят BDSM"
+ abused_by_sadist: "Терпят надругательство от садистов"
+ adaptive_cross_fertilised:0 "Сексуальные партнеры"
+ adaptive_cross_fertilised_xphi:0 "Сексуальные партнеры"
+ sex_slave: "Секс рабы"
+ in_heat: "Этот вид в горячке"
+ 
+ ####################################
+ # Opinion Modifiers
+ ####################################
+ 
+ ##Civics
+ 
+ opinion_orgasmic_diplomats_civic:1 "Оргазмические дипломаты"
+ civic_invasive_copulation_evolution:1 "Агрессивные оплодотворители"

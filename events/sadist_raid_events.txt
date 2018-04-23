@@ -1,0 +1,401 @@
+
+namespace = sadist_raid
+
+#Sadist Raid Part 1
+country_event = {
+	id = sadist_raid.1
+	title = "sadist_raid.1.name"
+	desc = "sadist_raid.1.desc"
+	diplomatic = yes
+	show_sound = event_default
+	location = event_target:raiding_target
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = bound_rape_room
+	}
+	#Abduct Option	
+	option = {
+		name = sadist_raid.1.a
+		Trigger = {
+			THIS = {
+				any_owned_planet = {
+					free_pop_tiles > 0
+				}
+				NOR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				OR = {
+					THIS = {
+						OR = {
+							has_ethic = ethic_authoritarian
+							has_ethic = ethic_fanatic_authoritarian
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = -20
+				OR = {
+					THIS = {
+						OR = {
+							has_ethic = ethic_xenophile
+							has_ethic = ethic_fanatic_xenophile
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			THIS = {
+				country_event = { id = sadist_raid.2 }
+			}
+			event_target:planet_owner = {
+				country_event = { id = sadist_raid.3 }
+			}
+		}
+		event_target:raiding_target = {
+			random_pop = {
+				limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+				}
+				IF = {
+					limit = {
+						pop_has_trait = trait_behavior_masochistic
+					}
+					add_modifier = {
+								modifier = sadomasochist_fun
+								days = 100
+							}
+					else = {
+						add_modifier = {
+							modifier = abused_by_sadist
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	#Have Fun Option
+	option = {
+		name = sadist_raid.1.b
+		Trigger = {
+			THIS = {
+				NOR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = -20
+				OR = {
+					THIS = {
+						OR = {
+							has_ethic = ethic_xenophile
+							has_ethic = ethic_fanatic_xenophile
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			THIS = {
+				country_event = { id = sadist_raid.4 }
+			}
+			event_target:planet_owner = {
+				country_event = { id = sadist_raid.5 }
+			}
+		}
+		
+		event_target:raiding_target = {
+			random_pop = {
+				limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+				}
+				IF = {
+					limit = {
+						pop_has_trait = trait_behavior_masochistic
+					}
+					add_modifier = {
+								modifier = sadomasochist_fun
+								days = 100
+							}
+					else = {
+						add_modifier = {
+							modifier = abused_by_sadist
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	#Punish Option
+	option = {
+		name = sexyplanet_war.1.c
+		ai_chance = {
+			factor = 10
+		}		
+		THIS = { 
+			country_event = { id = military_affairs.2 }
+		}	
+		event_target:raiding_target = {
+			random_pop = {
+				limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+				}
+				IF = {
+					limit = {
+						pop_has_trait = trait_behavior_masochistic
+					}
+					add_modifier = {
+								modifier = sadomasochist_fun
+								days = 100
+							}
+					else = {
+						add_modifier = {
+							modifier = abused_by_sadist
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Sadist Abduction Raid (Attacker)
+country_event = {
+	id = sadist_raid.2
+	title = "sadist_raid.2.name"
+	desc = "sadist_raid.2.desc"
+	diplomatic = yes
+	show_sound = event_default
+	location = event_target:raiding_target
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = sadist_abduction_raid_room
+	}
+	
+	immediate = {
+		event_target:raiding_target = {
+			random_pop = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+				}
+				save_event_target_as = massa_abduction_target
+			}
+		}
+	}
+	
+	option = {
+		name = sadist_raid.2.a
+		event_target:raiding_target = {
+			random_pop = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+				}
+				kill_pop = yes
+			}
+		}
+		event_target:planet_attacker = {
+			random_owned_planet = {
+				LIMIT = {
+					free_pop_tiles > 0
+				}
+				random_tile = {
+					limit = {
+						has_pop = no
+						has_blocker = no
+					}
+					create_pop = {
+						species = event_target:massa_abduction_target.species
+					} 
+				}
+			}
+		}
+	}
+}
+
+#Sadist Abduction Raid (Defender)
+country_event = {
+	id = sadist_raid.3
+	title = "sadist_raid.3.name"
+	desc = "sadist_raid.3.desc"
+	diplomatic = yes
+	show_sound = event_default
+	location = event_target:raiding_target
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = sadist_abduction_raid_room
+	}
+		
+	option = {
+		name = sadist_raid.3.a
+		add_influence = -10
+	}
+}
+
+#Sadist Raiding Party (Attacker)
+country_event = {
+	id = sadist_raid.4
+	title = "sadist_raid.4.name"
+	desc = "sadist_raid.4.desc"
+	diplomatic = yes
+	show_sound = event_default
+	location = event_target:raiding_target
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = sadist_raiding_party_room
+	}
+		
+	option = {
+		name = sadist_raid.4.a
+		THIS = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+#Sadist Raiding Party (Defender)
+country_event = {
+	id = sadist_raid.5
+	title = "sadist_raid.5.name"
+	desc = "sadist_raid.5.desc"
+	diplomatic = yes
+	show_sound = event_default
+	location = event_target:raiding_target
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = sadist_raiding_party_room
+	}
+		
+	option = {
+		name = sadist_raid.5.a
+		add_influence = -10
+		event_target:raiding_target = {
+			While = {
+				limit = {
+					count_pops = {
+						limit = {
+							is_growing = no
+							is_non_sapient_robot = no
+							OR = {
+								has_modifier = sadomasochist_fun
+								has_modifier = abused_by_sadist
+							}
+						}
+						count < 4
+					}
+				}
+				random_pop = {
+					limit = {
+							is_growing = no
+							is_non_sapient_robot = no
+							NOR = {
+								has_modifier = sadomasochist_fun
+								has_modifier = abused_by_sadist
+							}
+					}
+					IF = {
+						limit = {
+							pop_has_trait = trait_behavior_masochistic
+						}
+						add_modifier = {
+									modifier = sadomasochist_fun
+									days = 100
+								}
+						else = {
+							add_modifier = {
+								modifier = abused_by_sadist
+								days = 100
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+namespace = sadist_raid_gate
+
+# 
+planet_event = {
+	id = sadist_raid_gate.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	
+	Trigger = {
+		THIS = {
+			Not = { has_country_flag = soldier_rapists_punished }
+			OR = {
+				owner_species = { has_trait = trait_behavior_sadistic }
+				any_owned_leader = {
+					has_trait = leader_trait_general_sadistic
+				}
+				ruler = {
+					has_trait = leader_trait_ruler_sadistic
+				}
+			}
+		}
+	}
+	
+	Immediate = {
+		FROMFROM = {
+			save_event_target_as = raiding_target
+		}
+		THIS = {
+			country_event = { id = sadist_raid.1 }
+			save_event_target_as = planet_attacker
+		}
+		FROM = {
+			save_event_target_as = planet_owner
+		}
+	}
+	
+	
+}

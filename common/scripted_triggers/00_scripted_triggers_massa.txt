@@ -1,0 +1,150 @@
+has_encountered_other_species = {
+	OR = {
+		has_civic = civic_syncretic_evolution
+		has_civic = civic_machine_servitor
+		has_civic = civic_sadomasochist_evolution
+		has_civic = civic_tentacled_symbiosis
+		num_communications > 0
+		any_owned_pop = {
+			NOR = {
+				has_trait = "trait_robotic_1"
+				has_trait = "trait_robotic_2"
+				has_trait = "trait_robotic_3"
+			}
+			NOT = { is_same_species = prev }
+		}
+	}	
+}
+
+has_encountered_new_species = {
+	OR = {
+		num_communications > 0	
+		AND = {
+			has_civic = civic_syncretic_evolution
+			any_owned_pop = {
+				NOR = {
+					has_trait = "trait_robotic_1"
+					has_trait = "trait_robotic_2"
+					has_trait = "trait_robotic_3"
+					has_trait = trait_syncretic_proles
+				}
+				NOT = { is_same_species = prev }
+			}
+		}
+		AND = {
+			has_civic = civic_sadomasochist_evolution
+			any_owned_pop = {
+				NOR = {
+					has_trait = "trait_robotic_1"
+					has_trait = "trait_robotic_2"
+					has_trait = "trait_robotic_3"
+					has_trait = trait_behavior_masochistic
+				}
+				NOT = { is_same_species = prev }
+			}
+		}
+		any_owned_pop = {
+			NOR = {
+				has_trait = "trait_robotic_1"
+				has_trait = "trait_robotic_2"
+				has_trait = "trait_robotic_3"
+			}
+			NOT = { is_same_species = prev }
+		}
+	}	
+}
+
+enslaved_sadist = {
+	pop_has_trait = trait_behavior_sadistic
+	is_enslaved = yes
+}
+
+# Checks if a pop can procreate
+# This = Pop
+massa_can_pop_procreate = {
+	is_sapient = yes
+	is_being_purged = no
+	has_population_control = no
+	is_robot_pop = no
+}
+
+is_non_sapient_robot = { # The pop is a non-sapient robot
+	OR = {
+		has_trait = "trait_robotic_1"
+		has_trait = "trait_robotic_2"
+		has_trait = "trait_android_1"
+		AND = {
+			has_trait = "trait_robotic_3"
+			exists = owner
+			owner = { has_policy_flag = ai_outlawed }
+		}
+	}
+}
+
+is_shackled_robot = { # The pop is a non-free robot
+	OR = {
+		has_trait = "trait_robotic_1"
+		has_trait = "trait_robotic_2"
+		has_trait = "trait_android_1"
+		AND = {
+			has_trait = "trait_robotic_3"
+			NAND = {
+				exists = owner
+				owner = { 
+					OR = {
+						has_policy_flag = ai_full_rights 
+						is_mechanical_empire = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+can_be_soldier = {
+	is_sapient = yes
+	AND = {
+		OR = {
+			has_military_service_type = { type = military_service_full }
+			has_military_service_type = { type = military_service_limited }
+		}
+		NOT = {
+			has_trait = trait_android_1
+		}
+	}
+}
+
+massa_is_habitable_world = {
+	or = {
+				is_planet_class = pc_desert
+				is_planet_class = pc_tropical
+				is_planet_class = pc_arid
+				is_planet_class = pc_continental
+				is_planet_class = pc_ocean
+				is_planet_class = pc_tundra
+				is_planet_class = pc_arctic
+				is_planet_class = pc_alpine
+				is_planet_class = pc_savannah
+				is_planet_class = pc_gaia
+				
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_glacial
+				is_planet_class = pc_frozen_desert
+				is_planet_class = pc_steppe
+				is_planet_class = pc_hadesert
+				is_planet_class = pc_antarctic
+				is_planet_class = pc_sandsea
+				is_planet_class = pc_subarctic
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_cascadian
+				is_planet_class = pc_swamp
+				is_planet_class = pc_mangrove
+				is_planet_class = pc_desertislands
+				is_planet_class = pc_mesa
+				is_planet_class = pc_oasis
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_crystal
+				is_planet_class = pc_floating
+				
+			}
+}

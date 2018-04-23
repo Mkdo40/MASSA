@@ -1,0 +1,98 @@
+########################
+### anomaly EVENTS ###
+########################
+# potential = ship scope
+
+###########################################################################
+############# Written by Darkspleen for Make Space Sexy Again #############
+###########################################################################
+
+# Cockpit Tentacles									
+anomaly = {
+	event = sexy_planet.1     		
+	category = "sexy_planet_category"	
+	
+	weight = 1	
+
+	potential = {
+		always = yes
+	}
+}
+
+# Tentacles Swarm
+anomaly = {
+	event = sexy_planet.2
+	category = "sexy_planet_category"
+	
+	weight = 1
+	potential = {
+	always = yes
+	}
+}
+
+# The Xeno Terror
+anomaly = {
+	event = sexy_planet.4
+	category = "sexy_planet_hard_category"
+	
+	weight = 1
+	potential = { always = yes }
+}
+
+# Tentacled Lifeforms
+anomaly = {
+	event = sexy_planet.3
+	category = "potential_colony_site_category"
+	
+	weight = 1
+	potential = { always = yes }
+}
+
+# Nuclear Sex
+anomaly = {
+	event = nuclear_sex.1
+	category = "nuclear_sex_category"
+	
+	weight = 1
+	potential = { always = yes }
+}
+
+# Slime Tentacles Lab
+anomaly = {
+	event = slime_asteroid.1
+	category = "slime_asteroid_category"
+	
+	weight = 1
+	
+	potential = {always = yes}
+}
+
+# The Mad Scientist's Tentacled Creation
+anomaly = {
+	event = sexy_asteroid.1
+	category = "sexy_asteroid_category"
+	
+	weight = 1
+	
+	potential = { always = yes }
+}
+
+# The Cyber Sex Shop
+anomaly = {
+	event = sexy_asteroid.2
+	category = "sexy_asteroid_category"
+	
+	weight = 1
+	
+	potential = { always = yes}
+}
+
+# Slug Planet
+anomaly = {
+	event = slug_planet.1
+	category = "slug_planet_category"
+	
+	weight = 1
+	
+	potential = { always = yes}
+}

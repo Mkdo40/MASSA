@@ -1,0 +1,223 @@
+############################
+### DISCOVERY CATEGORIES ###
+############################
+# potential = planet scope
+# on_success = ship scope
+# on_fail = ship scope
+# on_critical_fail = ship scope
+# level = level of discovery that is checked against scientist level
+# risk = risk of researching the discovery (defaults to NDefines::NGameplay:anomaly_RISK_DEFAULT)
+
+# For on_success, on_fail, on_critical_fail
+# FROM = planet scope
+# ROOT = ship scope
+# Ex. on_fail, ship_event would have the planet in From.From
+
+###########################################################################
+############# Written by Darkspleen for Make Space Sexy Again #############
+###########################################################################
+
+# Sexy Planet
+anomaly_category = {
+
+	key = "sexy_planet_category"	
+	desc = "sexy_planet_category_desc"	
+	picture = GFX_evt_ship_in_orbit 
+	level = 1			
+	#risk = 5			
+
+	spawn_chance = {	
+		modifier = {
+			add = 99
+			massa_is_habitable_world = yes
+		}
+	}
+	on_success = {		
+	}
+
+	on_fail = {
+		random_list = {
+			40 = { ship_event = { id = sexy_failure.1 } }
+			60 = { ship_event = { id = sexy_failure.3 } }
+		}
+	}
+	
+	on_critical_fail = {
+		ship_event = {
+			id = sexy_failure.2	
+		}
+	}
+}
+
+# Sexy Planet Hard
+anomaly_category = {
+
+	key = "sexy_planet_hard_category"	
+	desc = "sexy_planet_hard_category_desc"	
+	picture = GFX_evt_ship_in_orbit 
+	level = 4			
+	#risk = 30			
+
+	spawn_chance = {	
+		modifier = {
+			add = 99
+			massa_is_habitable_world = yes
+		}
+	}
+	on_success = {				
+	}
+
+	on_fail = {
+		random_list = {
+			40 = { ship_event = { id = sexy_failure.1 } }
+			60 = { ship_event = { id = sexy_failure.3 } }
+		}
+	}
+	
+	on_critical_fail = {
+		ship_event = {
+			id = sexy_failure.2	
+		}
+	}
+}
+
+# Potential Colony Site
+anomaly_category = {
+
+	key = "potential_colony_site_category"	
+	desc = "potential_colony_site_category_desc"	
+	picture = GFX_evt_alien_nature 
+	level = 3			
+	#risk = 10			
+
+	spawn_chance = {	
+		modifier = {
+			add = 99
+			massa_is_habitable_world = yes
+		}
+	}
+	on_success = {				
+	}
+
+	on_fail = {
+		random_list = {
+			40 = { ship_event = { id = sexy_failure.1 } }
+			60 = { ship_event = { id = sexy_failure.3 } }
+		}
+	}
+	
+	on_critical_fail = {
+		ship_event = {
+			id = sexy_failure.2	
+		}
+	}
+}
+
+# Nuclear Sex
+anomaly_category = {
+	key = "nuclear_sex_category"
+	desc = "nuclear_sex_category_desc"
+	picture = GFX_alien_ruins
+	level = 3
+	#risk = 20
+	
+	spawn_chance = {		
+		modifier = {
+			add = 99
+			is_planet_class = pc_nuked
+		}
+	}
+	
+	on_success = {}
+	
+	on_fail = {
+	ship_event = { id = sexy_failure.1}
+	}
+	
+	on_critical_fail = {
+	ship_event = {id = sexy_failure.2}
+	}
+}
+
+# Sexy Asteroid
+anomaly_category = {
+	key = "sexy_asteroid_category"
+	desc = "sexy_asteroid_category_desc"
+	picture = GFX_evt_mining_station
+	level = 2
+	#risk = 20
+	
+	spawn_chance = {		
+		modifier = {
+			add = 99
+			is_asteroid = yes
+		}
+	}
+	
+	on_success = {}
+	
+	on_fail = {
+	ship_event = { id = gen_crit_fail.1}
+	}
+	
+	on_critical_fail = {
+	ship_event = {id = sexy_failure.2}
+	}
+}
+
+# Slime Asteroid
+anomaly_category = {
+	key = "slime_asteroid_category"
+	desc = "slime_asteroid_category_desc"
+	picture = GFX_evt_mining_station
+	level = 2
+	#risk = 20
+	
+	spawn_chance = {		
+		modifier = {
+			add = 99
+			is_asteroid = yes
+		}
+	}
+	
+	on_success = {}
+	
+	on_fail = {
+	ship_event = { id = gen_crit_fail.1}
+	}
+	
+	on_critical_fail = {
+	ship_event = {id = sexy_failure.2}
+	}
+}
+
+# Slug Planet
+anomaly_category = {
+	key = "slug_planet_category"	
+	desc = "slug_planet_category_desc"	
+	picture = GFX_evt_ship_in_orbit 
+	level = 3			
+	#risk = 5			
+
+	spawn_chance = {	
+		modifier = {
+			add = 99
+			massa_is_habitable_world = yes
+		}
+	}
+	on_success = {		
+	}
+
+	on_fail = {
+		random_list = {
+			40 = { ship_event = { id = sexy_failure.1 } }
+			60 = { ship_event = { id = sexy_failure.3 } }
+		}
+	}
+	
+	on_critical_fail = {
+		ship_event = {
+			id = sexy_failure.2	
+		}
+	}
+}

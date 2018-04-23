@@ -1,0 +1,34 @@
+﻿l_english:
+
+###########################################################################
+############# Written by Darkspleen for Make Space Sexy Again #############
+###########################################################################
+
+# §Ywords§ = Yellow Words
+# §Rwords§ = Red Words
+# §Gwords§ = Green Words
+# §Bwords§ = Blue Words
+# §Swords§ = Orange Words
+# \n£blocker = Blocker Picture
+# \n£society = Society Picture
+# \n£engineering = Engineering Picture
+# \n£physics = Physics Picture
+# \n£energy = Energy Picture
+# \n£minerals = Minerals Picture
+
+
+#TEMPLATE
+#youranomalyhere_category: "Name of beginning event"
+#youranomalyhere_category_desc: "Desc of beginning event"
+#youranomalyhere.1.name: "Name of event"
+#youranomalyhere.1.desc: "Desc of event"
+#youranomalyhere.1.a: "first answer"
+#youranomalyhere.1.b: "second answer"
+
+neuter_purge_event.2.name: "Undesirables with Benefits"
+neuter_purge_event.2.desc: "Our policy of neutering the [PREV.FROMFROM.GetName] people has come with some unintended, but very desirable consequences. For whatever reason, whether they wished to leave behind some kind of offspring or were hoping to obtain favors from our loyal citizens, many of the [PREV.FROMFROM.GetName] not only had intercourse with our citizens, but also offered to bare their offspring."
+neuter_purge_event.2.a: "I almost feel bad that they are now gone."
+
+neuter_purge_event.3.name: "Baby Ovens"
+neuter_purge_event.3.desc: "Through the use of hormones, gene therapy, powerful aphrodisiacs, artificial insemination, and a strict regiment of compulsory intercourse with loyal citizens, we have managed to turn a large number of undesirables on [PREV.THIS.GetName] into 'baby ovens', baring the young not of their own species, but those of loyal citizen species." 
+neuter_purge_event.3.a: "They served their purpose."

@@ -1,0 +1,453 @@
+﻿l_english:
+
+###########################################################################
+############# Written by Darkspleen for Make Space Sexy Again #############
+###########################################################################
+
+# §Ywords§ = Yellow Words
+# §Rwords§ = Red Words
+# §Gwords§ = Green Words
+# §Bwords§ = Blue Words
+# §Swords§ = Orange Words
+# \n£blocker = Blocker Picture
+# \n£society = Society Picture
+# \n£engineering = Engineering Picture
+# \n£physics = Physics Picture
+# \n£energy = Energy Picture
+# \n£minerals = Minerals Picture
+
+
+#TEMPLATE
+#youranomalyhere_category: "Name of beginning event"
+#youranomalyhere_category_desc: "Desc of beginning event"
+#youranomalyhere.1.name: "Name of event"
+#youranomalyhere.1.desc: "Desc of event"
+#youranomalyhere.1.a: "first answer"
+#youranomalyhere.1.b: "second answer"
+
+########## Anomaly EVENTS ##########
+
+ sexy_planet_category: "The Odd Lifeform"
+ sexy_planet_category_desc: "The crew has detected some kind of strange lifeform on §Y[From.GetName]§!."
+ 
+ sexy_planet.1.name: "In Heat"
+ sexy_planet.1.desc: "All search efforts for the lifeform proved fruitless. Even sending survey ships to physically search §Y[From.GetName]§! failed to obtain any results.\n\nIt seems that it was unnecessary for us to search so hard, however, as one of our female pilots discovered the lifeform in her survey ship as she returned from the planet's surface."
+ sexy_planet.1: "Disturbing, yet fascinating."
+
+ sexy_planet.2.name: "The Swarm"
+ sexy_planet.2.desc: "Upon touching down on the surface of  §Y[From.GetName]§! our survey team was immediately beset upon by a creature with an insatiable sex drive. The males of the survey team could do little more than watch as the creature stripped the clothes of the female members and penetrated all of their holes with its tentacles, not letting them go until it had fully filled them with its seed."
+ sexy_planet.2.a: "Disturbing, yet fascinating."
+ sexy_planet.2.b: "These vile creatures will make good test subjects for our latest weapons."
+ sexy_planet.2.c: "The women clearly enjoyed the experience."
+ 
+ sexy_planet_hard_category: "Something Lurks Here"
+ sexy_planet_hard_category_desc: "The crew believes it may have detected signs of a strange lifeform on §Y[From.GetName]§!, but whatever it is it has proven itself to be immensely hard to track."
+ 
+ sexy_planet_hard.1.name: "The Xeno Terror"
+ sexy_planet_hard.1.desc: "The crew managed to find the lifeform. Well... perhaps it would be more accurate to say that it found them. §G[Root.GetLeaderName]§! still isn't sure what sort of creature this lifeform is, but he says with some confident that it was biogengineered. Whatever it is, the 'Xeno Terror' as the crew calls it, seems to have a strong attraction to the females of our species."
+ sexy_planet_hard.1.a: "Truly Horrifing"
+ sexy_planet_hard.1.b: "This is why no one important is sent on these missions."
+ sexy_planet_hard.1.c: "Nope! Nope! Nope!"
+ sexy_planet_hard.1.d: "Learn what we can then nuke the site from orbit."
+ 
+ nuclear_sex_category: "Life on a Ruined World"
+ nuclear_sex_category_desc: "The crew has detected lifeforms on the surface of §Y[From.GetName]§! despite the planet having been ruined by a nuclear conflict. Trying to find these lifeforms from orbit has proven fustrating at best, as the lifeforms are being shielded from our sensors by the various ruins on the planet's surface. §G[Root.GetLeaderName]§! has suggested sending a team to the surface to further investigate."
+ nuclear_sex.1.name: "Nuclear Sex"
+ nuclear_sex.1.desc: "The survey team hadn't been on the surface long before one of the lifeforms made contact with an isolated member of the team. Upon arriving at the scene the other survey members found the woman with her hazard suit completely torn off. Recordings of the incident indicate that the sexual act the xeno was performing on the woman probably would have been quite enjoyable for her if she wasn't recieving a lethal dose of radiation."
+ nuclear_sex.1.a: "Let's keep quiet about this incident."
+ nuclear_sex.1.b: "Make the recordings of the act public so we can learn as much as we can."
+ nuclear_sex.1.c: "Our scientist suffered a tragic, but unintended fate."
+ 
+ potential_colony_site_category: "Potential Colony Site"
+ potential_colony_site_category_desc: "§G[Root.GetLeaderName]§! claims to find a site on §Y[From.GetName]§! that would be perfect for a new colony."
+ sexy_planet.3.name: "Tentacled Lifeforms Abound"
+ sexy_planet.3.desc: "At first the site on §Y[From.GetName]§! did indeed seem perfect. The survey team was in the process of determining the best spot for a future administrative building when one of the team's females was suddenly pulled into a hole in the ground. She cried out as tendril-like appendages wrapped themselves around her and forced their way into her. §G[Root.GetLeaderName]§! informs us that the planet is home to numerous other 'tentacle lifeforms'."
+ sexy_planet.3.a: "Besides that its still a good site for a colony, right?"
+ sexy_planet.3.b: "Gather as much data as we can about these fascinating lifeforms."
+ sexy_planet.3.c: "Eradicate it! We won't tolerate the presence of these creatures."
+ 
+ slime_asteroid_category: "The Slime"
+ slime_asteroid_category_desc: "The crew of §B[Root.GetFleetName]§! has reported catching sight of some kind of slime-like entity on a nearby asteroid. §G[Root.GetLeaderName]§! has recommended we collect a sample for further research."
+ 
+ slime_asteroid.1.name: "Raunchy Slime"
+ slime_asteroid.1.desc: "The slime entity was easily located and brought aboard the §B[Root.GetFleetName]§!. §G[Root.GetLeaderName]§! wasn't sure if it was even alive or not until it broke free and attempted to mate with a female scientist."
+ slime_asteroid.1.a: "We can use their photosynthesizing nature to our advantage."
+ slime_asteroid.1.b: "Their biology and behavior is truly fascinating."
+ slime_asteroid.1.c: "Perhaps our engineers can find a use for them."
+ slime_asteroid.1.d: "Find some military usage to it."
+ 
+ sexy_asteroid_category: "Interesting Asteroid"
+ sexy_asteroid_category_desc: "The sensors of the §B[Root.GetFleetName]§! haved picked up unusual readings on the nearby asteroid."
+ 
+ sexy_asteroid.1.name: "The Mad Scientist's Tentacled Creation"
+ sexy_asteroid.1.desc: "Upon further investigation the §B[Root.GetFleetName]§! detected a small facility built into the asteroid. A survey team is dispatched to investigate. At first all seems well, the facility seems deserted even, but suddenly the facility's defenses spring to life and incapacitate the team. A second team is sent in to rescue the first. It takes them some time, but eventually the first team is located in the depths of a clearly functioning laboratory. The facility's sole occupant has obviously decided that our people would make excellent test subjects for this tentacled creation."
+ sexy_asteroid.1.a: "Those poor women."
+ sexy_asteroid.1.b: "We will learn much from their sacrifice."
+ sexy_asteroid.1.c: "Let's learn what we can to make this worthwhile."
+ sexy_asteroid.1.d: "The creation of life is the domain of the divine!"
+ sexy_asteroid.1.e: "Our people ARE NOT your test subjects!"
+ 
+ sexy_asteroid.2.name: "The Cyber Sex Shop"
+ sexy_asteroid.2.desc: "Our survey team quickly located what could only be described of as a 'store catering in phallic prostetics'. Interestingly the shop has informed our team that the vast majority of its customers are females."
+ sexy_asteroid.2.a: "Another tax source."
+ sexy_asteroid.2.b: "There is much we can learn from these designs."
+ sexy_asteroid.2.b2: "We should take notes, these designs are quite interesting."
+ sexy_asteroid.2.c: "This will bring further equality to our people!"
+ sexy_asteroid.2.d: "This disrupts the natural order."
+ 
+ slug_planet_category: "Slug Planet"
+ slug_planet_category_desc: "After a few days scanning [from.GetName], [Root.GetFleetName] has detected some kind of lifeform that possesses any entirely different DNA structure than the rest of the lifeforms present. [Root.GetLeaderName] suggests sending a team down to the surface to investigate further."
+ 
+ slug_planet.1.name: "Slug Planet"
+ slug_planet.1.desc: "The detected lifeforms certainly did not belong to [from.GetName]'s ecosystem. From what our scientists could gather, the 'slugs' as they call them, were implanted on the planet centuries ago. Why? They can only speculate. What we know for sure is that they appear to like our people in a sexual sense. While investigating the slugs, several of our female scientists were dragged to the ground by the slugs, who then proceeded to have sexual intercourse with the females. Repeatedly. Thankfully the slugs made for gentle, if sticky, lovemakers."
+ slug_planet.1.a: "Interesting."
+  
+ ########## End Anomaly EVENTS ##########
+ 
+ ########## COUNTRY EVENTS ##########
+ 
+ interstellar_exchange.2.name: "Interstellar Exchange"
+ interstellar_exchange.2.desc: "It has come to our attention that a number of businesses have begun to cater to xenos. What should we do?"
+ interstellar_exchange.2.a: "Tax them like any other business."		
+ interstellar_exchange.2.b: "Xeno businessmen?! Awesome! Let's tax the businesses." 
+ interstellar_exchange.2.c: "Disgusting! Tear these businesses down and sell their assets!"
+ interstellar_exchange.2.d: "Execute everyone involved. We stand together or not at all."
+ interstellar_exchange.2.e: "Another investment opportunity!"
+ 
+ robotsex.1.name: "Robot Rapists"
+ robotsex.1.desc: "The governors of several of our cities has reported a disturbing trend. Young women have been assaulted by various types of robots. Some of these robots were simple humanoid models are smaller models, but several of the involved droids were large industrial models. Needless to say this is a matter of great concern. We believe these attacks are not linked in any way and are simply a random collection of faulty programming, hackers, and the rare case of emergent AI."
+ robotsex.1.a: "Investigate the matter and have our PR team tackle the issue."
+ robotsex.1.b: "Let's learn what we can from these attacks."
+ robotsex.1.c: "These machines are a plague on our society!"
+ robotsex.1.d: "We'll get all those behind these attacks."
+ 
+ military_affairs.1.name: "Unit Recreational Parties"
+ military_affairs.1.desc: "These so called 'unit recreational parties' have become fairly commonplace in our armed forces. Each platoon, ship, or airwing has its own version but in general these parties are where a group of males has group sex with one of more females, who are almost always of lower rank. Some of our military leaders claim this is simply a way of venting for the troops, although others warn this could cause discipline issues later on."
+ military_affairs.1.a: "That's life in the military for you."
+ military_affairs.1.b: "Find a few officers involved and make an example of them."
+ military_affairs.1.c: "Wars and armies are the root of all evil."
+ military_affairs.1.d: "Our soldiers offer their bodies to their country and leaders."
+ military_affairs.1.e: "Soldiers should not be treating their comrades like a piece of meat."
+ military_affairs.1.f: "Let's study this fascinating bit of military culture!"
+ 
+ military_affairs.2.name: "Soldier Rapists Punished"
+ military_affairs.2.desc: "We expect better from our soldiers. Those who were behind the rape of captured soldiers or civilians have been punished accordingly. We didn't stop there. Those who know of these terrible deeds and did nothing have also been punished accordingly. We know that, in time, this will become a problem again, but for the forseeable future our soldiers will be very well behaved."
+ military_affairs.2.a: "Good"
+ military_affairs.2.b: "We expect the best from our troops."
+ military_affairs.2.c: "We are better than this."
+ 
+ sexy_country.1.name: "Festival of Love"
+ sexy_country.1.desc: "A large portion of our citizens have begun participating in what they call a 'Festival of Love'. There seem to be many differing definitions of what the 'Festival of Love' actually is, but as far as we can ascertain it involves large groups of people indulging in sexual intercourse throughout the day and generally being kind to each other."
+ sexy_country.1.a: "Whatever makes them happy."
+ sexy_country.1.b: "A true festival of love!"
+ sexy_country.1.c: "This a great opportunity to invest in the contraception market!"
+ sexy_country.1.d: "Unacceptable! Ban this festival immediately!"
+ sexy_country.1.e: "We do not support this type of festival."
+ 
+ sexy_country.2.name: "Futa Rising"
+ sexy_country.2.desc: "The ability to alter our genes is causing ripples in society itself. Once a fantasy 'futas', females with male genitalia, are now beginning to crop up in our society. Only time will tell what the longterm effects of this will be."
+ sexy_country.2.a: "People are weird."
+ sexy_country.2.b: "This will only spread our love further."
+ sexy_country.2.c: "Strange, but very interesting."
+ sexy_country.2.d: "We must stand united against these vile changes."
+ sexy_country.2.e: "Equality at last!"
+ sexy_country.2.f: "This is illegal genetic modification! Ban the practice."
+ sexy_country.2.g: "We do not allow this kind of genetic modification."
+ 
+ sexy_country.3.name: "Science Gone Wrong"
+ sexy_country.3.desc: "Something has gone horribly wrong at one of our top secret science facilities. Several of the facilities containment systems failed, allowing the entities being experimented on to break out. Many of the males at the facility were killed and the females were used to meet the entities' needs. Repeatedly. The good news is we did learn something from this event. Unfortunately it appears that some of the entities escaped into the surrounding areas, so this may cause more issues for us later on."
+ sexy_country.3.a: "Could have been worse."
+ sexy_country.3.b: "This makes us look bad."
+ sexy_country.3.c: "We will learn what we can from this."
+ 
+ sexy_country.4.name: "Breeding Season"
+ sexy_country.4.desc: "It is that time of year when the species that are seasonal breeders are in heat. These normally solid workers become distracted as even the smallest of stimuli can have them searching for sexual gratification."
+ sexy_country.4.a: "Ok"
+ 
+ sexbots.1.name: "Illegal Sex Robots"
+ sexbots.1.desc: "Due to a police investigation concerning some stolen robotics parts, multiple non-registered robots has been found inside an abandoned warehouse. Upon their arrival, multiple officers has been assaulted by what they described as "sexually obsessed" robots.\n\nFortunately, apart from some officers reported inexplicably tired after the intervention, our police forces managed to deactivate them without any major incident. After investigation, these robots seems to have been heavily modified to resemble to our species females, as well as reprogrammed to be attracted by phallic shapes and provide sexual pleasure to their owners.\n\nHowever, we have yet to found who is responsible for the assembling of these robots."
+ sexbots.1.a: "Register the modified robots and let them integrate our society."
+ sexbots.1.b: "Remove the modifications and reprogram them to our standards."
+ sexbots.1.c: "Dismantle the robots and recover the stolen parts."
+ sexbots.1.d: "Fascinating! We should attempt to reverse engineer one of them."
+ sexbots.1.e: "Unacceptable! Eradicate these robotic abominations!"
+ sexbots.1.f: "It seems we had dismantled a robotic prostitution network!"
+ 
+ ########## End COUNTRY EVENTS ##########
+ 
+ ########## COLONY EVENTS ##########
+ 
+ sexycolony.1.name: "Invasive Tentacles"
+ sexycolony.1.desc: "A xeno lifeform has somehow managed to sneak onto one of our planets. This wouldn't be an issue in and of itself if it weren't for the fact that it repeatedly attempted to mate with our females. The people are afraid and the local government is seeking aid."
+ sexycolony.1.a: "We'll do what we can to help."
+ sexycolony.1.b: "Send in the special forces!"
+ sexycolony.1.c: "It means us no harm!"
+ sexycolony.1.d: "This is why we can't trust xenos!"
+ sexycolony.1.e: "This creature is a divine being!"
+ 
+ sexycolony.2.name: "Zoo Breakout"
+ sexycolony.2.desc: "One of the animals kept in the zoo on §B[Root.GetPlanetName]§! has broken out of its enclosure. It took the zoo staff quite a while to contain the situation. Only after the animal had attempted to mate with several of the zoo visitors was it subdued and finally returned to its enclosure."
+ sexycolony.2.a: "How terrible!"
+ sexycolony.2.b: "Maybe we should engineer a few more escapes..."
+ 
+ sexycolony.3.name: "Futa Sadists"
+ sexycolony.3.desc: "Given the comparatively large number of sadists on §B[Root.GetPlanetName]§!, and the ability for those sadists to modify themselves and others, it shouldn't be all that surprising that a massive futa BDSM orgy has taken place. Reports indicate that most who took part did so willingly, however there is a high possibility that many individuals were forced or pressured into taking part and are too shamed to report so."
+ sexycolony.3.a: "Both violent and arousing."
+ 
+ sexycolony.4.name: "Sadist Fun"
+ sexycolony.4.desc: "Given the sadist population on §B[Root.GetPlanetName]§!, it should come as no surprise that some sort of massive BDSM orgy has occured in several of the planet's population centers. Reports indicate that most who took part did so willingly, however there is a high possibility that many individuals were forced or pressured into taking part and are too shamed to report so."
+ sexycolony.4.a: "Both violent and arousing."
+ sexycolony.4.b: "This doesn't reflect our society's values."
+ 
+ sexycolony.5.name: "Masochist Fun"
+ sexycolony.5.desc: "Given that there is a signifigant population of masochists on [root.GetName], it shouldn't come as a surprise to see a BDSM party or two from time to time. The masochists have taken to tying themselves and each other up and inflicting pain on themselves. Any sadists they could find were 'recruited' to aid them in their endevours."
+ sexycolony.5.a: "Glad they are enjoying themselves."
+ 
+ sexyplanet_mod.2.name: "Lusting Plants"
+ sexyplanet_mod.2.desc: "We have known of the tentacled lifeforms on §B[Root.GetPlanetName]§! for quite some time and been able to live alongside them since establishing our colony. Granted occasionally one of our females would be abducted by the lifeforms, but these cases were fairly rare and didn't have a large impact on the colony. The colonists have called them the lusty plants, although whether these lifeforms are actually plants or not is up for debate.\n\nRecently the lusty plants have been especially aggressive and have begun to abduct increasingly large numbers of women. The abducted females were found after the colony launched a massive search effort. The lusty plants were clearly using the women for reproductive purposes and were using their milk to nourish themselves. Interestingly enough we have learned that the lusty plants are making the planet more inhabitable for our people. Perhaps this is an attempt to trade on their part?"
+ sexyplanet_mod.2.a: "This cannot be allowed to continue."
+ sexyplanet_mod.2.b: "If the Lusty Plants want a deal they've got it."
+ sexyplanet_mod.2.c: "They have abducted our people for the last time."
+ 
+ sexyplanet_mod.3.name: "The Tentacled Natives"
+ sexyplanet_mod.3.desc: "We have known of the tentacled lifeforms on §B[event_target:invasion_location.GetPlanetName]§! for quite some time and been able to live alongside them since establishing our colony. Granted occasionally one of our females would be abducted by the lifeforms, but these cases were fairly rare and didn't have a large impact on the colony. Something about our presence here on the planet, however, has caused rapid change in these creatures. Their firtility rates have skyrocketed and, while far from sapient, our scientists have noticed a marked increase in their intelligence."
+ sexyplanet_mod.3.a: "Interesting."
+ sexyplanet_mod.3.b: "Our people will come to love their primitive natives, tentacles and all."
+ sexyplanet_mod.3.c: "We need to kill as many of these tentacled beasts as possible."
+ 
+ sexyplanet_mod.4.name: "Raunchy Titans"
+ sexyplanet_mod.4.desc: "Our governor on [Root.GetName] didn't initially believe the reports that were coming in about the titanic lifeforms trying to mate with our colonists. Soon, however, a large amount of video and photographic evidence has left little doubt that they are indeed attempting to mate with our people. Thankfully only a few of our females have been injured during these mating attempts and the injuries themselves have been minor. The local government is still attempting to determine how best to handle this situation."
+ sexyplanet_mod.4.desc_phile: "On colonists on [Root.GetName] have begun to call the local titanic lifeforms the 'Titans of Love' after some of them attempted to mate with willing colonists. The few females lucky enough to partake in this act claim that the Titans of Love are very caring and gentle lovers, even if their massive phalli prove to be a tad uncomfortable upon insertion."
+ sexyplanet_mod.4.desc_phobe: "Initial reports of ravenous titanic lifeforms on [Root.GetName] raping our colonists has proven to be true. Thankfully the number of rapes have been fairly low, although a large number of people have been injuried either during the rape incidents or while fleeing from these rapacious monsters. The horrors our females on the planet must endure, the constant fear of penetration by the titanic lifeforms' massive phalli, is horrible. Unfortunately the local government is at a loss as to how to handle this situation."
+ sexyplanet_mod.4.a: "Nothing we can do about it."
+ sexyplanet_mod.4.b: "Sounds like some of our people had the rides of their lives."
+ sexyplanet_mod.4.c: "Disgusting!"
+ 
+ sexyplanet_mod.5.name: "Titanic Rising"
+ sexyplanet_mod.5.desc: "Reports from [Root.GetName] indicate that the titanic lifeforms find our colonists to be increasingly attractive mates. Why this is the case is up for much debate; what isn't up to debate is the increase in number of reported 'incidents' involving the local titanic life. The government is split between how to handle the issue with some officials wanting to do nothing while others want to eliminate, or at least contain, the titanic life. Regardless of their thoughts on the matter, all of our officials on [Root.GetName] agree that they don't know how to handle the issue."
+ sexyplanet_mod.5.desc_phile: "Reports from [Root.GetName] indicate that the titanic lifeforms find our colonists to be increasingly attractive mates. Why this is the case is up for much debate; what isn't up to debate is the increase in number of reported sexual encounters with the Titans of Love. Many of our citizens have rushed to join the 'Titan Club': people who have had intercourse with a Titan of Love much like those of centuries past who had endevoured to have sex in an operating aircraft."
+ sexyplanet_mod.5.desc_phobe: "Reports from [Root.GetName] indicate that the titanic lifeforms find our colonists to be increasingly attractive mates. Why this is the case is up for much debate; what isn't up to debate is the increase in number of reported rapes involving the local titanic life. Many of our females are afraid of leaving the city, or even leaving their homes. Local government officials have come up with a plan to cull the number of titanic lifeforms on the planet and harvest them to feed our people."
+ sexyplanet_mod.5.a: "We will do nothing for now."
+ sexyplanet_mod.5.b: "We love the Titans of Love."
+ sexyplanet_mod.5.c: "Remove these vile creatures!"
+ 
+ sexyplanet_mod.6.name: "Titanic Changes"
+ sexyplanet_mod.6.desc: "We've recieved some concerning reports from [Root.GetName]. We are not sure why, or how for that matter, but repeated sexual intercourse with the titanic lifeforms has begun to change our females at a genetic level. Their sexual organs have begun to adapt to the increadible size of the titan's phalli. Not only that, but some of the local scientists are reporting that, given enough time, the genetic changes will make it so our females will be able to bare the young of the titans. They assure us that if we act quickly we can prevent this from occuring."
+ sexyplanet_mod.6.desc_phile: "We've recieved amazing news from [Root.GetName]. We are not sure why, or how for that matter, but repeated sexual intercourse with the Titans of Love has begun to change our females at a genetic level. Their sexual organs have begun to adapt to the increadible size of the titan's phalli. Not only that, but some of the local scientists are reporting that, given enough time, the genetic changes will make it so our females will be able to bare the young of the titans. They assure us that if we act quickly we can prevent this from occuring, although why would we want to do that?"
+ sexyplanet_mod.6.desc_phobe: "We've recieved horrifying news from [Root.GetName]. We are not sure how, but repeated rapes by the titanic lifeforms has begun to change our females at a genetic level. Their sexual organs have begun to adapt to the increadible size of the titan's phalli. Not only that, but some of the local scientists are reporting that, given enough time, the genetic changes will make it so our females will be able to bare the young of the titans. These disgusting creatures can no longer be allowed to do as they please!"
+ sexyplanet_mod.6.a: "We shall let nature take its course."
+ sexyplanet_mod.6.b: "Why wouldn't we let nature take its course?!"
+ sexyplanet_mod.6.c: "We need to stop this."
+ sexyplanet_mod.6.d: "We need to prevent crossbreeding to preserve these amazing creatures."
+ sexyplanet_mod.6.e: "This ends. Now."
+ 
+ sexyplanet_mod.7.name: "Titanic Evolution"
+ sexyplanet_mod.7.desc: "Just as our scientists and doctors predicted, the colonists of [root.GetName] have been permamently changed by their continued sexual interactions with the titanic lifeforms. Only time will tell if these changes are for better or worse."
+ sexyplanet_mod.7.desc_phile: "Amazing! The Titans of Love have altered our colonists to be their mates. Although the changes are permament, our scientists assure us that these changes are for the better."
+ sexyplanet_mod.7.desc_phobe: "Our fears have come true. The titanic rapists have altered our colonists to truly be their mates. Thankfully the children of these unfortunate pairings aren't also titans, although there are no guarantees that this won't become the case in the future."
+ sexyplanet_mod.7.a: "It is what it is."
+ sexyplanet_mod.7.b: "Amazing!"
+ sexyplanet_mod.7.c: "I think I'm going to throw up."
+ 
+ sexyplanet_mod.8.name: "Titanic Fun"
+ sexyplanet_mod.8.desc: "The titans of [root.GetName] continue to have sexual intercourse with our colonists. Any new arrivals to the colony almost certainly have been genetically altered to meet the titans' needs."
+ sexyplanet_mod.8.desc_phile: "The Titans of Love on [root.GetName] continue to have sexual intercourse with our colonists. Any new arrivals to the colony almost certainly have been granted the same amazing changes as our previous colonists."
+ sexyplanet_mod.8.desc_phobe: "The disgusting rapacious titans continue to rape our colonists on [root.GetName]. To make matters worse even the newest colonists on the planet have had their bodies altered against their wills!"
+ sexyplanet_mod.8.a: "It is what it is."
+ sexyplanet_mod.8.b: "Sounds like fun!"
+ sexyplanet_mod.8.c: "Disgusting."
+ 
+ sexyplanet_mod.101.name: "Raunchy Titans Contained"
+ sexyplanet_mod.101.desc: "Our efforts to contain and prevent the local titanic lifeforms from mating with our citizens has been successful."
+ sexyplanet_mod.101.c: "These steaks taste great!"
+ 
+ sexyplanet_mod.102.name: "Enraged Raunchy Titans"
+ sexyplanet_mod.102.desc: "Our efforts to contain the local titanic lifeforms were unsuccessful to say the least. Even now our local defense forces are attempting to hold them back, least they unleash the rage upon our citizens."
+ raunchy_titanic_uprising_tooltip: "Titanic beasts are raping everyone!"
+ 
+ sexyplanet_war.1.name: "Spoils of War"
+ sexyplanet_war.1.desc: "Our soldiers are victorious! Even now the last remnants of armed resistance on §B[FROM.ROOT.GetName]§! is being hunted down. Our troops are mostly being well behaved, but as is the nature of soldiers and conflicts, there are those who are taking advantage of their newfound power over the locals."
+ sexyplanet_war.1.a: "This is the nature of war."
+ sexyplanet_war.1.b: "To the victor goes the spoils"
+ sexyplanet_war.1.c: "Find and Punish those responsible."
+ 
+ sexyplanet_war.2.name: "Spoils of War"
+ sexyplanet_war.2.desc: "Our soldiers have been defeated! Even now the last remnants of armed resistance on §B[FROMFROM.ROOT.GetName]§! is being hunted down by the enemy. The females of our armed forces are even now recieving a very intimate lesson about the meaning of the phrase 'spoils of war'."
+ sexyplanet_war.2.a: "This is the nature of war."
+ sexyplanet_war.2.b: "This is why you fight to the last."
+ sexyplanet_war.2.c: "We have recieved an object lesson on the evils of war."
+ 
+ ########## End COLONY EVENTS ##########
+ 
+ ########## POP EVENTS ##########
+ 
+ massa_pop.3.name: "Invasive Copulation"
+ massa_pop.3.desc: "After many years, our population of [event_target:massa_sexing_pop.species] has impregnated enough females of the other local species to cause a drastic change in local demographics."
+ massa_pop.3.a: "This is how we evolved."
+ massa_pop.3.b: "Ok."
+ 
+ ########## End POP EVENTS ##########
+ 
+ ########## EVENT FAILS ##########
+ 
+ sexy_failure.1.name: "Pirate Abduction"
+ sexy_failure.1.desc: "What we thought was a simple lifeform turned out to be a pirate. Fortunately our science ship and most of our team was uninjured, however several of members of the crew were abducted. Dispite our best efforts we have been unable to track them and must conclude that they are being kept as slaves for the pirates, sold, or killed."
+ sexy_failure.1.a: "Well shit."
+ 
+ sexy_failure.2.name: "Slaver Attack"
+ sexy_failure.2.desc: "All was going well when we suddenly lost contact with §G[Root.GetLeaderName]§! and his crew. Attempts to reestablish contact proved fruitless and when we sent a rescue team all they found were the debris left behind by an attack. Several days later we were informed of a widely distributed video showing the attack and abduction of scientists. The video also showed ten hours of the 'training' of the scientists as they were taught all the skills they would need to have in their new lives as sex slaves."
+ sexy_failure.2.a: "Well shit."
+ 
+ sexy_failure.3.name: "Fun Outdoors"
+ sexy_failure.3.desc: "After an exhaustive survey, the crew of §G[FROMFROM.GetFleetName]§! gave up their search. Many hurried to return to the ship, but some decided to take their time and enjoy the 'sights' and each other's bodies."
+ sexy_failure.3.a:  "These things happen."
+ 
+ ########## END EVENT FAILS ##########
+ 
+ ########## Observation EVENTS ##########
+ 
+ sexy_observation.2.name: "Missing Scientists"
+ sexy_observation.2.desc: "Several of our scientists working at the observation station orbitting §B[From.GetPlanetName]§! has gone missing. A detailed search of the station failed to locate them, but it did find a missing escape pod."
+ sexy_observation.2.a: "We must find them quickly."
+ 
+ sexy_observation.3.name: "Death of a Scientist"
+ sexy_observation.3.desc: "It took our search team a mere hour to locate the escape pod. It was immediately clear that the pod had somehow malfunctioned and hit the ground at high speeds. Surprisingly one of the scientists had survived the crash and managed to drag herself into the wilderness, leaving a trail of blood behind her. Several hours later the search team found her body."
+ sexy_observation.3.a: "Why did they do this?"
+ 
+ sexy_observation.5.name: "Strange Reports from [From.GetName]"
+ sexy_observation.5.desc: "We are receiving strange reports from our observers above [From.GetName]. One of the native kingdoms has rallied under a mysterious religious figure, and we have seen evidence of them using advanced technology far beyond their current level of development. We are also witnessing a rapid change in culture as the religion our scientists are calling 'a sex cult' is taking hold. Could this be related to our missing scientist?"
+ sexy_observation.5.a: "Fascinating."
+ 
+ sexy_observation.7.desc: "Hello, friends. You may recognize me as one of the scientists that went missing on [From.GetName]. My sudden disappearance was quite intentional, I assure you.\n\nThe natives here have come to see me as something of a god... and why shouldn't they? After much deliberation, I have decided to bring true civilization to these savages."
+ sexy_observation.7.a: "What has gotten into you?!"
+ sexy_observation.7.a.response: "I was tired. Tired of short-sighted ethical constraints, tired of the ridicule I suffered at the hands of my peers. Most of all, I was tired of passive observation.\n\nHA! What nonsense! It is our DUTY to interfere with primitive cultures - to guide and shape them into something useful! Observing quietly from a distance is just a shameful way of skirting responsibility."
+ sexy_observation.7.b: "You will report for immediate extraction!"
+ sexy_observation.7.b.response: "It is too late for that, I'm afraid. I am done taking orders from those beneath my station. My intellect was at your disposal, but you chose to squander it.\n\nHere I am treated with the respect I deserve. This is my home now. With my knowledge and the technical schematics I brought with me, I will jump-start this culture and shape it into something great."
+ sexy_observation.7.c: "You just wanted to fuck them."
+ sexy_observation.7.c.response: "Of course! Don't you? This is the problem with the culture of [Root.GetName]. Too many restraints. Why should we feel shame over our natural drive to reproduce?\n\nI will tell you. We should not. I will create a utopia here. Join it or leave us alone.\n\nThere is little more to say. I bid you farewell. "
+ 
+ sexy_observation.9.name: "Rogue Scientist Consolidates Power"
+ sexy_observation.9.desc: "We have received alarming reports from the surface of [From.GetName]. It looks like our rogue scientist is consolidating power - he has given one of the feudal kingdoms access to advanced weaponry, and they are now in the process of conquering the rest of the [From.GetPlanetMoon] in his name.\n\nA plan has been put forward to remove him from power, but it will require significant ground forces. There is no telling what effect this will have on the native population, as many have come to see him as a god."
+ sexy_observation.9.a: "The operation is a go. Remove him."
+ sexy_observation.9.b: "It would only make things worse..."
+ 
+ sexy_observation.10.name: "Successful Extraction"
+ sexy_observation.10.desc: "We have successfully extracted the rogue scientist from [From.From.GetName]! Hundreds of natives were tragically gunned down when they launched suicidal attacks against our forces in a futile attempt to protect their "god."\n\nOur legal system will now deal with the scientist, but the impact of these events on the [From.From.GetPlanetMoon]'s civilization must be immense. They still possess some of our technology, they are still incredibly sexually liberal, and their deity has just been spirited away by invaders from the stars."
+ sexy_observation.10.a: "At least one problem has been dealt with."
+ 
+ sexy_observation.12.name: "Religious Conflicts on [From.GetName]"
+ sexy_observation.12.desc: "[From.GetName] has descended into a massive war following the successful extraction of our rogue scientist. The empire he built has fragmented into several quarreling factions, each with their own interpretation of his religious dogma.\n\nFighting has been particularly fierce due to the destructive weaponry the natives are now using. Several radiological "dirty bombs" have so far been detonated by the opposing factions, and it looks like the conflict is only getting started. The 'Sexy Cult' is still going strong, but has taken a dark turn. Sexual assault and rape has replaced consensual sex as the conflict intensifies."
+ 
+ sexy_observation.14.name: "Situation Calms on [From.GetName]"
+ sexy_observation.14.desc: "The situation on [From.GetName] seems to have settled down a bit since the successful extraction of our rogue scientist. Without him to interpret the data, the technical schematics he brought with him are of no use to them. They have started reverting back to their old ways, although they are still quite sexually liberal."
+ sexy_observation.14.a: "Some good news at last."
+ 
+ sexy_observation.16.name: "Missile Strikes Observation Outpost!"
+ sexy_observation.16.desc: "A barrage of surface-to-space missiles have been launched from the surface of [From.GetName] at our Observation Outpost! The station was destroyed with no survivors.\n\nIt looks like the primitive civilization on the [From.GetPlanetMoon]'s surface is continuing to advance at an incredible rate - despite the fact that we removed the influence of their so-called "god." The technology he gave them must have triggered a lasting scientific revolution."
+ sexy_observation.16.a: "This is why we need the Noninterference Directive."
+ 
+ sexy_observation.18.desc: "Spirits protect me! You look like our Holy Savior, yet the differences are telling. He spoke of demons who would mimic His appearance, and that might one day descend from the heavens to steal Him away. The prophecy came true, and there is no doubt in my mind that it was your doing.\n\nWhere is our Holy Savior, wretched creature? I demand His immediate release!"
+ sexy_observation.18.a: "Your "Holy Savior" was just a scientist."
+ sexy_observation.18.a.response: "On my world, slandering the name of the Holy Savior is an unforgivable sin punishable by death. It is only through His magical inventions that our civilization managed to achieve all that it has. I will forgive your blasphemy, so long as you return the Holy Savior to us."
+ sexy_observation.18.b: "He was executed for his crimes against your people."
+ sexy_observation.18.b.response:0 "You... you murdered the Holy Savior? I... you... we... we cannot...\n\nThis... this crime will not go unpunished, demon. Though it may take a thousand years, my people will see your demonic empire grounded into dust."
+ sexy_observation.18.c: "Very well. He will be released into your custody."
+ sexy_observation.18.c.response: "May the Holy Savior forgive your crimes, demon. Perhaps there is hope for you yet."
+ 
+ sexy_observation.19.desc: "Ahem. I suppose I should be thankful that you have returned me to my disciples after all these years I spent being shuttled between mental institutions...\n\nVery well. I am not past letting bygones be bygones. As long as you leave my people alone, I'm sure we can get along just fine. Space is very big after all."
+ sexy_observation.19.a: "We shall see."
+ 
+ sexy_observation.20.desc: "A barrage of surface-to-space missiles have been launched from the surface of [From.From.GetName] at our observation outpost in high orbit! The station was destroyed with no survivors.\n\nIt looks like the primitive civilization on the [From.From.GetPlanetMoon]'s surface has advanced at an incredible rate - no doubt thanks to the efforts of our rogue scientist. They can no longer be considered primitive, and the window of opportunity to remove the scientist from power has been closed."
+ 
+ sexy_observation.22.name: "Missing Scientists Captured by Natives"
+ sexy_observation.22.desc: "It didn't take long for our drones and orbital satellites to discover the fate of our missing scientists. They seem to be fairing well on [From.GetName], or at least as well as they can be given that they have been captured by the natives. It is unclear what the natives intend to do with our scientists and, unfortunately, the situation is too volitile to attempt a recovery mission."
+ sexy_observation.22.a: "We'll just have to bide our time."
+ 
+ sexy_observation.24.name: "Scientists Sold"
+ sexy_observation.24.desc: "Our observation station orbiting [From.GetName] has reported that a large majority of our captured scientists have been sold into slavery. National leaders and wealthy individuals from across the globe rushed to acquire what they were calling the 'Gifts from the Stars.' This will make recovering our scientists even harder now that they have been split up. At least we'll have the opportunity to view how the various cultures of [From.GetName] view our people."
+ sexy_observation.24.a: "We'll just have to bide our time."
+ 
+ sexy_observation.26.name: "Used as Mounts"
+ sexy_observation.26.desc: "Our observation station orbiting [From.GetName] has made a report stating that several of our captured scientists were rode in a fashion similar to mounts as their new owners traveled to their homeland. Our scientists, those still on the station, are unsure whether this is simply some display of domination over the "Gifts from the Stars", if they actually view our people as being mounts, or if there are some sexual elements to this behavior. Our scientists, those on the station, are quick to point out that the stripping of the captured scientists' clothes and the forced piercing of many of them, while having sexual connotations in our culture, may not in their's."
+ sexy_observation.26.a: "We'll just have to bide our time."
+ sexy_observation.26.b: "Savages"
+ sexy_observation.26.c: "At least we can learn about their culture."
+ 
+ sexy_observation.28.name: "Kept as Domestic Slaves"
+ sexy_observation.28.desc: "Our observation station orbiting [From.GetName] has made another report about our captured scientists. Those taken to the more advanced nations on [From.GetName] are being used as domestic slaves. Their primary duties seem to involve housekeeping and entertainment, although a large number of them are also being used as secretaries or aids for administrative duties.\n\nA large number of these domestic slaves are also being used to meet the sexual needs of their masters. While it is clear that the two species cannot produce offspring, the inhabitants of [From.GetName] may decide to intentionally breed our captured scientists."
+ sexy_observation.28.a: "We'll need to act soon."
+ sexy_observation.28.b: "Maybe this situation isn't so bad..."
+ 
+ sexy_observation.30.name: "Soon to be Bred"
+ sexy_observation.30.desc: "It has become clear that the people of [From.GetName] have determined that they will be recieving now further 'Gifts from the Stars' and so they have decided to simply make more of them themselves. The various countries around the globe have each concocted their own means of breeding our captured scientists. Some cultures are forcing the males to rape the females. Others are 'letting nature take its course' by ensuring the males and females have ample opportunities to reproduce. Regardless of the methods employed, it has become clear to us that soon our captured scientists will be bringing their children into the world.\n\\nWe must act now. Our generals have prepared a plan. We will deploy special forces teams all across the globe to simultaniously retrieve our scientists."
+ sexy_observation.30.a: "Mission is a go."
+ sexy_observation.30.b: "Its about time!"
+ sexy_observation.30.c: "Its too risky."
+ 
+ sexy_observation.31.name: "Extraction Successful"
+ sexy_observation.31.desc: "The mission went better than expected. All of our scientists were extracted and we managed to keep native casualties to a bare minimum. Our observation station is reporting that the natives have no idea what occured with some believing that the 'Gifts from the Stars' ascended to 'Heaven' and others believing our captured scientists were always just a figment of their imaginations. Of course some of the more rational natives believe the truth, that we extracted our people, but they have no evidence to support their claims."
+ sexy_observation.31.a: "Give my regards to our special forces."
+ 
+ sexy_observation.32.name: "Residents of the World Forever More"
+ sexy_observation.32.desc: "We've failed to extract our scientists before they began producing offspring. Now we will likely never recover our people, at least not unless we are willing to fully invade the country to do so."
+ sexy_observation.32.a: "What's done is done."
+ 
+ sexy_observation.202.name: "Close Encounters of the Probing Kind"
+ sexy_observation.202.desc: "Our scientists in orbit around [From.GetName] has begun to experiment on its inhabitants in order to get a firm understanding of their sexual characteristics. Thus far this has mainly involved sending droids equipped with dildos and other sexual toys and employing them to 'probe' the locals. The locals' reactions towards the droids have been split: many fear or hate them while some seem to like the probing, even going so far as to isolate themselves in the wilderness in the hopes of attracting our probing droids."
+ sexy_observation.202.a: "Fascinating"
+ 
+ sexy_observation.204.name: "Breeding Experiments"
+ sexy_observation.204.desc: "Recently our scientists in orbit around [From.GetName] has begun to experiment on the locals in order to better understand how they react sexually under different circumstances. These experiments range from simply putting two naked subjects of different sex in the same room to forcing the males to perform sexual intercourse with the females. Our scientists assure us that they are learning many interesting and useful things."
+ sexy_observation.204.a: "Fascinating"
+ sexy_observation.204.b: "We can learn something even from uncivilized savages."
+ sexy_observation.204.c: "Onwards! For science!"
+ 
+ sexy_observation.206.name: "Probing Continued"
+ sexy_observation.206.desc: "Feeling that their breeding experiments had hit a dead end, our scientists decided to continue the sexual probing of the locals of [From.GetName]. While they claim to be making great breakthroughs, some critics state that our scientists are simply probing the locals for the fun of it. Regardless, our scientists have noted a marked increase in pleasure of their test subjects."
+ sexy_observation.206.a: "What could it mean?"
+ sexy_observation.206.b: "Of course disgusting xenos would want to be probed."
+ sexy_observation.206.c: "Onwards! For science!"
+ 
+ sexy_observation.208.name: "Masochistic Tendencies"
+ sexy_observation.208.desc: "Our scientists aren't sure why, but their continued probing of the locals of [From.GetName] has caused them to become masochistic. They now yearn for the stress caused by our abductions and the pain that sometimes came with them. Some of our scientists claim that the locals were always masochistic, just that the traits had become subdued over time. Others believe that the locals became masochistic as a means of coping with our experiments. Regardless of the reason this has likely become a permament change for them."
+ sexy_observation.208.a: "Interesting."
+ sexy_observation.208.a.tooltip: "All pops on [From.GetName] get the Masochistic trait and become xenophiles."
+ 
+ sexy_observation.209.name: "Breeding Experiments Continued"
+ sexy_observation.209.desc: "Our scientist in orbit around [From.GetName] has moved their breeding experiments on to the next phase. They have begun to conduct experiments to see how the locals react to sexual intercourse with ours and other species. Some critics have pointed out that we already know that the locals won't be able to bare the children of any creature not native to their world, but that is not the point. Our scientists are trying to see how exactly the locals' gentials interact and handle the genticals of creatures foreign to their biosphere."
+ sexy_observation.209.a: "Carry on."
+ sexy_observation.209.b: "So some of our people have actually fucked them? Gross!"
+ sexy_observation.209.c: "For science!"
+ 
+ sexy_observation.211.name: "Breeding Experiments End"
+ sexy_observation.211.desc: "Our scientists in orbit around [From.GetName] have learned all they can from their breeding experiments with the locals. They know exactly what the locals find most sexually stimulating and the complete ins and outs of their sexual organs. They also know, definitively now, that the locals can only breed with their own species. Our scientists have reported that they are ending their breeding experiments and moving on to know projects."
+ sexy_observation.211.a: "Interesting."
+ sexy_observation.211.b: "Finally. We can stop fucking filth."
+ sexy_observation.211.c: "Guess our scientists have reached a 'climax'."
+ 
+ sexy_observation.213.name: "Sexy Modification"
+ sexy_observation.213.desc: "After decades of research our scientists have begun to get a handle on the genetic code of [From.GetName]'s inhabitants. They have proposed a daring plan that would, through a combination of selective viruses, genetic engineering, and surgery, would allow us to modify the locals to better meet our standards of beauty. While dubious sounding at first, numerous scientists from around our empire have reviewed the proposed subject and have stated that it looks promising."
+ sexy_observation.213.a: "Let's do it."
+ sexy_observation.213.b: "Sounds like a waste of time."
+ 
+ sexy_observation.1213.name: "Sexy Modification Completed"
+ sexy_observation.1213.desc: "Our project of modifying the locals of [From.GetName] to better meet our standards of beauty has been successfully completed."
+ sexy_observation.1213.a: "They look so much better."
+ 
+ sexy_observation.302.name: "Lustful Machinations"
+ sexy_observation.302.desc: "Our infiltration of [From.GetName] has proceeded faster than we first expected when our agents began to use their cyber sex toys to convert some of the local leaders to our cause. Perhaps it shouldn't be too surprising that our self-lubricating 'massaging' machines have been so successful given that they can bring the locals to hights of ecstasy few of them have ever felt before."
+ sexy_observation.302.a: "Sex sells"
+ 
+ ########## End Observation EVENTS ##########
+ 
+ ##########################
+ # Leader Events
+ ##########################
+ 
+ sexy_fleet.2.name: "Sadistic Celebration"
+ sexy_fleet.2.desc: "During [officer.GetHerHis] most recent victorious engagement with the enemy, Admiral [officer.GetName] managed to capture the enemy's commanding officer. The hours of physical, mental, and sexual abuse the sadistic [officer.GetName] is likely to inflict on [officer.GetHerHis] new 'toy' will have them wishing they had never enlisted in the military."
+ sexy_fleet.2.a: "This is the nature of war."
+ sexy_fleet.2.b: "Naturally the strong dominate the weak."
+ sexy_fleet.2.c: "[officer.GetHeShe] has earned this reward."
+ sexy_fleet.2.d: "At least the xeno is good for one thing."
+ sexy_fleet.2.e: "How horrifying!"

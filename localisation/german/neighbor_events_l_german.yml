@@ -1,0 +1,38 @@
+﻿l_german:
+
+ ####################################
+ # Massa Neighbor Events
+ ####################################
+ 
+###########################################################################
+############# Written by Darkspleen for Make Space Sexy Again #############
+###########################################################################
+
+# §Ywords§ = Yellow Words
+# §Rwords§ = Red Words
+# §Gwords§ = Green Words
+# §Bwords§ = Blue Words
+# §Swords§ = Orange Words
+# \n£blocker = Blocker Picture
+# \n£society = Society Picture
+# \n£engineering = Engineering Picture
+# \n£physics = Physics Picture
+# \n£energy = Energy Picture
+# \n£minerals = Minerals Picture
+
+
+#TEMPLATE
+#youranomalyhere_category: "Name of beginning event"
+#youranomalyhere_category_desc: "Desc of beginning event"
+#youranomalyhere.1.name: "Name of event"
+#youranomalyhere.1.desc: "Desc of event"
+#youranomalyhere.1.a: "first answer"
+#youranomalyhere.1.b: "second answer"
+
+sexy_neighbor_prositution.1.name: "Xeno Klientel"
+sexy_neighbor_prositution.1.desc: "Die Prostituierten unseres Landes haben einen offenen Markt in [event_target:neighbor_target.GetName] gefunden und haben es voll ausgenutzt. Es bestand eine Mischung aus Touristen von [event_target:neighbor_target.GetName] die unsere Prostituierten beschäftigten, während sie oder unsere Prostituierten auf der Suche nach Kunden nach [event_target:neighbor_target.GetName] reisten. Unabhängig davon, wo genau das Geschäft stattgefunden hat, ist eines klar: Wir haben hierdurch einen Anstieg der Steuereinnahmen."
+sexy_neighbor_prositution.1.a: "Süß."
+sexy_neighbor_prositution.1.b: "Super!"
+sexy_neighbor_prositution.1.c: "Das endet jetzt."
+sexy_neighbor_prositution.1.d: "Natürlich würden diejenigen, die von niedrigerer Erziehung sind, sich an diesen Handlungen beteiligen."
+sexy_neighbor_prositution.1.e: "Genau deshalb verwenden wir unsere Sklaven zur Prostitution."

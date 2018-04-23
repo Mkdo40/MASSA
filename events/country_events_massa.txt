@@ -1,0 +1,987 @@
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+
+@tier1unityreward = 6
+@tier1unitymin = 40
+@tier1unitymax = 100
+@tier2unityreward = 12
+@tier2unitymin = 80
+@tier2unitymax = 175
+@tier3unityreward = 18
+@tier3unitymin = 125
+@tier3unitymax = 250
+@tier4unityreward = 24
+@tier4unitymin = 150
+@tier4unitymax = 300
+
+namespace = interstellar_exchange
+
+# Yearly gate keeper
+event = {
+	id = interstellar_exchange.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { 
+				is_ai = no
+			}
+			country_event = { id = sexy_country.4 }
+		}
+	}
+}
+
+# Interstellar Exchange Caller
+country_event = {
+	id = interstellar_exchange.1
+	hide_window = yes
+#	is_triggered_only = yes
+	
+	Trigger = {
+		is_ai = no 
+		NOT = { has_country_flag = had_exchange }
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	immediate = {
+		random_list = {
+			100 = {country_event = { id = null_event.2 } }
+			45 = { country_event = { id = interstellar_exchange.2 } }
+			15 = { country_event = { id = sexy_country.1 } }
+			15 = { country_event = { id = sexy_country.2 } }
+			15 = { country_event = { id = sexy_country.3 } }
+			15 = { country_event = { id = military_affairs.1 } }
+			10 = { country_event = { id = robotsex.1 } }
+		}
+		IF = {
+			LIMIT = {
+				has_country_flag = longer_event_wait
+			}
+			set_timed_country_flag = {
+				flag = had_exchange
+				days = 730 #2 years
+			}
+			ELSE = {
+				set_timed_country_flag = {
+					flag = had_exchange
+					days = 1
+				}
+			}
+		}
+	}	
+}
+
+#Interstellar Exchange
+country_event = {
+	id = interstellar_exchange.2
+	title = interstellar_exchange.2.name
+	desc = interstellar_exchange.2.desc
+	picture = GFX_interstellar_exchange
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	trigger = {
+            this = {
+                has_encountered_new_species = yes
+            }
+	}
+	
+	option = {
+		name = interstellar_exchange.2.a
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+		
+	}
+	
+	option = {
+		name = interstellar_exchange.2.b
+		trigger = { this = { OR = {
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+			} } }
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+		add_modifier = {
+			modifier = xeno_businesses_accepted
+			days = 100
+		}
+	}
+	
+	option = {
+		name = interstellar_exchange.2.c
+		trigger = { this = { OR = {
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			} } }
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = @tier1materialreward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+	}
+	
+	option = {
+    name = interstellar_exchange.2.d
+    trigger = { this = {
+            has_valid_civic = civic_fanatic_purifiers
+            } }
+            add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+            }
+    }
+	
+	option = {
+		name = interstellar_exchange.2.e
+		trigger = { this = { OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+			} } }
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier2materialreward
+			min = @tier2influencemin
+			max = @tier2influencemax
+		}
+	}
+}
+
+namespace = robotsex
+# Robot rape
+country_event = {
+	id = robotsex.1
+	title = robotsex.1.name
+	desc = robotsex.1.desc
+	picture = GFX_large_robot_sex
+	show_sound = event_default
+	
+	is_triggered_only = yes
+	
+	
+	trigger = {
+			this = {
+				has_technology = tech_robotic_workers
+				not = { has_ethic = ethic_gestalt_consciousness }
+				not = { has_country_flag = bad_sexy_event }
+				any_owned_planet = {
+					any_pop = {
+						is_non_sapient_robot = yes
+						
+					}
+				}
+			}
+	}
+	immediate = {
+		this = {
+			set_timed_country_flag = { flag = bad_sexy_event days = 730 }
+		}
+	}
+	
+	option = {
+		name = robotsex.1.a
+		trigger = { 
+			this = { 
+				NOT = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					} 
+				}
+			} 
+		}
+		add_influence = -50
+	}
+	
+	option = {
+		name = robotsex.1.b
+		trigger = { this = { OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+			} } }
+			
+		this = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+		add_influence = -10
+	}
+	
+	option = {
+		name = robotsex.1.c
+		trigger = { this = {
+			has_ethic = ethic_spiritualist
+			} }
+			
+		add_influence = -20
+		random_owned_pop = {
+				limit = { is_non_sapient_robot = yes }
+				kill_pop = yes
+			}
+	}
+	
+	option = {
+		name = robotsex.1.d
+		trigger = { this = { OR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+			} } }
+			
+		this = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_influence = 10
+			random_owned_pop = {
+				limit = { is_non_sapient_robot = yes }
+				kill_pop = yes
+			}
+		}
+	}
+	
+	option = {
+		name = robotsex.1.c
+		trigger = { this = {
+			has_ethic = ethic_fanatic_spiritualist
+			 } }
+			
+		add_influence = -50
+		every_owned_pop = {
+			limit = { is_non_sapient_robot = yes }
+			kill_pop = yes
+		}
+	}
+}
+
+namespace = military_affairs
+
+country_event = {
+	id = military_affairs.1
+	title = military_affairs.1.name
+	desc = military_affairs.1.desc
+	picture = GFX_military_gangbang
+	show_sound = event_default
+	
+	is_triggered_only = yes
+	
+	trigger = {
+			this = {
+				not = { has_ethic = ethic_gestalt_consciousness }
+				not = { has_country_flag = bad_sexy_event }
+				not = { has_country_flag = recreational_officiers_punished }
+			}
+		}
+	
+	immediate = {
+		this = {
+			set_timed_country_flag = { flag = bad_sexy_event days = 730 }
+		}
+	}
+	
+	option = {
+		name = military_affairs.1.a
+		trigger = { 
+			this = { 
+				NOT = {
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fanatic_pacifist
+						has_ethic = ethic_fanatic_egalitarian
+					} 
+				}
+			} 
+		}
+		add_influence = -10
+		add_energy = 10
+	}
+	
+	option = {
+		name = military_affairs.1.b
+		trigger = { this = { OR = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+			} } }
+		
+		add_influence = -20
+		set_timed_country_flag = { flag = recreational_officiers_punished days = 1825 } #5 years
+	}
+	
+	option = {
+		name = military_affairs.1.c
+		trigger = { this = { OR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+			} } }
+		
+		add_influence = -20
+	}
+	
+	option = { 
+		name = military_affairs.1.d
+		trigger = { this = { OR = {
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+			} } }
+			
+		add_influence = 10
+	}
+	
+	option = { 
+		name = military_affairs.1.e
+		trigger = { this = { OR = {
+			has_ethic = ethic_egalitarian
+			has_ethic = ethic_fanatic_egalitarian
+			} } }
+			
+		add_influence = -10
+	}
+	
+	option = { 
+		name = military_affairs.1.f
+		trigger = { this = { OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+			} } }
+			
+		add_influence = -10
+		add_modifier = {
+			modifier = military_recreational_sex_study
+			days = 1095 #3 years
+		}
+	}
+}
+
+# Soldier Rapists Punished
+country_event = {
+	id = military_affairs.2
+	title = military_affairs.2.name
+	desc = military_affairs.2.desc
+	picture = GFX_evt_alien_segregation
+	show_sound = event_default
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		THIS = {
+			set_timed_country_flag = { flag = soldier_rapists_punished days = 1825 } #5 Years
+		}
+	}
+	
+	option = {
+		name = military_affairs.2.a
+	}
+	
+	option = {
+		name = military_affairs.2.b
+		Trigger = {
+			THIS = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier1influencereward
+                min = @tier1influencemin
+                max = @tier1influencemax
+        }
+	}
+	
+	option = {
+		name = military_affairs.2.b
+		Trigger = {
+			THIS = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier1influencereward
+                min = @tier1influencemin
+                max = @tier1influencemax
+        }
+		add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+        }
+	}
+}
+
+namespace = sexy_country
+
+#Festival of Love
+country_event = {
+	id = sexy_country.1
+	title = sexy_country.1.name
+	desc = sexy_country.1.desc
+	picture = GFX_group_sex_2
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	trigger = {
+		this = {
+			NOT = {
+				has_country_flag = festival_of_love_outlawed
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_country.1.a
+		add_influence = 10
+		random_owned_planet = {
+			add_modifier = {
+				modifier = festival_of_love
+				days = 30
+			}
+		}		
+	}	
+	option = {
+		name = sexy_country.1.b
+		trigger = { this = { OR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+			} } }
+		
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier1influencereward
+			min = @tier1influencemin
+			max = @tier1influencemax
+        }
+		random_owned_planet = {
+			add_modifier = {
+				modifier = festival_of_love
+				days = 90
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_country.1.c
+		trigger = { this = { OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+			} } }
+		random_owned_planet = {
+			add_modifier = {
+				modifier = festival_of_love
+				days = 30
+			}
+		}
+		this = {
+			add_modifier = {
+				modifier = contraceptive_boom
+				days = 30
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_country.1.d
+		trigger = { this = { OR = {
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+			} } }
+		this = { 
+			set_timed_country_flag = { flag = festival_of_love_outlawed days = 1825 } #5 years
+			add_modifier = {
+				modifier = festival_of_love_outlawed
+				days = 1825
+			}
+		}
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier1influencereward
+                min = @tier1influencemin
+                max = @tier1influencemax
+        }
+		add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+        }
+	}
+	
+	option = {
+		name = sexy_country.1.e
+		this = { 
+			set_timed_country_flag = { flag = festival_of_love_outlawed days = 1095 } #3 years
+			add_modifier = {
+				modifier = festival_of_love_outlawed
+				days = 1095
+			}
+		}
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier1influencereward
+                min = @tier1influencemin
+                max = @tier1influencemax
+        }
+	}
+}
+
+
+#Futa Rising
+country_event = {
+	id = sexy_country.2
+	title = sexy_country.2.name
+	desc = sexy_country.2.desc
+	picture = GFX_futa_sex
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	trigger = {
+			this = {
+				has_technology = tech_gene_tailoring
+				not = { has_ethic = ethic_gestalt_consciousness }
+				NOT = { has_country_flag = futa_outlawed }
+			}
+	}	
+
+	option = {
+		name = sexy_country.2.a
+		add_influence = 10		
+	}
+	
+	option = {
+		name = sexy_country.2.b
+		trigger = { this = { OR = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+			} } }
+			
+		add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+        }
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier1influencereward
+                min = @tier1influencemin
+                max = @tier1influencemax
+        }
+	}
+	
+	option = {
+		name = sexy_country.2.c
+		trigger = { this = { OR = {
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+			} } }
+			
+		add_monthly_resource_mult = {
+                resource = society_research
+                value = @tier1researchreward
+                min = @tier1researchmin
+                max = @tier1researchmax
+        }		
+	}
+	
+	option = {
+		name = sexy_country.2.d
+		trigger = { this = { OR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+			} } }
+		add_influence = -10
+		
+		add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+        }		
+	}
+	
+	option = {
+		name = sexy_country.2.e
+		trigger = { this = { OR = {
+			has_ethic = ethic_egalitarian
+			has_ethic = ethic_fanatic_egalitarian
+			} } }
+			
+		add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+        }
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier1influencereward
+                min = @tier1influencemin
+                max = @tier1influencemax
+        }
+	}
+	
+	option = {
+		name = sexy_country.2.f
+		trigger = { this = { OR = {
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+			} } }
+		this = { 
+			set_timed_country_flag = { flag = futa_outlawed days = 1825 } #5 years
+			add_modifier = {
+				modifier = futa_outlawed
+				days = 1825
+			}
+		}	
+	}
+	
+	option = {
+		name = sexy_country.2.g
+		this = { 
+			set_timed_country_flag = { flag = futa_outlawed days = 1095 } #3 years
+			add_modifier = {
+				modifier = futa_outlawed
+				days = 1095
+			}			
+		}	
+		
+	}
+}
+
+#Science Gone Wrong
+country_event = {
+	id = sexy_country.3
+	title = sexy_country.3.name
+	desc = sexy_country.3.desc
+	diplomatic = yes
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = science_gone_wrong_room
+	}
+	
+	trigger = {
+            this = {
+                has_encountered_new_species = yes
+            }
+		}
+	
+	option = {
+		name = sexy_country.3.a
+		Trigger = { this = {
+			NOR = {
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		add_influence = -5
+	}
+	
+	option = {
+		name = sexy_country.3.b
+		Trigger = { this = { OR = {
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+		} } }
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		add_influence = -15
+	}
+	
+	option = {
+		name = sexy_country.3.c
+		Trigger = { this = { OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+		} } }
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		add_influence = -5
+	}
+}
+
+#Breeding Season
+country_event = {
+	id = sexy_country.4
+#	title = sexy_country.4.name
+#	desc = sexy_country.4.desc
+#	diplomatic = yes
+	hide_window = yes
+	show_sound = event_default
+	is_triggered_only = yes
+	
+#	picture_event_data = {
+#		room = breeding_season_room
+#	}
+	
+	trigger = {
+		this = {
+			any_owned_pop = {
+				pop_has_trait = trait_seasonal_breeders
+			}
+		}
+	}
+	
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				pop_has_trait = trait_seasonal_breeders
+			}
+			add_modifier = {
+				modifier = in_heat
+				days = 120
+			}
+		}
+	}
+	
+#	option = {
+#		name = sexy_country.4.a
+#	}
+}
+
+namespace = sexbots
+
+# Illegal Sexbots
+country_event = {
+	id = sexbots.1
+	title = sexbots.1.name
+	desc = sexbots.1.desc
+	picture = GFX_sexbots
+	show_sound = event_default
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_owned_planet = {
+			limit = { free_pop_tiles > 0 }
+    		save_event_target_as = sexbot_planet 
+    	}	 
+	}
+	
+	trigger = {
+            this = {
+                has_technology = tech_droid_workers
+				not = { has_technology = tech_sexbots }
+				not = { has_ethic = ethic_gestalt_consciousness }
+				not = { has_policy_flag = ai_outlawed }
+        }
+	}
+		
+	#allow the modified robots
+	option = {
+		name = sexbots.1.a
+		trigger = { 
+			this = { 
+				NOT = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+						has_policy_flag = prostitution_prohibited
+					} 
+				}
+			}			
+		}
+		event_target:sexbot_planet = {
+			best_tile_for_pop = {
+				build_pop = {
+    				name = buildable_sexrobot_pop
+    				grown = yes
+    			}
+    		}
+    	}
+	}
+	
+	#reprogram the robots
+	option = {
+		name = sexbots.1.b
+		trigger = { 
+			this = { 
+				NOT = { has_policy_flag = ai_full_rights }
+			}			
+		}
+		event_target:sexbot_planet = {
+			best_tile_for_pop = {
+				build_pop = {
+    				name = buildable_robot_pop_2
+    				grown = yes
+    			}
+    		}
+    	}
+	}	
+
+	#dismantle the robots for parts
+	option = {
+		name = sexbots.1.c
+		trigger = { 
+			this = { 
+				NOT = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					} 
+				}
+			} 
+		}
+		add_minerals = 200
+	}
+	
+	#allow the modified robots and reverse engineer one of them
+	option = {
+		name = sexbots.1.d
+		trigger = { 
+			this = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+				AND = {
+					not = { has_policy_flag = prostitution_prohibited }
+				}
+			} 
+		}
+		
+
+			add_research_option = tech_sexbots
+			add_tech_progress = {
+			tech = tech_sexbots
+			progress = 0.15
+			}
+		
+		
+		event_target:sexbot_planet = {
+			best_tile_for_pop = {
+				build_pop = {
+    				name = buildable_sexrobot_pop
+    				grown = yes
+    			}
+    		}
+    	}			
+	}
+
+	#eradicate the modified robots
+	option = {
+		name = sexbots.1.e
+		trigger = { 
+			this = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				} 
+			} 
+		}
+		add_influence = 20
+	}
+	
+	#dismantled robotic prostitution network
+	option = {
+		name = sexbots.1.e
+		trigger = { 
+			this = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					} 
+				}			
+				AND = { 
+					has_policy_flag = ai_full_rights
+					not = { has_policy_flag = prostitution_prohibited }
+				}
+			}			
+		}
+		add_influence = 20
+	}
+}

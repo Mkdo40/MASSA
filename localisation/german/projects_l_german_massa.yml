@@ -1,0 +1,24 @@
+﻿l_german:
+
+ ####################################
+ # Special Research Projects
+ ####################################
+
+ EXTRACT_ROGUE_SEXY_SCIENTIST:0 "Entfernt den schändlichen Wissenschaftler"
+ EXTRACT_ROGUE_SEXY_SCIENTIST_DESC:0 "Einer unserer Wissenschaftler hat sich als Schurke herausgestellt und wird als Gott von den Einheimischen auf [From.GetName] verehrt. Eine Operation muss gestartet werden, um ihn zu entfernen - wenn nötig mit Gewalt."
+ 
+ EXTRACT_ENSLAVED_SCIENTISTS:0 "Rettet die versklavten Wissenschaftler"
+ EXTRACT_ENSLAVED_SCIENTISTS_DESC:0 "Einige unserer Wissenschaftler wurden von den Eingeborenen auf [From.GetName] versklavt. Eine Operation muss gestartet werden, um sie zu retten, bevor die Eingeborenen sich mit ihnen erfolgreich paaren."
+ 
+ raunchy_titanic_life_removal_mean:0 "Isolation titanischen Lebens"
+ raunchy_titanic_life_removal_mean_DESC:0 "Indem wir sie in Reservaten isolieren, können wir verhindern, dass die titanischen Lebensformen auf [Root.GetName] versuchen, sich mit unseren Bürgern zu paaren."
+ 
+ raunchy_titanic_life_removal_mean:0 "Ernte titanischen Lebens"
+ raunchy_titanic_life_removal_mean_DESC:0 "Indem wir sie als Vieh halten, können wir verhindern, dass die titanischen Lebensformen auf [Root.GetName] versuchen, sich mit unseren Bürgern zu paaren."
+ 
+ raunchy_titanic_life_removal_mean:0 "Erhaltung titanischen Lebens"
+ raunchy_titanic_life_removal_mean_DESC:0 "Indem wir neue Gesetze erlassen, die den Verkehr mit ihnen einschränken, können wir die titanischen Lebensformen auf [Root.GetName] bewahren."
+ 
+ SEXY_MODIFICATION_PROJECT:0 "Sexy Modifikationen
+ SEXY_MODIFICATION_PROJECT_DESC:0 "Durch eine Kombination aus selektiven Viren, Gentechnik und Chirurgie werden wir die Einheimischen von [From.GetName] modifizieren, damit sie unsere Schönheitsstandards besser erfüllen."
+ 

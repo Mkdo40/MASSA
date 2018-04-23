@@ -1,0 +1,201 @@
+############################
+#
+# Pop Events
+#
+# Written by Darkspleen
+#
+############################
+
+namespace = massa_pop
+
+event = {
+	id = massa_pop.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_pop = {
+			LIMIT = {
+				exists = planet
+				planet = {
+					any_pop = {
+						NOR = { 
+							is_same_species = prevprev
+							has_pop_flag = adaptive_cross_fertiliser
+						}
+						massa_can_pop_procreate = yes
+					}
+				}
+				massa_can_pop_procreate = yes
+				is_growing = yes
+				OR = {
+					pop_has_trait = trait_adaptive_reproductive_organs
+					pop_has_trait = trait_aggressively_adaptive_reproductive_organs
+				}
+			}
+			planet = {
+				random_pop = {
+					LIMIT = {
+						NOR = { 
+							is_same_species = prevprev
+							has_pop_flag = adaptive_cross_fertiliser
+						}
+						massa_can_pop_procreate = yes
+					}
+					set_timed_pop_flag = {
+						flag = adaptive_cross_fertiliser
+						days = 89
+					}
+					IF = {
+						limit = {
+							THIS = { pop_has_ethic = ethic_xenophile }
+						}
+						PREVPREV = {
+							add_modifier = {
+								modifier = adaptive_cross_fertilised_xphi
+								days = 89
+							}
+						}
+						else = {
+							PREVPREV = {
+								add_modifier = {
+								modifier = adaptive_cross_fertilised
+								days = 89
+								}
+							}
+						}
+					}					
+				}
+			}
+			
+		}
+	}
+}
+
+#event = {
+#	id = massa_pop.2
+#	hide_window = yes
+#		
+#	is_triggered_only
+#	
+#	trigger = {
+#		any_country = {
+#			has_civic = civic_sex_slaves
+#		}
+#	}
+#	
+#	Immediate = {
+#		every_country = {
+#			limit = {
+#				has_civic = civic_sex_slaves
+#			}
+#			every_owned_pop = {
+#				limit = {
+#					is_enslaved = yes
+#					Not = {
+#						has_modifier = sex_slave
+#					}
+#				}
+#				add_modifier = {
+#					modifier = "sex_slave"
+#					days = 89
+#				}
+#			}
+#		}		
+#	}
+#}
+
+# Invasive Copulation
+planet_event = {
+	id = massa_pop.3
+	title = "massa_pop.3.name"
+	desc = "massa_pop.3.desc"
+	diplomatic = yes
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+			room = invasive_copulation_room
+		}
+	
+	trigger = {
+		has_owner = yes
+		any_pop = {
+			pop_has_trait = trait_aggressively_adaptive_reproductive_organs
+			is_growing = no
+			is_enslaved = no
+			massa_can_pop_procreate = yes
+		}
+		any_pop = {
+			NOT = {
+				pop_has_trait = trait_aggressively_adaptive_reproductive_organs
+			}
+			is_growing = no
+			massa_can_pop_procreate = yes
+		}	 
+	}
+	
+	is_triggered_only = yes
+	
+	Immediate = {
+		random_pop = {
+			LIMIT = {
+				pop_has_trait = trait_aggressively_adaptive_reproductive_organs
+				is_growing = no
+				is_enslaved = no
+				massa_can_pop_procreate = yes
+			}
+			save_event_target_as = massa_sexing_pop
+		}
+	}
+	
+	option = {
+		name = massa_pop.3.a
+		Trigger = {
+			OWNER = {
+				has_valid_civic = civic_invasive_copulation_evolution
+			}
+		}
+		random_pop = {
+			LIMIT = {
+				NOT = { pop_has_trait = trait_aggressively_adaptive_reproductive_organs }
+				is_growing = no
+				massa_can_pop_procreate = yes
+			}
+			save_event_target_as = massa_sexed_pop
+			change_species = event_target:massa_sexing_pop.species
+		}
+		IF = {
+			LIMIT = {
+				host_has_dlc = "Utopia"
+			}
+			OWNER = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = 1
+					min = 1
+					max = 100
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = massa_pop.3.b
+		Trigger = {
+			OWNER = {
+				NOT = { has_valid_civic = civic_invasive_copulation_evolution }
+			}
+		}
+		random_pop = {
+			LIMIT = {
+				NOT = { pop_has_trait = trait_aggressively_adaptive_reproductive_organs }
+				is_growing = no
+				massa_can_pop_procreate = yes
+			}
+			save_event_target_as = massa_sexed_pop
+			change_species = event_target:massa_sexing_pop.species
+		}
+	}
+}

@@ -1,0 +1,153 @@
+namespace = massa_civic
+
+# this: capital planet
+# from: secondary species
+#Sadomasochist Evolution Initialization
+planet_event = {
+	id = massa_civic.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		from = { save_event_target_as = secondary_species }
+
+		if = { limit = { owner = { has_valid_civic = civic_sadomasochist_evolution } }
+			event_target:secondary_species = {
+				set_citizenship_type = {
+					country = root.owner
+					type = citizenship_slavery
+				}
+			}
+			while = {
+				count = 4
+				random_tile = {
+					limit = {
+						OR = {
+							has_building = building_mining_network_1
+							has_building = building_hydroponics_farm_1
+						}
+						has_pop = no
+					}
+					create_pop = {
+						species = event_target:secondary_species
+						ethos = { ethic = ethic_authoritarian }
+					}
+				}
+			}
+		
+		}
+	}
+}
+
+namespace = massa_start
+
+country_event = {
+	id = massa_start.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	Immediate = {
+		If = {
+			Limit = {
+				has_valid_civic = civic_sadomasochist_evolution
+				
+			}
+			give_technology = { tech = tech_interspecies_reproduction }
+		}
+		If = {
+			Limit = {
+				has_valid_civic = civic_sex_slaves
+				
+			}
+			give_technology = { tech = tech_sex_slavery }
+#			set_policy = {
+#				policy = prostitution_legislation
+#				option = prostitution_slavery
+#				cooldown = yes
+#			}
+		}
+	}
+}
+
+country_event = {
+	id = massa_start.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	Immediate = {
+		If = {
+			Limit = {
+				has_valid_civic = civic_sex_slaves
+				
+			}
+			set_policy = {
+				policy = prostitution_legislation
+				option = prostitution_slavery
+				cooldown = yes
+			}
+		}
+		If = {
+			Limit = {
+				has_valid_civic = civic_invasive_copulation_evolution
+			}
+			every_owned_pop = {
+				limit = {
+					NOR = {
+						has_trait = trait_adaptive_reproductive_organs 
+						has_trait = trait_aggressively_adaptive_reproductive_organs
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_aggressively_adaptive_reproductive_organs
+					base = none
+				}
+			}
+			change_dominant_species = { species = last_created change_all = yes }
+		}
+		If = {
+			Limit = {
+				has_valid_civic = civic_tentacled_symbiosis
+			}
+#			set_country_flag = "custom_start_screen"
+#			set_country_flag = "tentacled_symbiot" 
+			every_owned_planet = {
+				random_tile = {
+					limit = {
+						has_grown_pop = no
+						has_growing_pop = no
+						has_blocker = yes
+					}
+					remove_blocker
+					set_blocker = "tb_tentacle"
+				}
+				random_tile = {
+					limit = {
+						has_grown_pop = no
+						has_growing_pop = no
+						has_blocker = no
+					}
+					set_blocker = "tb_tentacle"
+				}				
+			}
+		}
+	}
+}
+
+event = {
+	id = massa_start.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = { 
+				has_valid_civic = civic_tentacled_symbiosis
+			}
+			
+			#give a custom start screen
+			set_country_flag = "custom_start_screen"
+			set_country_flag = "tentacled_symbiot"
+		}
+	}
+}

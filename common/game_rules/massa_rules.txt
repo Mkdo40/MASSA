@@ -1,0 +1,11 @@
+can_species_have_rights = {
+	exists = root
+	exists = this
+	is_sapient = yes
+	NOT = {
+		has_trait = trait_robotic_1
+		has_trait = trait_robotic_2
+		has_trait = trait_robotic_3
+		has_trait = trait_android_1
+	}
+}

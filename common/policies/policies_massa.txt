@@ -1,0 +1,688 @@
+################################################
+# MASSA - Policies						   	   #
+# Author: Darkspleen & Mk40					   #
+# Edited by veedanya
+################################################ 
+
+#PROSTITUTION
+ 
+prostitution_legislation = {
+	potential = { 
+		NOT = { has_ethic = "ethic_gestalt_consciousness" } 
+		always = yes
+	}
+		
+	#Prohibited 
+	option = {
+		name = "prostitution_prohibited"
+		policy_flags = {
+			prostitution_prohibited
+			}
+		modifier = {
+			planet_unrest_mult = 0.10
+			pop_growth_speed = 0.10
+			pop_non_slave_resource_output = 0.05
+		}
+		valid = {
+			NOR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+				has_civic = civic_sex_slaves
+				has_civic = civic_sexual_worship
+			}
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					has_ethic = "ethic_materialist"
+					has_ethic = "ethic_fanatic_materialist"
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_spiritualist"
+					has_ethic = "ethic_fanatic_spiritualist"
+				}
+			}
+		}
+	}
+
+	#Prostitution allowed, but unorganized
+	option = {
+		name = "prostitution_authorized"
+		policy_flags = {
+			prostitution_authorized
+			}
+		modifier = {
+			planet_unrest_mult = -0.10
+			pop_growth_speed = -0.05
+		}
+		valid = {
+			NOR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+				has_civic = civic_sex_slaves
+			}
+		}
+		AI_weight = {
+			factor = 2
+			modifier = {
+				factor = 10
+				AND = {
+					OR = {
+						has_ethic = "ethic_spiritualist"
+						has_ethic = "ethic_fanatic_spiritualist"
+					}
+					has_civic = civic_sexual_worship
+				}
+			}
+		}
+	}
+	
+	
+	#Sexual release is considered a health need, and a public service is there therefore provided by government
+	option = {
+		name = "prostitution_supported"
+		policy_flags = {
+			prostitution_supported
+			}
+		modifier = {
+			planet_unrest_mult = -0.20
+			pop_citizen_happiness = 0.05
+			country_resource_energy_mult = -0.08
+			pop_growth_speed = -0.05
+			pop_ethic_egalitarian_attraction_mult = 0.10
+		}
+		valid = {
+			NOR = {
+				has_ethic = "ethic_fanatic_materialist"
+				has_civic = civic_sex_slaves
+				has_civic = civic_sexual_worship
+			}
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_ethic = "ethic_egalitarian"
+				has_ethic = "ethic_fanatic_authoritarian"
+				has_ethic = "ethic_pacifist"
+				has_ethic = "ethic_fanatic_pacifist"
+			}
+			modifier = {
+				factor = 10
+				has_ethic = "ethic_fanatic_egalitarian"
+			}
+		}
+	}
+	
+	#Prostitution organized, corporate
+	option = {
+		name = "prostitution_industrialized"
+		policy_flags = {
+			prostitution_industrialized
+			}
+		modifier = {
+			planet_unrest_mult = -0.10
+			country_resource_energy_mult = 0.05
+			pop_growth_speed = -0.10						## More widespread use of prostitution drops birth rate
+			pop_ethic_materialist_attraction_mult = 0.10
+		}
+		valid = {
+			AND = {
+				OR = {
+					has_ethic = "ethic_materialist"
+					has_ethic = "ethic_fanatic_materialist"
+					has_ethic = "ethic_egalitarian"
+				}	
+			}
+			NOR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+				has_civic = civic_sex_slaves
+				has_civic = civic_sexual_worship
+			}
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_ethic = "ethic_materialist"
+			}
+			modifier = {
+				factor = 10
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+	
+	#Prostituion using slaves
+	option = {
+		name = "prostitution_slavery"		## While it seems weak on its own, also take into account
+		policy_flags = {					## bonuses from pop modifiers and civics
+			prostitution_slavery
+			}
+		modifier = {
+			pop_happiness = -0.1				## Slaves aren't happy being abused (-10% net happiness)
+			pop_citizen_happiness = 0.05		## Pops without slaves are jealous (-5% net happiness)
+			pop_owner_happiness = 0.15			## Slave owners like this (+10% net happiness)
+			pop_eff_wo_slaves = -0.05							## At least one slave on planet
+			pop_slave_resource_output = -0.05					## Slaves taken away from traditional work
+			pop_non_slave_resource_output = 0.05
+			country_unrest_unhappy_pop_effect_mult = -0.20
+			country_unrest_unhappy_slave_effect_mult = 0.20		## Slave abuse
+			pop_consumer_goods_mult = -0.15						## Free labour saves costs
+			country_resettlement_cost_mult = -0.50				## To make it easier to shuffle slaves around
+			pop_ethic_authoritarian_attraction_mult = 0.10
+		}
+		prerequisites = { tech_sex_slavery }
+		valid = {
+			allows_slavery = yes
+		}
+		AI_weight = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_valid_ai_personality = yes
+				NOT = { has_ai_personality_behaviour = slaver }
+			}
+			modifier = {
+				factor = 0
+				has_valid_ai_personality = no
+				NOR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+	}
+	
+	#Sexual worship
+	option = {
+		name = "prostitution_worship"
+		policy_flags = {
+			prostitution_worship
+			}
+		modifier = { } ## Unlocks the sexual worship policy options
+		valid = {
+			AND = {
+				is_ai = no
+				OR = { 
+					has_ethic = ethic_spiritualist 
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		AI_weight = {
+			factor = 0
+			modifier = {
+				factor = 10
+				has_civic = civic_sexual_worship
+			}
+		}
+	}
+}
+
+
+#INTERSPECIES COPULATION
+
+interspecies_copulation_legislation = {
+	potential = { 
+		any_relation = { has_communications = root }
+		NOT = { has_ethic = "ethic_gestalt_consciousness" } 
+	}
+	
+	#Prohibited 
+	option = {
+		name = "interspecies_copulation_prohibited"
+		policy_flags = {
+			interspecies_copulation_prohibited
+			}
+		modifier = {
+			pop_growth_speed = 0.10							## Your own species is better equiped than anyone to give birth to that species
+			pop_other_species_happiness = -0.10				## Only affects xeno pops, so worlds without aliens won't be affected
+			planet_migration_xeno_pull = -0.25
+			pop_ethic_xenophobe_attraction_mult = 0.10
+			pop_government_ethic_attraction = 0.10			## Invasive government breeds conformity
+		}
+		valid = {
+			NOR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_xenophobe"
+					has_ethic = "ethic_fanatic_xenophobe"
+				}
+			}
+		}
+	}
+	
+	#Authorized 
+	option = {
+		name = "interspecies_copulation_authorized"
+		policy_flags = {
+			interspecies_copulation_authorized
+			}
+		modifier = {
+			pop_growth_speed = -0.10					## Xeno reproduction not researched yet
+			pop_other_species_happiness = 0.05			## Only affects xeno pops, so worlds without aliens won't be affected
+			planet_migration_xeno_pull = 0.25
+			pop_ethic_xenophile_attraction_mult = 0.10
+			pop_government_ethic_attraction = -0.10		## More intimate contact with foreign cultures
+		}
+		valid = {
+			OR = {
+				has_policy_flag = worship_venus
+				NOR = {
+					has_ethic = "ethic_xenophobe"
+					has_ethic = "ethic_fanatic_xenophobe"
+				}	
+			}
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_egalitarian"
+					has_ethic = "ethic_fanatic_egalitarian"
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_fanatic_pacifist"
+					has_ethic = "ethic_xenophile"
+					has_ethic = "ethic_fanatic_xenophile"
+				}
+			}
+		}
+	}
+
+	#Supported Reproduction
+	option = {
+		name = "interspecies_copulation_supported"
+		policy_flags = {
+			interspecies_copulation_supported
+			}
+		modifier = {
+			country_trust_growth = 0.10
+			country_trust_cap_add = 25
+			category_biology_research_speed_mult = 0.1
+			pop_other_species_happiness = 0.10	
+			planet_migration_xeno_pull = 0.50
+			pop_ethic_xenophile_attraction_mult = 0.20
+		}
+		prerequisites = { tech_interspecies_reproduction }
+		valid = {
+			OR = {
+				has_policy_flag = worship_venus
+				AND = {
+					NOR = {
+						has_ethic = "ethic_xenophobe"
+						has_ethic = "ethic_fanatic_xenophobe"
+					}
+					any_owned_pop = {
+						has_trait = "trait_adaptive_reproductive_organs"
+					}	
+				}
+			}	
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_xenophile"
+					has_ethic = "ethic_fanatic_xenophile"
+				}
+			}
+		}
+	}
+}
+
+### Gender Leadership
+
+gender_leadership = {
+	potential = { 
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+	}
+	
+	#Default option
+	option = {
+		name = "gender_leadership_default"
+
+		policy_flags = {
+			gender_leadership_default
+		}
+	}
+	
+	#Female option
+	option = {
+		name = "gender_leadership_female"
+
+		policy_flags = {
+			gender_leadership_female
+		}
+		AI_weight = {
+			factor = 0
+		}
+	}
+
+	#Male option
+	option = {
+		name = "gender_leadership_male"
+
+		policy_flags = {
+			gender_leadership_male
+		}
+		AI_weight = {
+			factor = 0
+		}
+	}	
+}
+
+worship = {
+	potential = {
+		OR = {
+			has_civic = civic_sexual_worship
+			AND = {
+				is_ai = no
+				OR = { 
+					has_ethic = ethic_spiritualist 
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		
+	}
+	option = { ## no specific god worship
+		name = "worship_pantheon"
+		policy_flags = { worship_pantheon }
+		modifier = {
+			pop_ethic_spiritualist_attraction_mult = 0.1
+			pop_government_ethic_attraction = 0.2
+			country_resource_unity_mult = 0.2
+		}
+		valid = {
+			has_policy_flag = prostitution_worship
+		}
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_valid_civic = civic_sexual_worship
+			}
+		}
+	}
+	option = { ## love. Focus on organics, unity, growth. extra bonuses for non-slavers. But hypersensitive to unhappiness
+		name = "worship_venus"
+		policy_flags = { worship_venus }
+		modifier = {
+			pop_ethic_pacifist_attraction_mult = 0.1
+			pop_ethic_spiritualist_attraction_mult = 0.1
+			pop_growth_speed = 0.2
+			biological_pop_happiness = 0.05
+			pop_eff_wo_slaves = 0.10
+			country_resource_food_mult = 0.1
+			country_resource_unity_mult = 0.4
+			country_resource_energy_mult = -0.05
+			planet_migration_all_pull = 1
+			ship_upkeep_mult = 0.10
+			country_naval_cap_mult = -0.15
+			army_upkeep_mult = 0.25
+			army_attack_damage_mult = -0.2
+			army_attack_morale_mult = -0.2
+			planet_unrest_mult = 1	
+			country_unrest_unhappy_slave_effect_mult = 1
+			pop_robot_production_output = -0.1
+			pop_robot_build_cost_mult = 1
+			pop_robot_upkeep_mult = 0.2
+			country_engineering_tech_research_speed = -0.15
+			country_society_tech_research_speed = 0.15
+			BIOLOGICAL_species_trait_points_add = 2
+		}
+		valid = {
+			has_policy_flag = prostitution_worship
+			NOT = { has_policy_flag = ai_allowed }
+			OR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_egalitarian 
+				has_ethic = ethic_fanatic_egalitarian
+
+			}
+		}
+		AI_weight = {
+			factor = 0
+			modifier = {
+				factor = 0
+				has_valid_civic = civic_sexual_worship
+			}
+		}
+	}
+	option = { ## war
+		name = "worship_mars" ## Modeled after the Spartans, that had all citizens as warriors, and slaves doing most non-combat work
+		policy_flags = { worship_mars }
+		modifier = {
+			pop_ethic_authoritarian_attraction_mult = 0.1
+			pop_ethic_militarist_attraction_mult = 0.1
+			pop_non_slave_resource_output = -0.1
+			pop_slave_resource_output = 0.10
+			pop_eff_wo_slaves = -0.20
+			pop_owner_happiness = 0.10
+			ship_weapon_damage = 0.1
+			ship_upkeep_mult = -0.1
+			army_upkeep_mult = -0.2
+			army_attack_damage_mult = 0.2
+			army_attack_morale_mult = 0.2
+			army_collateral_damage_mult = 0.3
+			starbase_shipyard_build_speed_mult = 0.10
+			country_vassal_naval_capacity_contribution_mult = 0.2
+			country_naval_cap_mult = 0.1
+			country_subject_power_penalty_mult = -0.2
+			subject_tribute_mult = 0.1
+			country_war_exhaustion_mult = -0.25
+			pop_growth_speed = -0.25  			## Spartans suffered a steady and sharp population decline, for reasons unknown. Also encourages slaving to grow working population.
+			army_disengage_chance_mult = -1
+			ship_disengage_chance_mult = -1
+			all_technology_research_speed = -0.10
+			country_trade_attractiveness = -0.1
+			country_trust_cap_add = -20
+		}
+		
+		valid = {
+			has_policy_flag = prostitution_worship
+			OR = {
+				Has_ethic = ethic_militarist
+				Has_ethic = ethic_fanatic_militarist
+				Has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		AI_weight = {
+			factor = 0
+			modifier = {
+				factor = 0
+				has_valid_civic = civic_sexual_worship
+			}
+		}
+	}
+	
+	option = { ## wisdom
+		name = "worship_minerva"
+		policy_flags = { worship_minerva }
+		modifier = {
+			pop_ethic_materialist_attraction_mult = 0.1
+			pop_ethic_egalitarian_attraction_mult = 0.1
+			all_technology_research_speed = 0.05
+			country_physics_tech_research_speed = 0.1
+			num_tech_alternatives_add = 1
+			ship_anomaly_generation_chance_mult = 0.1
+			ship_anomaly_fail_risk = -0.2
+			species_leader_exp_gain = 0.25
+			country_leader_pool_size = 2
+			country_leader_cap = 3
+			leader_skill_levels = 2
+			leader_cost = -0.25
+			edict_length_mult = 0.5
+			country_government_civic_points_add = 1
+			country_naval_cap_mult = -0.15
+			building_time_mult = 0.25
+			planet_colony_development_speed_mult = -0.25
+		}
+		
+		valid = {
+			has_policy_flag = prostitution_worship
+		}
+		AI_weight = {
+			factor = 0
+			modifier = {
+				factor = 0
+				has_valid_civic = civic_sexual_worship
+			}
+		}
+	}
+
+	option = { ## industry. focus on minerals, robots, and heavy ships
+		name = "worship_vulcan"
+		policy_flags = { worship_vulcan }
+		modifier = {
+			pop_ethic_materialist_attraction_mult = 0.1
+			country_resource_minerals_mult = 0.15
+			country_resource_food_mult = -0.30
+			slave_mineral_output = 0.10
+			planet_building_build_speed_mult = -0.3
+			planet_building_upkeep_mult = -0.1
+			country_engineering_tech_research_speed = 0.15
+			all_technology_research_speed = -0.05
+			pop_robot_production_output = 0.1
+			pop_robot_build_cost_mult = 0.25
+			Pop_robot_build_speed_mult = -0.2
+			pop_robot_upkeep_mult = -0.1
+			ROBOT_species_trait_points_add = 2
+			MACHINE_species_trait_points_add = 2
+			ship_home_territory_fire_rate_mult = 0.1
+			ship_weapon_damage = 0.1
+			ship_weapon_range_mult = 0.2
+			ship_hull_mult = 0.3
+			ship_armor_mult = 0.15
+			ship_shield_mult = 0.10
+			country_ship_upgrade_cost_mult = 0.25
+			starbase_shipyard_build_cost_mult = 0.25
+			starbase_shipyard_build_time_mult = 0.25
+			ship_upkeep_mult = 0.1
+			
+		}
+		valid = {
+			has_policy_flag = prostitution_worship
+			NOT = { 
+				has_policy_flag = robots_outlawed
+			}
+		}
+		AI_weight = {
+			factor = 0
+			modifier = {
+				factor = 0
+				has_valid_civic = civic_sexual_worship
+			}
+		}
+	}
+	option = {
+		name = "worship_ruler"
+		policy_flags = { worship_ruler }
+		modifier = {
+			pop_ethic_spiritualist_attraction_mult = 0.1
+			pop_ethic_xenophobe_attraction_mult = 0.3
+			pop_government_ethic_attraction = 0.3
+			country_resource_unity_mult = 0.50
+			faction_influence_mult = -0.50
+			ruler_skill_levels = 2
+			pop_environment_tolerance = 0.2
+			edict_length_mult = 1
+			edict_cost = -0.1
+			pop_other_species_happiness = -0.2
+			planet_migration_xeno_pull = -1
+			country_trade_attractiveness = -0.25
+			country_trust_growth = -0.25
+			planet_unrest_add = 50
+		}
+		valid = {
+			has_policy_flag = prostitution_worship
+			any_owned_leader = { has_trait = leader_trait_ruler_chosen }
+			OR = { 
+				has_civic = civic_imperial_cult
+				has_civic = civic_inward_perfection
+			}
+			OR = { 
+				has_authority = auth_imperial
+				has_authority = auth_dictatorial
+			}
+			NOT = { 
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+			}
+		}
+		AI_weight = {
+			factor = 0
+			modifier = {
+				factor = 0
+				has_valid_civic = civic_sexual_worship
+			}
+		}
+	}
+}
+
+### Gender Leadership
+
+gender_leadership = {
+	potential = { 
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+	}
+	
+	#Default option
+	option = {
+		name = "gender_leadership_default"
+
+		policy_flags = {
+			gender_leadership_default
+		}
+	}
+	
+	#Female option
+	option = {
+		name = "gender_leadership_female"
+
+		policy_flags = {
+			gender_leadership_female
+		}
+		AI_weight = {
+			factor = 0
+		}
+	}
+
+	#Male option
+	option = {
+		name = "gender_leadership_male"
+
+		policy_flags = {
+			gender_leadership_male
+		}
+		AI_weight = {
+			factor = 0
+		}
+	}	
+}

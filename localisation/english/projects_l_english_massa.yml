@@ -1,0 +1,24 @@
+﻿l_english:
+
+ ####################################
+ # Special Research Projects
+ ####################################
+
+ EXTRACT_ROGUE_SEXY_SCIENTIST:0 "Extract Rogue Scientist"
+ EXTRACT_ROGUE_SEXY_SCIENTIST_DESC:0 "One of our scientists has gone rogue and is being worshiped as a god by the natives on [From.GetName]. An operation must be launched to remove him - by force if necessary."
+ 
+ EXTRACT_ENSLAVED_SCIENTISTS:0 "Extract the Enslaved Scientists"
+ EXTRACT_ENSLAVED_SCIENTISTS_DESC:0 "Several of our scientists have been enslaved by the natives on [From.GetName]. An operation must be launched to rescue them before the natives successfully breed them."
+ 
+ raunchy_titanic_life_removal_mean:0 "Titanic Life Isolation"
+ raunchy_titanic_life_removal_mean_DESC:0 "By isolating them in preserves we can prevent the titanic lifeforms on [Root.GetName] from attempting to mate with our citizens."
+ 
+ raunchy_titanic_life_removal_mean:0 "Titanic Life Harvesting"
+ raunchy_titanic_life_removal_mean_DESC:0 "By containing and using them as livestock, we can prevent the titanic lifeforms on [Root.GetName] from attempting to mate with our citizens."
+ 
+ raunchy_titanic_life_removal_mean:0 "Titanic Life Preservation"
+ raunchy_titanic_life_removal_mean_DESC:0 "By enacting new laws limiting intercourse with them we can preserve the titanic lifeforms on [Root.GetName]."
+ 
+ SEXY_MODIFICATION_PROJECT:0 "Sexy Modification"
+ SEXY_MODIFICATION_PROJECT_DESC:0 "Through a combination of selective viruses, genetic engineering, and surgery we will modify the locals of [From.GetName] to better meet our standards of beauty."
+ 

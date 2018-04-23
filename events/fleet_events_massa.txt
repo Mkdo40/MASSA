@@ -1,0 +1,165 @@
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+
+@tier1unityreward = 6
+@tier1unitymin = 40
+@tier1unitymax = 100
+@tier2unityreward = 12
+@tier2unitymin = 80
+@tier2unitymax = 175
+@tier3unityreward = 18
+@tier3unitymin = 125
+@tier3unitymax = 250
+@tier4unityreward = 24
+@tier4unitymin = 150
+@tier4unitymax = 300
+
+namespace = sexy_fleet
+#Sadistic Celebration
+event = {
+	id = sexy_fleet.2
+	title = sexy_fleet.2.name
+	desc = sexy_fleet.2.desc
+	diplomatic = yes
+	show_sound = event_default
+	location = FROMFROM
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = defeated_gangbang_room
+	}
+	
+	Trigger = {
+		FROMFROM = {
+			exists = leader
+			leader = { has_trait = leader_trait_admiral_sadistic }
+			NOT = {
+				has_fleet_flag = had_sexy_event
+			}
+		}
+	}
+	
+	immediate = {
+		FROMFROM = {
+			leader = { save_event_target_as = officer }
+			solar_system = { save_event_target_as = system }
+			set_timed_fleet_flag = {
+				flag = had_sexy_event
+				days = 30
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_fleet.2.a
+				Trigger = { This = {
+			NOR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}}
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier1influencereward
+                min = @tier1influencemin
+                max = @tier1influencemax
+        }
+	}
+	
+	option = {
+		name = sexy_fleet.2.b
+		Trigger = { This = {
+			OR = {
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}}
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier2influencereward
+                min = @tier2influencemin
+                max = @tier2influencemax
+        }
+	}
+	
+	option = {
+		name = sexy_fleet.2.c
+		Trigger = { This = {
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+				AND = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					event_target:officer.species = {
+						Not = {
+							is_same_species = event_target:defeated_officer.species
+						}
+					}
+				}
+			}
+		}}
+		add_monthly_resource_mult = {
+                resource = influence
+                value = @tier1influencereward
+                min = @tier1influencemin
+                max = @tier1influencemax
+        }
+		add_monthly_resource_mult = {
+                resource = unity
+                value = @tier1unityreward
+                min = @tier1unitymin
+                max = @tier1unitymax
+        }
+	}
+	
+	option = {
+		name = sexy_fleet.2.d
+		Trigger = { This = {
+			OR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}}
+		add_influence = -10
+	}
+}
+

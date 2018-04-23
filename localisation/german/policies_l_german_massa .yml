@@ -1,0 +1,125 @@
+﻿l_german:
+
+ ###########################################################################
+ ############# Written by Darkspleen for Make Space Sexy Again #############
+ ###########################################################################
+
+
+ policy_nudity_legislation: "Nacktheit"
+ policy_nudity_legislation_desc: "Rechtsvorschriften in Bezug auf öffentliche Nacktheit."
+ 
+ ###Nudity completly prohibited, being nude is seen as being like a primitive.
+ nudity_prohibited: "Verboten"
+ nudity_prohibited_name: "Nacktheit wird verboten." 
+ nudity_prohibited_desc: "Öffentliche Nacktheit ist das Zeichen von Primitiven und wird geächtet." 
+ 
+ ###Tolerated like in modern modern society. Public nudity not allowed but naturism is allowed in restricted areas.
+ nudity_restricted: "Toleriert"
+ nudity_restricted_name: "Nacktheit wird toleriert."
+ nudity_restricted_desc: "Öffentliche Nacktheit ist mit Ausnahme einiger ausgewiesener "naturalistischer" Gebiete verboten." 
+ 
+ ###Public nudity / Naturism allowed without restriction.
+ nudity_authorized: "Erlaubt"
+ nudity_authorized_name: "Nacktheit wird erlaubt."
+ nudity_authorized_desc: "Öffentliche Nacktheit ist völlig legal."
+ 
+ ###Same as above, but supported/encouraged by the society. 
+ nudity_supported: "Förderung"
+ nudity_supported_name: "Nacktheit wird gefördert."
+ nudity_supported_desc: "Die Gesellschaft und die Regierung fördern aktiv die öffentliche Nacktheit." 
+ 
+ ###Basically, wearing clothes is seen a bad behavior, being naked is seen as proof of trust.
+ nudity_idolized: "Verehrung"
+ nudity_idolized_name: "Nacktheit wird verehrt."
+ nudity_idolized_desc: "Das Tragen von Kleidung wird als unhöflich und unangemessen angesehen, wobei die Nacktheit unter anderem als Zeichen des Vertrauens gesehen wird." 
+ 
+ policy_prostitution_legislation: "Prostitution"
+ policy_prostitution_legislation_desc: "Die Rechtmäßigkeit der Prostitution."
+ 
+ ### Prostitution is illegal.
+ prostitution_prohibited: "Verboten"
+ prostitution_prohibited_name: "Prostitution wird verboten." 
+ prostitution_prohibited_desc: "Prostitution wird vollständig verboten." 
+ 
+ ### Prostitution is legal.
+ prostitution_authorized: "Erlaubt"
+ prostitution_authorized_name: "Prostitution wird erlaubt."
+ prostitution_authorized_desc: "Prostitution ist legal." 
+ 
+ ### Prostitution is legal and supported by the society. It's considered like any other jobs.
+ prostitution_supported: "Gefördert"
+ prostitution_supported_name: "Prostitution wird gefördert."
+ prostitution_supported_desc: "Prostitution ist legal und wird von der Gesellschaft als legitime und akzeptable Arbeit angesehen." 
+ 
+ ### Same as above, and also supported by big industrials groups.
+ prostitution_industrialized: "Industrialisiert"
+ prostitution_industrialized_name: "Prostitution wird industrialisiert."
+ prostitution_industrialized_desc: "Prostitution wird ein wichtiger Wirtschaftszweig." 
+ 
+ ### Prostitution is legal and enforced for slaves.
+ prostitution_slavery: "Sklaverei"
+ prostitution_slavery_name: "Prostitution in der Sklaverei"
+ prostitution_slavery_desc: "Prostitution ist nicht nur legal, auch Sklaven werden dazu gezwungen."
+ 
+ policy_sexual_relationships_legislation: "Sexuelle Beziehungen"
+ policy_sexual_relationships_legislation_desc: "Gesetzgebung in Bezug auf sexuelle Beziehungen."
+ 
+ ### Heavily controlled and limited sexual relations in order to keep the population focused on energy, mineral and research production.
+ sexual_relationships_controlled: "Kontrolliert"
+ sexual_relationships_controlled_name: "Sexuelle Beziehungen werden kontrolliert." 
+ sexual_relationships_controlled_desc: "Sex wird stark kontrolliert, damit die Bevölkerung sich auf ihre Arbeit konzentrieren kann." 
+ 
+ ### Limited sexual relations in order to keep the population focused on energy, mineral and research production.
+ sexual_relationships_restricted: "Beschränkt"
+ sexual_relationships_restricted_name: "Sexuelle Beziehungen werden kontrolliert."
+ sexual_relationships_restricted_desc: "Die Regierung hat eine begrenzte Kontrolle über die sexuellen Beziehungen einer Person, um ihnen zu erlauben, sich auf ihre Arbeit zu konzentrieren."
+
+ ### No restriction.  
+ sexual_relationships_authorized: "Erlaubt"
+ sexual_relationships_authorized_name: "Sexuelle Beziehungen werden erlaubt."
+ sexual_relationships_authorized_desc: "Es gibt keine gesetzlichen Beschränkungen für die sexuellen Beziehungen einer Person." 
+ 
+ ### Sexual relations are encouraged in order to increase the population growth.
+ sexual_relationships_encouraged: "Gefördert"
+ sexual_relationships_encouraged_name: "Sexuelle Beziehungen werden gefördert."
+ sexual_relationships_encouraged_desc: "Die Regierung und die Gesellschaft ermutigen Einzelpersonen, mehr sexuelle Beziehungen zu haben, um die Bevölkerung zu vergrößern." 
+ 
+ ### Via a repopulation program, sexual relations are highly encouraged by the government in order to drastically increase the population growth.
+ sexual_relationships_reinforced: "Verstärkt"
+ sexual_relationships_reinforced_name: "Sexuelle Beziehungen werden verstärkt."
+ sexual_relationships_reinforced_desc: "Sexuelle Beziehungen werden von der Regierung aktiv gefördert, um ein rasches Bevölkerungswachstum zu ermöglichen." 
+ 
+ policy_interspecies_copulation_legislation: "Interspezies Begattung"
+ policy_interspecies_copulation_legislation_desc: "Gesetzgebung zur Interspezies-Kopulation."
+ 
+ ### Interspecies sexual relation are illegal.
+ interspecies_copulation_prohibited: "Verboten"
+ interspecies_copulation_prohibited_name: "Interspezies Begattung wird verboten." 
+ interspecies_copulation_prohibited_desc: "Sexuelle Beziehungen zwischen verschiedenen Arten sind illegal."
+
+ ### Interspecies sexual relation are legal. 
+ interspecies_copulation_authorized: "Erlaubt"
+ interspecies_copulation_authorized_name: "Interspezies Begattung Allowed"
+ interspecies_copulation_authorized_desc: "Sexuelle Beziehungen zwischen verschiedenen Arten sind legal." 
+ 
+ ### Interspecies sexual relation are legal and encouraged.
+ interspecies_copulation_encouraged: "Gefördert"
+ interspecies_copulation_encouraged_name: "Interspezies Begattung wird gefördert."
+ interspecies_copulation_encouraged_desc: "Sexuelle Beziehungen zwischen verschiedenen Arten sind legal und werden gefördert." 
+ 
+ ### Same as above. Via a genetic modification, interspecies reproduction is allowed.
+ interspecies_copulation_supported: "Unterstützte Reproduktion"
+ interspecies_copulation_supported_name: "Artenübergreifende Reproduktion"
+ interspecies_copulation_supported_desc: "Genetische Veränderung und Gentherapie ermöglicht die Reproduktion zwischen verschiedenen Arten." 
+ 
+ requires_prostitution_not_prohibited: "§RBenötigt die Politik §YProstitution wird erlaubt§!.§!"
+ requires_interspecies_copulation_supported: "§RBenötigt die Politik §YInterspezies Begattung wird gefördert§!.§!"
+
+ policy_neuterization_legislation:0 "Gesetzgebung zur Kastration"
+ policy_neuterization_legislation_desc:1 "Hierbeit geht es um die Bedeutung des Wortes Sterilisieren."
+ standard_neuterization:0 "Standardsterilisierung"
+ standard_neuterization_desc:1 "Der Standard bedeutet, dass eine Spezies davon abgehalten wird, sich weiter zu vermehren."
+ conditional_procreation:0 "Bedingte Fortpflanzung"
+ conditional_procreation_desc:1 "Die Mehrheit wird sterilisiert, aber einige Individuen erhalten das Recht, Nachwuchs zu zeugen."
+ synthetic_sexual_selection:0 "Synthetische sexuelle Selektion"
+ synthetic_sexual_selection_desc:1 "Die Bevölkerung ist im traditionellen Sinne nicht kastriert. Sie sind nicht in der Lage, sich mit ihren eigenen Arten zu paaren, stattdessen können sie nur den Nachwuchs anderer Arten austragen.\nDie Regierung kümmert sich aktiv um die Zucht mit den eigenen Bürgern."

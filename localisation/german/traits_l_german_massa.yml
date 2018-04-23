@@ -1,0 +1,79 @@
+﻿l_german:
+
+######################
+### Species traits ###
+######################
+
+ # Presentient Traits
+ 
+ trait_presapient_tentacle_lifeform: "Tentakel-Lebensformen"
+ trait_presapient_tentacle_lifeform_desc: "§LDie Mitglieder dieser Spezies sind beachtenswert für ihre tentakelartigen Fortpflanzungsorgane.§!\n"
+
+ # Traits
+ 
+ trait_behavior_sadistic: "Sadistisch"
+ trait_behavior_sadistic_desc: "§LMitglieder dieser Spezies genießen es, anderen Schmerz und Erniedrigung zuzufügen. Sie genießen es, andere zu dominieren, besonders sexuell. Wird einzigartige §YEvents§ auslösen!§!\n"
+ 
+ trait_behavior_masochistic: "Masochistisch"
+ trait_behavior_masochistic_desc: "§LMitglieder dieser Spezies suchen Schmerz und Demütigung und das Vergnügen, das sie bringen. Sie genießen es, von anderen dominiert zu werden, besonders sexuell. Am besten in Verbindung mit §RSadistischen§! Bevölkerungspops.§!\n"
+
+ trait_adaptive_reproductive_organs: "Adaptive Reproduktionsorgane"
+ trait_adaptive_reproductive_organs_desc: "§LDie Fortpflanzungsorgane dieser Art wurden genetisch verändert, um die Fortpflanzung zwischen den Arten zu ermöglichen.§!\n"
+ TRAIT_ADAPTIVE_REPRODUCTIVE_ORGANS_EFFECT:2 "Erlaubt die Auswahl §BArtenübergreifende Reproduktion§!.\n$MOD_POP_OTHER_SPECIES_OWNER_HAPPINESS$: §G+10%§!" 
+ 
+
+ trait_aggressively_adaptive_reproductive_organs: "Agressive adaptive Reproduktionsorgane"
+ trait_aggressively_adaptive_reproductive_organs_desc: "§LDie Fortpflanzungsorgane dieser Art wurden genetisch so verändert, dass sie nicht nur die Fortpflanzung zwischen verschiedenen Arten ermöglichen, sondern auch so, die Ihrer Spezies schnellere Wachstumsraten ermöglicht, wenn sie auf Planeten mit Pops anderer Arten leben. Zusätzlich ersetzt sie Pops die keine §YProleten§ sind oder denen die §YTentakel§!-Fähigkeit fehlt.§!\n"
+
+ trait_seasonal_breeders: "Saisonale Brüter"
+ trait_seasonal_breeders_desc: "§LMitglieder dieser Spezies haben ein festgelegtes Zeitfenster, in dem sie das Bedürfnis haben sich zu paaren, was es ihnen erlaubt, sich auf andere Aufgaben zu konzentrieren, während sie nicht in ihrer Brutsaison sind. Während ihrer Brutzeit werden sie weniger produktiv, da sie ihren instinktiven Reproduktionsdrang erfüllen.§!\n"
+
+ trait_physical_lustful_body: "Lustvoller Körper"
+ trait_physical_lustful_body_desc: "§LDas physikalische Erscheinungsbild dieser Art wirkt selbst auf radikal unterschiedlichen Arten einen sehr starken sexuellen Reiz aus. Selbst die 'einfachsten' Mitglieder dieser Spezies besitzen, was andere Spezies als 'Bombenkörper' bezeichnen würden.§!\n"
+ 
+ trait_body_ample_mammary_glands: "Große Milchdrüsen"
+ trait_body_ample_mammary_glands_desc: "§LDiese Spezies besitzt abnormal große Milchdrüsen. Während dies sicherlich die Männchen der Spezies glücklich macht und ihren Sexualtrieb erhöht, verringert dies unglücklicherweise die Fähigkeit der Weibchen, körperliche Arbeit zu verrichten."§!\n"
+
+ trait_body_meager_mammary_glands: "Spärliche Milchdrüsen"
+ trait_body_meager_mammary_glands_desc: "§LDie Milchdrüsen dieser Art sind im Durchschnitt bemerkenswert klein. Während dies sicherlich nicht den Geschlechtstrieb der Männchen der Art fördert und sie auch nicht glücklich macht, ermöglicht die geringe Größe der Milchdrüsen den Weibchen der Art, körperlichen Aktivitäten besser auszuführen."§!\n"
+ 
+ # Robot Traits
+ 
+ trait_robot_sexbot: "Sexuelle Hardware"
+ trait_robot_sexbot_desc: "§LDiese Maschinen sollen die Körper unserer Spezies nachahmen und Liebesgefühlen nacheifern. Sie sollen ihren Besitzern oder Partnern ein optimales sexuelles Vergnügen bieten.§!\n"
+ 
+ trait_robot_sexbot: "Verbesserte sexuelle Hardware"
+ trait_robot_sexbot_desc: "§LEin Upgrade, das dazu bestimmt ist, den Körper und die künstlichen Sexualorgane der Sex-Androiden zu verbessern, um eine optimale sexuelle Erfahrung zu ermöglichen.§!\n"
+ trait_robot_womb: "Synthetische Gebärmutter"
+ trait_robot_womb_desc: "§LEine künstliche Gebärmutter, die Sex-Androiden erlaubt, sich mit biologischen Spezies fortzupflanzen.§!\n"
+  
+#####################
+### Leader Traits ###
+#####################
+
+ # Ruler Traits
+ # Purple §M for Expertise, Blue §B for Politics, $R for Personality and Green §G for Skills
+ leader_trait_ruler_sadistic: "Sadistic"
+ leader_trait_ruler_sadistic_desc: "§LDieser Anführer ist dasüf bekannt, ein §Rgraumsames§! Individium zu sein.§!\n"
+ 
+ # Governor Traits
+ # Purple §M for Expertise, Blue §B for Politics, $R for Personality and Green §G for Skills
+
+ 
+ # Admiral Traits
+ # Purple §M for Expertise, Blue §B for Tactics, $R for Personality and Green §G for Skills
+ 
+ leader_trait_admiral_sadistic: "Sadistisch"
+ leader_trait_admiral_sadistic_desc: "§LDieser Anführer konzentriert sich darauf, dem Feind so viel Schaden wie möglich zuzufügen. Sadistische Admirale neigen dazu, geschlagene Feinde und die Bevölkerung der Welten, die sie bombardieren, zu foltern und sexuell auszubeuten.§!\n"
+ 
+ # General Leader Traits
+ # Purple §M for Expertise, Blue §B for Tactics, $R for Personality and Green §G for Skills
+ leader_trait_general_sadistic: "Sadistisch"
+ leader_trait_general_sadistic_desc: "§LDieser Anführer konzentriert sich darauf, dem Feind so viel Schaden wie möglich zuzufügen.§!\n"
+ 
+ # Some strings
+
+
+ #######################
+ ### Trait Modifiers ###
+ #######################

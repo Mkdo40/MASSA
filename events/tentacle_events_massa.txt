@@ -1,0 +1,30 @@
+
+namespace = massa_tentacle
+
+#Spawn tentacle blocker for Tentacled Symbiosis Civic
+planet_event = {
+	id = massa_tentacle.1
+	hide_window = yes	
+	is_triggered_only = yes
+	
+	Trigger = {
+		NOR = {
+			is_planet_class = pc_habitat
+			is_planet_class = pc_ringworld_habitable
+		}		
+		OWNER = {
+			has_valid_civic = civic_tentacled_symbiosis
+		}
+	}
+	
+	Immediate = {
+		random_tile = {
+			limit = {
+				has_grown_pop = no
+				has_growing_pop = no
+				has_blocker = no
+			}
+			set_blocker = "tb_tentacle"
+		}
+	}
+}

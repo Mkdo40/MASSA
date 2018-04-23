@@ -1,0 +1,132 @@
+﻿l_russian:
+
+ ###########################################################################
+ ############# Written by Darkspleen for Make Space Sexy Again #############
+ ###########################################################################
+
+
+ policy_nudity_legislation: "Нудизм"
+ policy_nudity_legislation_desc: " Законодательство в отношении публичной наготы."
+ 
+ ###Nudity completly prohibited, being nude is seen as being like a primitive.
+ nudity_prohibited: "Нудизм запрещен"
+ nudity_prohibited_name: "Нудизм запрещен" 
+ nudity_prohibited_desc: "Общественное обнажение - это признак примитивности и объявлен вне закона." 
+ 
+ ###Tolerated like in modern modern society. Public nudity not allowed but naturism is allowed in restricted areas.
+ nudity_restricted: "Толерантность к нудизму"
+ nudity_restricted_name: "Толерантность к нудизму"
+ nudity_restricted_desc: "Общественное обнажение объявляется вне закона, за исключением нескольких определенных ‘нудистских’ зон." 
+ 
+ ###Public nudity / Naturism allowed without restriction.
+ nudity_authorized: "Нудизм разрешен"
+ nudity_authorized_name: "Нудизм разрешен"
+ nudity_authorized_desc: "Публичное обнажение полностью легально."
+ 
+ ###Same as above, but supported/encouraged by the society. 
+ nudity_supported: "Поощрение нудизма"
+ nudity_supported_name: "Поощрение нудизма"
+ nudity_supported_desc: "Общество и правительство активно поощряют общественную наготу." 
+ 
+ ###Basically, wearing clothes is seen a bad behavior, being naked is seen as proof of trust.
+ nudity_idolized: "Приверженность нудизму"
+ nudity_idolized_name: "Приверженность нудизму"
+ nudity_idolized_desc: "Ношение одежды считается неэтичным и неправильным, публичная обнаженность, воспринимается как признак доверия." 
+ 
+ policy_prostitution_legislation: "Проституция"
+ policy_prostitution_legislation_desc: "Легальность проституции."
+ 
+ ### Prostitution is illegal.
+ prostitution_prohibited: "Проституция запрещена"
+ prostitution_prohibited_name: "Проституция запрещена" 
+ prostitution_prohibited_desc: "Проституция полностью вне закона." 
+ 
+ ### Prostitution is legal.
+ prostitution_authorized: "Проституция разрешена"
+ prostitution_authorized_name: "Проституция разрешена"
+ prostitution_authorized_desc: "Проституция легальна." 
+ 
+ ### Prostitution is legal and supported by the society. It's considered like any other jobs.
+ prostitution_supported: "Проституция поддерживается"
+ prostitution_supported_name: "Проституция поддерживается"
+ prostitution_supported_desc: "Проституция является законной и рассматривается обществом как законная и приемлемая работа." 
+ 
+ ### Same as above, and also supported by big industrials groups.
+ prostitution_industrialized: "Проституция индустриализирована"
+ prostitution_industrialized_name: "Проституция индустриализирована"
+ prostitution_industrialized_desc: "Проституция является важной индустрией." 
+ 
+ ### Prostitution is legal and enforced for slaves.
+ prostitution_slavery: "Проституция рабов"
+ prostitution_slavery_name: "Проституция рабов"
+ prostitution_slavery_desc: "Рабы вынуждены предоставлять сексуальные услуги свободным гражданам."
+ 	
+ policy_sexual_relationships_legislation: "Сексуальные отношения"
+ policy_sexual_relationships_legislation_desc: "Законодательство, касающееся сексуальных отношений."
+ 	
+ ### Heavily controlled and limited sexual relations in order to keep the population focused on energy, mineral and research production.
+ sexual_relationships_controlled: "Сексуальные отношения контролируются"
+ sexual_relationships_controlled_name: "Сексуальные отношения контролируются " 
+ sexual_relationships_controlled_desc: "Секс сильно контролируется, чтобы ‘позволить’ народу сосредоточиться на своей работе." 
+ 
+ ### Limited sexual relations in order to keep the population focused on energy, mineral and research production.
+ sexual_relationships_restricted: "Сексуальные отношения ограничены"
+ sexual_relationships_restricted_name: "Сексуальные отношения ограничены"
+ sexual_relationships_restricted_desc: "Правительство имеет некоторый ограниченный контроль над сексуальными отношениями людей, чтобы ‘позволить’ им сосредоточиться на своей работе."
+
+ ### No restriction.  
+ sexual_relationships_authorized: "Сексуальные отношения разрешены"
+ sexual_relationships_authorized_name: "Сексуальные отношения не ограничиваются"
+ sexual_relationships_authorized_desc: "Нет никаких юридических ограничений на сексуальные отношения человека." 
+ 
+ ### Sexual relations are encouraged in order to increase the population growth.
+ sexual_relationships_encouraged: "Сексуальные отношения поощряются"
+ sexual_relationships_encouraged_name: "Сексуальные отношения поощряются"
+ sexual_relationships_encouraged_desc: "Правительство и общество поощряют людей к более сексуальным отношениям для роста населения." 
+ 
+ ### Via a repopulation program, sexual relations are highly encouraged by the government in order to drastically increase the population growth.
+ sexual_relationships_reinforced: "Сексуальные отношения усиливаются"
+ sexual_relationships_reinforced_name: "Сексуальные отношения усиливаются"
+ sexual_relationships_reinforced_desc: "Правительство активно поощряет сексуальные отношения, чтобы способствовать быстрому росту населения." 
+ 
+ policy_interspecies_copulation_legislation: "Межвидовое спаривание"
+ policy_interspecies_copulation_legislation_desc: "Законодательство о межвидовом совокуплении."
+ 
+ ### Interspecies sexual relation are illegal.
+ interspecies_copulation_prohibited: "Межвидовое спаривание запрещено"
+ interspecies_copulation_prohibited_name: "Межвидовое спаривание запрещено" 
+ interspecies_copulation_prohibited_desc: "Сексуальные отношения между различными видами незаконны."
+
+ ### Interspecies sexual relation are legal. 
+ interspecies_copulation_authorized: "Межвидовое спаривание разрешено"
+ interspecies_copulation_authorized_name: "Межвидовое спаривание разрешено"
+ interspecies_copulation_authorized_desc: "Сексуальные отношения между разными видами являются законными." 
+ 
+ ### Interspecies sexual relation are legal and encouraged.
+ interspecies_copulation_encouraged: "Межвидовое спаривание поощряется"
+ interspecies_copulation_encouraged_name: "Межвидовое спаривание поощряется"
+ interspecies_copulation_encouraged_desc: "Сексуальные отношения между различными видами являются законными и поощряются." 
+ 
+ ### Same as above. Via a genetic modification, interspecies reproduction is allowed.
+ interspecies_copulation_supported: " Межвидовое размножение поддерживается"
+ interspecies_copulation_supported_name: "Межвидовое размножение поддерживается"
+ interspecies_copulation_supported_desc: "Генетическая модификация и генная терапия позволяют размножаться между различными видами." 
+ 
+ requires_prostitution_not_prohibited: "§RТребуется политика §YПроституция разрешена§!.§!"
+ requires_interspecies_copulation_supported: "§RТребуется политика §YМежвидовое размножение поддерживается§!.§!"
+ 
+
+ policy_gender_leadership: "Пол Лидеров"
+ policy_gender_leadership_desc: "Определяет пол руководства вашей страны."
+ 
+ gender_leadership_default: "Пол Лидеров по умолчанию"
+ gender_leadership_default_name: "Пол Лидеров по умолчанию"
+ gender_leadership_default_desc: "Опция по умолчанию. Лидерами могут быть как мужчины так и женщины."
+ 
+ gender_leadership_female: "Женщины Лидеры"
+ gender_leadership_female_name: "Женщины Лидеры"
+ gender_leadership_female_desc: "Появляются только женщины лидеры."
+ 
+ gender_leadership_male: "Мужчины Лидеры"
+ gender_leadership_male_name: "Мужчины Лидеры"
+ gender_leadership_male_desc: "Появляются только мужчины лидеры."

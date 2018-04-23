@@ -1,0 +1,13 @@
+################################################
+# MASSA - Deposit						   	   #
+# Author: Mk40							   	   #
+################################################
+
+# Slime deposit (event only)
+d_slime_deposit = {
+	resources = { sr_slime = 1 }
+	station = shipclass_research_station 
+	orbital_weight = { weight = 0 }
+	drop_weight = { weight = 0 }
+}
+	

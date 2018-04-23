@@ -1,0 +1,1601 @@
+################################################
+# MASSA - Buildings							   #
+# Author: Mk40							   	   #
+################################################
+
+#Slime Vats
+building_slime_vats = {
+	base_buildtime = 360
+	planet_unique = yes
+	
+	cost = {
+		minerals = 150
+	}
+	
+	show_tech_unlock_if = { NOT = { has_authority = auth_machine_intelligence } }
+	
+	potential = {
+		NOT = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+	}
+
+	destroy_if = {
+		exists = owner
+		owner = { has_authority = auth_machine_intelligence }
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	produced_resources = {
+		minerals = 8
+		society_research = 5
+	}
+	
+	required_resources = {
+		food = 6
+		sr_slime = 1
+	}
+	
+	planet_modifier = {
+		pop_consumer_goods_mult = -0.25
+		planet_building_upkeep_mult = -0.1
+		planet_building_build_speed_mult = 0.1
+		planet_building_cost_mult = -0.1
+		pop_eff_wo_slaves = -0.1
+		pop_happiness = -0.1
+		pop_citizen_happiness = 0.1
+		pop_growth_speed = -0.1
+		planet_unrest_add = 20
+	}
+
+	adjacency_bonus = {
+		tile_building_resource_minerals_add = 2
+	}
+	
+	prerequisites = {
+		"tech_slime_vats"
+	}
+	
+	ai_allow = {
+		NOR = {
+			has_resource = {
+				type = sr_betharian
+				amount > 0
+			}	
+			has_resource = {
+				type = sr_alien_pets
+				amount > 0
+			}				
+		}
+		NOT = {
+			planet = {
+				owner = {
+					any_owned_planet = {
+						NOT = { is_same_value = from }
+						has_building = building_slime_vats
+					}				
+				}
+			}
+		}
+		
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no	
+	}
+	
+	ai_weight = {
+		factor = 0
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}
+	}	
+}
+
+#Slave Market
+building_slave_market = {
+	base_buildtime = 270
+	planet_unique = yes
+	
+	cost = {
+		minerals = 200
+	}
+	
+	show_tech_unlock_if = { NOT = { has_authority = auth_machine_intelligence } }
+	
+	produced_resources = {
+		energy = 5
+		unity = 1
+	}
+	
+	required_resources = {
+		food = 3
+	}
+
+	planet_modifier = {
+		pop_happiness = -0.10
+		pop_citizen_happiness = 0.10
+		pop_slave_resource_output = 0.05
+		planet_unrest_add = 20
+		country_unrest_unhappy_slave_effect_mult = 0.10
+	}
+
+	potential = {
+		exists = owner
+		owner = { 
+			NOT = { has_authority = auth_machine_intelligence }
+			allows_slavery = yes
+		}
+			
+	}
+	
+	destroy_if = {
+		exists = owner
+		owner = { 
+			OR = { 
+				has_authority = auth_machine_intelligence
+				allows_slavery = no
+			}
+		}
+	}
+
+	allow = {
+		if = {
+			custom_tooltip = {
+				text = "not_enough_slaves"
+				planet = {
+					count_pops = {
+						limit = { is_enslaved = yes }
+						count > 4
+					}				
+				}	
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_authority = auth_machine_intelligence }
+				}
+			}
+			custom_tooltip = {
+				text = "requires_building_capital_1"
+				planet = {
+					OR = {
+						has_building = "building_capital_1"
+						has_building = "building_capital_2"
+						has_building = "building_capital_3"
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			custom_tooltip = {
+				text = "requires_building_machine_capital_1"
+				planet = {
+					OR = {
+						has_building = "building_machine_capital_1"
+						has_building = "building_machine_capital_2"
+						has_building = "building_machine_capital_3"
+					}
+				}
+			}
+		}
+	}
+	
+
+	prerequisites = {
+		"tech_slave_market"
+	}
+
+	ai_allow = {
+		NOR = {
+			has_resource = {
+				type = sr_betharian
+				amount > 0
+			}	
+			has_resource = {
+				type = sr_alien_pets
+				amount > 0
+			}				
+		}
+		planet = {
+			count_pops = {
+				limit = { is_enslaved = yes }
+				count > 6
+			}				
+		}	
+	}
+	
+	ai_weight = {
+		weight = 10
+	}		
+}
+
+#Slave Milking Facility
+building_slave_milking_facility = {
+	base_buildtime = 360
+	planet_unique = yes
+	
+	cost = {
+		minerals = 300
+	}
+	
+	show_tech_unlock_if = { NOT = { has_authority = auth_machine_intelligence } }
+	
+	produced_resources = {
+		food = 4
+		unity = 1
+		sr_dairy = 0.25
+	}
+	
+	required_resources = {
+		energy = 3
+	}
+
+	planet_modifier = {
+		pop_happiness = -0.10
+		pop_eff_wo_slaves = -0.10
+		pop_citizen_happiness = 0.10
+		slave_food_output = 0.15
+		pop_growth_speed = 0.05
+		pop_food_mult = 0.25
+		planet_unrest_add = 20
+		country_unrest_unhappy_slave_effect_mult = 0.1
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			has_policy_flag = prostitution_slavery
+			resources = {
+				food = 2
+				sr_dairy = 0.1
+			}
+		}
+		modifier = {
+			has_policy_flag = prostitution_industrialized
+			resources = {
+				energy = 3
+				sr_dairy = 0.05	
+			}
+		}
+		modifier = {
+			has_policy_flag = prostitution_worship
+			resources = {
+				unity = 2
+			}
+		}
+		modifier = {
+			has_policy_flag = prostitution_supported
+			resources = {
+				unity = 2
+			}
+		}
+	}
+
+	potential = {
+		exists = owner
+		NOT = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+	}
+	
+	destroy_if = {
+		exists = owner
+		owner = {  
+			has_authority = auth_machine_intelligence
+		}
+	}
+
+	allow = {
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_authority = auth_machine_intelligence }
+				}
+			}
+			custom_tooltip = {
+				text = "requires_building_capital_2"
+				planet = {
+					OR = {
+						has_building = "building_capital_2"
+						has_building = "building_capital_3"
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			custom_tooltip = {
+				text = "requires_building_machine_capital_2"
+				planet = {
+					OR = {
+
+						has_building = "building_machine_capital_2"
+						has_building = "building_machine_capital_3"
+					}
+				}
+			}
+		}
+	}
+	
+
+	prerequisites = {
+		"tech_slave_milking_facility"
+	}
+
+	upgrades = {
+		building_megamilking_facility
+	}
+	
+	ai_allow = {
+		NOR = {
+			has_resource = {
+				type = sr_betharian
+				amount > 0
+			}	
+			has_resource = {
+				type = sr_alien_pets
+				amount > 0
+			}				
+		}
+		planet = {
+			OR = {
+				has_building = building_slave_milking_facility
+				count_pops = {
+					limit = { is_enslaved = yes }
+					count > 4
+				}				
+			}
+		}	
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+building_megamilking_facility = {
+	base_buildtime = 360
+	planet_unique = yes
+	is_listed = no
+	
+	cost = {
+		minerals = 600
+	}
+	
+	show_tech_unlock_if = { NOT = { has_authority = auth_machine_intelligence } }
+	
+	produced_resources = {
+		food = 8
+		unity = 1
+		sr_dairy = 1
+	}
+	
+	required_resources = {
+		energy = 5
+	}
+	adjacency_bonus = {
+		tile_building_resource_food_add = 2
+	}
+	planet_modifier = {
+		pop_happiness = -0.3
+		pop_eff_wo_slaves = -0.30
+		pop_citizen_happiness = 0.3
+		slave_food_output = 0.30
+		pop_growth_speed = 0.15
+		pop_food_mult = 0.50
+		planet_unrest_add = 30
+		country_unrest_unhappy_slave_effect_mult = 0.2
+	}
+
+	produced_resource_trigger = {
+		modifier = {
+			has_policy_flag = prostitution_slavery
+			resources = {
+				food = 4
+				sr_dairy = 0.2
+			}
+		}
+		modifier = {
+			has_policy_flag = prostitution_industrialized
+			resources = {
+				energy = 6
+				sr_dairy = 0.1	
+			}
+		}
+		modifier = {
+			has_policy_flag = prostitution_worship
+			resources = {
+				unity = 4
+			}
+		}
+		modifier = {
+			has_policy_flag = prostitution_supported
+			resources = {
+				unity = 4
+			}
+		}
+	}
+
+	potential = {
+		NOT = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+	}
+	
+	destroy_if = {
+		exists = owner
+		owner = { 
+			OR = { 
+				has_authority = auth_machine_intelligence
+				is_ai = yes
+			}
+		}
+	}
+
+	allow = {
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_authority = auth_machine_intelligence }
+				}
+			}
+			custom_tooltip = {
+				text = "requires_building_capital_2"
+				planet = {
+					OR = {
+						has_building = "building_capital_2"
+						has_building = "building_capital_3"
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			custom_tooltip = {
+				text = "requires_building_machine_capital_2"
+				planet = {
+					OR = {
+
+						has_building = "building_machine_capital_2"
+						has_building = "building_machine_capital_3"
+					}
+				}
+			}
+		}
+	}
+	
+
+	prerequisites = {
+		"tech_slave_milking_facility"
+	}
+
+	upgrades = {
+		building_megamilking_facility
+	}
+	
+	ai_allow = { always = no }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+building_cowgirl_ranch = {
+	base_buildtime = 180
+	
+	cost = {
+		minerals = 100
+		energy = 50
+	}
+	
+	produced_resources = {
+		food = 3
+		unity = 1
+		sr_dairy = 0.5
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			has_policy_flag = prostitution_slavery
+			resources = {
+				sr_dairy = 0.2
+			}
+		modifier = {
+			has_policy_flag = prostitution_industrialized
+			resources = {
+				sr_dairy = 0.1
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 1
+	}
+	
+	planet_modifier = {
+		slave_food_output = 0.05
+		pop_happiness = -0.05
+		pop_citizen_happiness = 0.05
+		country_unrest_unhappy_slave_effect_mult = 0.05
+		
+	}	  
+	prerequisites = {
+		"tech_slave_milking_facility"
+	}
+	
+	potential = {
+		planet = {
+			OR = {
+				has_building = "building_slave_milking_facility"
+				has_building = "building_megamilking_facility"
+			}
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			tile = {
+				any_neighboring_tile = {
+					OR = {
+						has_building = "building_slave_milking_facility"
+						has_building = "building_megamilking_facility"
+					}
+				}
+			}
+		}	
+	}
+	
+	ai_allow = {
+		NOR = {
+			has_resource = {
+				type = sr_betharian
+				amount > 0
+			}	
+			has_resource = {
+				type = sr_alien_pets
+				amount > 0
+			}				
+		}		
+	}
+	
+	destroy_if = {
+		planet = {
+			NOR = { 
+				has_building = "building_slave_milking_facility"
+				has_building = "building_megamilking_facility"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+building_creamery = {
+	base_buildtime = 200
+	planet_unique = yes
+	
+	cost = {
+		minerals = 400
+	}
+	
+	produced_resources = {
+		food = 3
+		energy = 3
+		unity = 2
+	}
+
+	planet_modifier = {
+		pop_happiness = 0.05
+		pop_resource_output = 0.05
+		pop_growth_speed = 0.1
+		pop_food_req_mult = -0.10
+		pop_government_ethic_attraction = 0.05
+	}
+	
+	required_resources = {
+		sr_dairy = 1
+	}
+
+	destroy_if = {
+		exists = owner
+		owner = { 	has_authority = auth_machine_intelligence }
+		owner = { is_ai = yes } 
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		has_country_strategic_resource = { type = sr_dairy amount > 1 }
+	}
+}
+
+#Temple of Love
+building_temple_of_love = {
+	base_buildtime = 200
+	planet_unique = yes
+	
+	cost = {
+		minerals = 200
+	}
+	
+	produced_resources = {
+		unity = 3
+	}
+	
+	adjacency_bonus = {
+		tile_building_resource_unity_add = 1
+	}
+	
+	planet_modifier = {
+		pop_happiness = 0.10
+		pop_citizen_happiness = -0.05
+		pop_government_ethic_attraction = 0.1
+		pop_ethic_spiritualist_attraction_mult = 0.1
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			NOT = { has_policy_flag = prostitution_worship }
+			resources = {
+				unity = -2
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 2
+	}
+	
+	potential = { 	
+		owner = {
+			NOR = {
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		planet = {
+			NOR = {
+				has_building = building_red_district
+				has_building = building_autochthon_monument
+				has_building = building_heritage_site
+				has_building = building_hypercomms_forum
+				has_building = building_autocurating_vault
+				has_building = building_basilia_of_love
+			}
+		}
+	}
+
+	destroy_if = {
+		exists = owner
+		owner = { has_authority = auth_machine_intelligence }
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_temple_of_love"
+	}
+	
+	upgrades = {
+		building_basilia_of_love
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+}
+
+building_basilia_of_love = {
+	base_buildtime = 400
+	planet_unique = yes
+	is_listed = no
+	
+	cost = {
+		minerals = 400
+	}
+	
+	produced_resources = {
+		unity = 6
+	}
+	
+	adjacency_bonus = {
+		tile_building_resource_unity_add = 1
+	}
+	
+	planet_modifier = {
+		pop_happiness = 0.1
+		pop_government_ethic_attraction = 0.2
+		pop_ethic_spiritualist_attraction_mult = 0.2
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			NOT = { has_policy_flag = prostitution_worship }
+			resources = {
+				unity = -4
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 4
+	}
+	
+	potential = { 	
+		owner = { has_policy_flag = prostitution_worship }
+	}
+
+	destroy_if = {
+		exists = owner
+		owner = { 
+			OR = { 
+				has_authority = auth_machine_intelligence
+				is_ai = yes
+			}
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "already_have_cultural_building"
+			planet = {
+				NOR = {
+					has_building = building_red_district
+					has_building = building_autochthon_monument
+					has_building = building_heritage_site
+					has_building = building_hypercomms_forum
+					has_building = building_autocurating_vault
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "requires_pops_10"
+			planet = {
+				count_pops = {
+					count > 9
+					limit = {
+						is_colony_pop = yes
+					}
+				}
+			}
+		}
+	}
+	prerequisites = {
+		"tech_temple_of_love"
+	}
+	
+	upgrades = {
+		building_cathedral_of_venus
+		building_cathedral_of_mars
+		building_cathedral_of_minerva
+		building_cathedral_of_vulcan
+		building_cathedral_of_ruler
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+}
+
+
+building_cathedral_of_venus = {
+	base_buildtime = 800
+	empire_unique = yes
+	is_listed = no
+	
+	cost = {
+		minerals = 1000
+	}
+	
+	produced_resources = {
+		unity = 12
+		sr_pitharan = 1
+	}
+	
+	adjacency_bonus = {
+		tile_building_resource_unity_add = 4
+	}
+	
+	planet_modifier = {
+		biological_pop_happiness = 0.1
+		pop_ethic_spiritualist_attraction_mult = 0.1
+		pop_ethic_pacifist_attraction_mult = 0.1
+	}	
+	
+	country_modifier = {
+		pop_ethic_spiritualist_attraction_mult = 0.1
+		pop_ethic_pacifist_attraction_mult = 0.1
+		biological_pop_happiness = 0.05
+		pop_eff_wo_slaves = 0.05
+		country_resource_unity_mult = 0.25
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			NOT = { has_policy_flag = prostitution_worship }
+			resources = {
+				unity = -6
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 25
+	}
+	
+	potential = { 	
+		owner = { has_policy_flag = prostitution_worship }
+		owner = { has_policy_flag = worship_venus }
+		planet = { is_capital = yes	}
+	}
+
+	destroy_if = {
+		OR = {
+			AND = {
+				exists = owner
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			planet = { is_capital = no }
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { 
+			NOR = { 
+				has_authority = auth_machine_intelligence
+				is_ai = yes
+			}
+		}
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "already_have_cultural_building"
+			planet = {
+				NOR = {
+					has_building = building_red_district
+					has_building = building_autochthon_monument
+					has_building = building_heritage_site
+					has_building = building_hypercomms_forum
+					has_building = building_autocurating_vault
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "already_have_monument_to_another_god"
+			planet = {
+				NOR = {
+					has_building = building_cathedral_of_mars
+					has_building = building_cathedral_of_minerva
+					has_building = building_cathedral_of_vulcan
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_temple_of_love"
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+}
+
+building_cathedral_of_mars = {
+	base_buildtime = 800
+	empire_unique = yes
+	is_listed = no
+	
+	cost = {
+		minerals = 1000
+	}
+	
+	produced_resources = {
+		unity = 6
+		minerals = 8
+		sr_satramene = 1
+	}
+	
+	adjacency_bonus = {
+		tile_building_resource_unity_add = 2
+		tile_building_resource_minerals_add = 3
+	}
+	
+	planet_modifier = {
+		pop_happiness = 0.1
+		pop_ethic_authoritarian_attraction_mult = 0.1
+		pop_ethic_militarist_attraction_mult = 0.1
+		army_damage_mult = 0.25
+		army_health = 0.25
+		
+	}	
+	
+	country_modifier = {
+		pop_ethic_authoritarian_attraction_mult = 0.1
+		pop_ethic_militarist_attraction_mult = 0.1
+		naval_upkeep = -0.10
+		planet_unrest_mult = -0.10
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			NOT = { has_policy_flag = prostitution_worship }
+			resources = {
+				unity = -6
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 25
+	}
+	
+	potential = { 	
+		owner = { has_policy_flag = prostitution_worship }
+		owner = { has_policy_flag = worship_mars }
+		planet = { is_capital = yes	}
+	}
+
+	destroy_if = {
+		OR = {
+			AND = {
+				exists = owner
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			planet = { is_capital = no }
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { 
+			NOR = { 
+				has_authority = auth_machine_intelligence
+				is_ai = yes
+			}
+		}
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "already_have_cultural_building"
+			planet = {
+				NOR = {
+					has_building = building_red_district
+					has_building = building_autochthon_monument
+					has_building = building_heritage_site
+					has_building = building_hypercomms_forum
+					has_building = building_autocurating_vault
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "already_have_monument_to_another_god"
+			planet = {
+				NOR = {
+					has_building = building_cathedral_of_venus
+					has_building = building_cathedral_of_minerva
+					has_building = building_cathedral_of_vulcan
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_temple_of_love"
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+}
+
+building_cathedral_of_minerva = {
+	base_buildtime = 800
+	empire_unique = yes
+	is_listed = no
+	
+	cost = {
+		minerals = 1000
+	}
+	
+	produced_resources = {
+		unity = 6
+		physics_research = 4
+		sr_zro = 1
+	}
+	
+	adjacency_bonus = {
+		tile_building_resource_unity_add = 2
+		tile_building_resource_physics_research_add = 3
+	}
+	
+	planet_modifier = {
+		pop_citizen_happiness = 0.1
+		pop_ethic_materialist_attraction_mult = 0.2
+		pop_ethic_egalitarian_attraction_mult = 0.1
+	}	
+	
+	country_modifier = {
+		pop_ethic_materialist_attraction_mult = 0.1
+		pop_government_ethic_attraction = 0.1
+		all_technology_research_speed = 0.05
+		country_physics_tech_research_speed = 0.1
+		edict_cost = -0.2
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			NOT = { has_policy_flag = prostitution_worship }
+			resources = {
+				unity = -6
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 25
+	}
+	
+	potential = { 	
+		owner = { has_policy_flag = prostitution_worship }
+		owner = { has_policy_flag = worship_minerva }
+		planet = { is_capital = yes	}
+	}
+
+	destroy_if = {
+		OR = {
+			AND = {
+				exists = owner
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			planet = { is_capital = no }
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { 
+			NOR = { 
+				has_authority = auth_machine_intelligence
+				is_ai = yes
+			}
+		}
+		custom_tooltip = {
+			text = "requires_building_capital_3"
+			planet = { has_building = "building_capital_3" }
+		}
+		custom_tooltip = {
+			text = "already_have_cultural_building"
+			planet = {
+				NOR = {
+					has_building = building_red_district
+					has_building = building_autochthon_monument
+					has_building = building_heritage_site
+					has_building = building_hypercomms_forum
+					has_building = building_autocurating_vault
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "already_have_monument_to_another_god"
+			planet = {
+				NOR = {
+					has_building = building_cathedral_of_venus
+					has_building = building_cathedral_of_mars
+					has_building = building_cathedral_of_vulcan
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_temple_of_love"
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+}
+
+building_cathedral_of_vulcan = {
+	base_buildtime = 800
+	empire_unique = yes
+	is_listed = no
+	
+	cost = {
+		minerals = 1000
+	}
+	
+	produced_resources = {
+		unity = 6
+		engineering_research = 8
+		sr_neutronium = 1
+	}
+	
+	adjacency_bonus = {
+		tile_building_resource_unity_add = 2
+		tile_building_resource_engineering_research_add = 3
+	}
+	
+	planet_modifier = {
+		pop_happiness = 0.1
+		pop_ethic_materialist_attraction_mult = 0.2
+		pop_ethic_pacifist_attraction_mult = 0.1
+	}	
+	
+	country_modifier = {
+		pop_ethic_materialist_attraction_mult = 0.1
+		pop_ethic_pacifist_attraction_mult = 0.1
+		country_resource_engineering_research_mult = 0.15
+		pop_robot_upkeep_mult = -0.15
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			NOT = { has_policy_flag = prostitution_worship }
+			resources = {
+				unity = -6
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 25
+	}
+	
+	potential = { 	
+		owner = { has_policy_flag = prostitution_worship }
+		owner = { has_policy_flag = worship_vulcan }
+		planet = { is_capital = yes	}
+	}
+
+	destroy_if = {
+		OR = {
+			AND = {
+				exists = owner
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			planet = { is_capital = no }
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { 
+			NOR = { 
+				has_authority = auth_machine_intelligence
+				is_ai = yes
+			}
+		}
+		custom_tooltip = {
+			text = "requires_building_capital_3"
+			planet = { has_building = "building_capital_3" }
+		}
+		custom_tooltip = {
+			text = "already_have_cultural_building"
+			planet = {
+				NOR = {
+					has_building = building_red_district
+					has_building = building_autochthon_monument
+					has_building = building_heritage_site
+					has_building = building_hypercomms_forum
+					has_building = building_autocurating_vault
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "already_have_monument_to_another_god"
+			planet = {
+				NOR = {
+					has_building = cathedral_of_beauty
+					has_building = cathedral_of_war
+					has_building = cathedral_of_wisdom
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_temple_of_love"
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+}
+
+building_cathedral_of_ruler = {
+	base_buildtime = 800
+	empire_unique = yes
+	is_listed = no
+	
+	cost = {
+		minerals = 1000
+	}
+	
+	produced_resources = {
+		unity = 25
+	}
+	
+	adjacency_bonus = {
+		tile_building_resource_unity_add = 5
+	}
+	
+	planet_modifier = {
+		pop_happiness = 0.25
+		pop_other_species_happiness = -0.15
+		pop_government_ethic_attraction = 0.5
+		planet_unrest_add = -50
+		pop_resource_output = 2
+		tile_resource_unity_mult = 1
+		army_defense_morale_mult = 1
+		army_defense_damage_mult = 1
+		planet_orbital_bombardment_damage = -0.9
+		
+	}	
+	
+	country_modifier = {
+		country_government_civic_points_add = 1
+		pop_happiness = -0.10
+		pop_other_species_happiness = -0.10
+		country_resource_food_mult = -0.25
+		country_resource_minerals_mult = -0.25
+		country_resource_energy_mult = -0.25
+		mod_distance_to_capital_static_modifier_efficiency_mult = 1
+		country_naval_cap_add = 100
+		country_sector_cap_add = -3
+		country_core_sector_system_cap = -3
+		country_starbase_capacity_add = -3
+		planet_unrest_add = 30
+		max_minerals = 50000
+		max_energy = 50000
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			NOT = { has_policy_flag = prostitution_worship }
+			resources = {
+				unity = -6
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 100
+		food = 25
+		minerals = 25
+	}
+	
+	potential = { 	
+		owner = { has_policy_flag = prostitution_worship }
+		owner = { has_policy_flag = worship_ruler }
+		planet = { is_capital = yes	}
+	}
+
+	destroy_if = {
+		OR = {
+			AND = {
+				exists = owner
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			planet = { is_capital = no }
+		}
+	}
+	
+	allow = {
+		exists = owner
+		owner = { 
+			NOR = { 
+				has_authority = auth_machine_intelligence
+				is_ai = yes
+			}
+		}
+		custom_tooltip = {
+			text = "requires_building_capital_3"
+			planet = { has_building = "building_capital_3" }
+		}
+		custom_tooltip = {
+			text = "already_have_cultural_building"
+			planet = {
+				NOR = {
+					has_building = building_red_district
+					has_building = building_autochthon_monument
+					has_building = building_heritage_site
+					has_building = building_hypercomms_forum
+					has_building = building_autocurating_vault
+				}
+			}
+			text = "already_have_shield_generator"
+			planet = {
+				NOT = { has_building = building_planetary_shield_generator }
+			}
+		}
+		custom_tooltip = {
+			text = "already_have_monument_to_another_god"
+			planet = {
+				NOR = {
+					has_building = building_cathedral_of_mars
+					has_building = building_cathedral_of_venus
+					has_building = building_cathedral_of_minerva
+					has_building = building_cathedral_of_vulcan
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_temple_of_love"
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+}
+
+#Red District
+building_red_district = {
+	base_buildtime = 270
+	planet_unique = yes
+	
+	cost = {
+		minerals = 200
+	}
+	
+	produced_resources = {
+		unity = 3
+		energy = 3
+	}
+	
+	planet_modifier = {
+		pop_energy_mult = 0.10
+		pop_eff_wo_slaves = 0.10
+		pop_happiness = -0.10
+		pop_citizen_happiness = 0.10
+		unrest = -25
+	}
+	
+	required_resources = {
+		food = 1
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			has_policy_flag = prostitution_supported
+			resources = {
+				unity = 2
+			}
+		}
+		modifier = {
+			has_policy_flag = prostitution_industrialized
+			resources = {
+				energy = 3
+			}
+		}
+		modifier = {
+			has_policy_flag = prostitution_slavery
+			resources = {
+				energy = 6
+			}
+		}
+	}
+	
+	potential = { 	
+		owner = {
+			NOT = {
+				has_policy_flag = prostitution_prohibited
+			}
+		}
+		planet = {
+			NOR = {
+				has_building = building_temple_of_love
+				has_building = building_basilia_of_love
+				has_building = building_temple
+				has_building = building_holotemple				
+				has_building = building_citadel_of_faith
+				has_building = building_sacred_nexus
+			}
+		}
+	}
+
+	destroy_if = {
+		exists = owner
+		owner = { 
+			OR = { 
+				has_authority = auth_machine_intelligence
+				NOT = { has_policy_flag = prostitution_slavery }
+			}
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			text = "requires_building_capital_1"
+			planet = {
+				OR = {
+					has_building = "building_capital_1"
+					has_building = "building_capital_2"
+					has_building = "building_capital_3"
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_prostitution_not_prohibited"
+			owner = {
+				OR = {
+					has_policy_flag = "prostitution_prohibited"
+					has_policy_flag = "prostitution_slavery"
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_red_district"
+	}
+	
+	ai_allow = {
+		# If planet only has slaves/robots, keep it to mining and farming...
+		is_slave_tile_or_planet = no
+	}
+}
+
+#Xeno Preservation Center
+building_xeno_preservation_center = {
+	base_buildtime = 360
+	empire_unique = yes
+	
+	cost = {
+		minerals = 250
+	}
+	
+	show_tech_unlock_if = { NOT = { has_authority = auth_machine_intelligence } }
+
+	potential = {
+		NOT = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+	}
+
+	destroy_if = {
+		exists = owner
+		owner = { 
+			OR = { 
+				has_authority = auth_machine_intelligence
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+	}
+	
+	required_resources = {
+		energy = 2
+		food = 5
+	}
+	
+	produced_resources = {
+		unity = 6
+		society_research = 6
+	}
+	
+	planet_modifier = {
+		pop_citizen_happiness = 0.05
+		pop_ethic_xenophile_attraction_mult = 0.1
+	}
+	
+	country_modifier = {
+		country_trust_growth = 0.1
+		country_trade_attractiveness = 0.05	
+	}
+	
+	allow = {
+		AND = {
+			custom_tooltip = {
+				fail_text = "requires_building_capital_2"
+				planet = {
+					OR = {
+						has_building = "building_capital_2"
+						has_building = "building_capital_3"
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_alien_pets"
+				tile = {
+					has_resource = {
+						type = sr_alien_pets
+						amount > 0
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_interspecies_copulation_supported"
+				owner = {
+					has_policy_flag = "interspecies_copulation_supported"
+				}
+			}
+		}
+	}
+	
+	prerequisites = {
+		"tech_xeno_preservation_initiative"
+	}
+}
+
+

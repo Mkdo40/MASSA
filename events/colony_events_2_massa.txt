@@ -1,0 +1,1718 @@
+############################
+#
+# Colony Events
+#
+# Written by Darkspleen
+#
+############################
+
+@tier1influencecontact = 7
+@tier1influencecontactxenophile = 8
+@tier1influencecontactmin = 20
+@tier1influencecontactmax = 80
+
+@tier2influencecontact = 10
+@tier2influencecontactxenophile = 12
+@tier2influencecontactmin = 40
+@tier2influencecontactmax = 100
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+@tier5materialreward = 48
+@tier5materialmin = 700
+@tier5materialmax = 4000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+@tier5influencereward = 36
+@tier5influencemin = 250
+@tier5influencemax = 500
+@tier6influencereward = 48
+@tier6influencemin = 300
+@tier6influencemax = 600
+
+@tier1unityreward = 6
+@tier1unitymin = 100
+@tier1unitymax = 500
+@tier2unityreward = 12
+@tier2unitymin = 150
+@tier2unitymax = 1000
+@tier3unityreward = 18
+@tier3unitymin = 250
+@tier3unitymax = 1500
+@tier4unityreward = 24
+@tier4unitymin = 350
+@tier4unitymax = 2000
+@tier5unityreward = 48
+@tier5unitymin = 700
+@tier5unitymax = 4000
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+@tier5researchreward = 48
+@tier5researchmin = 300
+@tier5researchmax = 1000
+
+namespace = sexyplanet_mod
+
+#Sexyplanet Modifiers Gatekeeper
+planet_event = {
+	id = sexyplanet_mod.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_owner = yes
+		is_homeworld = no
+		owner = { is_ai = no }
+		has_modifier = "tentacled_lifeforms"
+		NOT = { has_modifier = "aggressive_tentacled_lifeforms" }
+		NOT = { has_modifier = "coexisting_tentacled_lifeforms" }
+		NOT = { has_planet_flag = "presapient_tentacles_spawned" }
+		has_ground_combat = no
+		num_pops > 0
+		is_capital = no
+	}
+	
+	
+	Immediate = {
+		random_list = {
+			50 = { planet_event = { id = sexyplanet_mod.2 days = 30 random = 90 } }
+			50 = { planet_event = { id = sexyplanet_mod.3 days = 30 random = 90 } }
+		}
+	}	
+}
+
+#Lusting Plants
+planet_event = {
+	id = sexyplanet_mod.2
+	title = sexyplanet_mod.2.name
+	desc = sexyplanet_mod.2.desc
+	picture = GFX_plant_impreg
+	show_sound = event_swarm_started
+	location = root
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexyplanet_mod.2.a
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fantatic_pacifist
+					}
+				}
+			}
+		}
+		
+		remove_modifier = "tentacled_lifeforms"
+		add_modifier = {
+			modifier = "aggressive_tentacled_lifeforms"
+			days = -1
+		}
+		
+	}
+	
+	option = {
+		name = sexyplanet_mod.2.b
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+						}
+				}
+			}
+		}
+		
+		remove_modifier = "tentacled_lifeforms" 
+		add_modifier = {
+			modifier = "coexisting_tentacled_lifeforms"
+			days = -1
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.2.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		
+		remove_modifier = "tentacled_lifeforms"
+		add_modifier = {
+			modifier = "aggressive_tentacled_lifeforms"
+			days = 3650
+		}
+	
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier3influencereward
+				min = @tier3influencemin
+				max = @tier3influencemax
+			}
+		}
+	}
+}
+
+# The Tentacled Natives
+planet_event = {
+	id = sexyplanet_mod.3
+	title = sexyplanet_mod.3.name
+	desc = sexyplanet_mod.3.desc
+	picture = GFX_tentacles_drag
+	show_sound = event_swarm_started
+	location = root
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexyplanet_mod.3.a
+			owner = {
+				add_monthly_resource_mult = {
+					resource = society
+					value = @tier1researchreward
+					min = @tier1researchmin
+					max = @tier1researchmax
+				}
+			}
+			set_planet_flag = presapient_tentacles_spawned
+							
+			random_tile = {
+				limit = {
+						has_grown_pop = no
+						has_growing_pop = no
+						has_blocker = no
+				}
+				set_blocker = "tb_tentacle"
+			}
+			random_tile = {
+				limit = {
+						has_grown_pop = no
+						has_growing_pop = no
+						has_blocker = no
+				}
+				set_blocker = "tb_tentacle"
+			}
+	}
+	
+	option = {
+		name = sexyplanet_mod.3.b
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+						}
+				}
+			}
+		}
+		set_planet_flag = presapient_tentacles_spawned
+		remove_modifier = "tentacled_lifeforms"
+		add_modifier = {
+			modifier = "coexisting_tentacled_lifeforms"
+			days = -1
+		}
+		owner = {
+				add_monthly_resource_mult = {
+					resource = society
+					value = @tier1researchreward
+					min = @tier1researchmin
+					max = @tier1researchmax
+				}
+			}
+		set_planet_flag = presapient_tentacles_spawned
+			
+		random_tile = {
+				limit = {
+					has_grown_pop = no
+					has_growing_pop = no
+					has_blocker = no
+				}
+				set_blocker = "tb_tentacle"
+			}
+		random_tile = {
+				limit = {
+					has_grown_pop = no
+					has_growing_pop = no
+					has_blocker = no
+				}
+				set_blocker = "tb_tentacle"
+			}
+		random_tile = {
+				limit = {
+					has_grown_pop = no
+					has_growing_pop = no
+					has_blocker = no
+				}
+				set_blocker = "tb_tentacle"
+			}
+	}
+	
+	option = {
+		name = sexyplanet_mod.3.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		set_planet_flag = presapient_tentacles_spawned
+		remove_modifier = "tentacled_lifeforms"
+		add_modifier = {
+			modifier = "aggressive_tentacled_lifeforms"
+			days = -1
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin				
+				max = @tier2influencemax
+			}
+		}
+		set_planet_flag = presapient_tentacles_spawned
+			
+		random_tile = {
+				limit = {
+					has_grown_pop = no
+					has_growing_pop = no
+					has_blocker = no
+				}
+				set_blocker = "tb_tentacle"
+			}
+	}
+	
+}
+
+###################
+# Titanic Life Fun
+###################
+
+#Raunchy Titans
+planet_event = { 
+	id = sexyplanet_mod.4
+	title = "sexyplanet_mod.4.name"
+	desc = {
+		text = "sexyplanet_mod.4.desc"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.4.desc_phile"
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.4.desc_phobe"
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	diplomatic = yes
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+		room = raunchy_titan_room
+	}
+	
+	trigger = {
+		has_owner = yes
+		original_owner = yes
+		is_homeworld = no
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = "titanic_life"
+		NOT = { has_planet_flag = sexy_titanic_life }
+		has_ground_combat = no
+		num_pops > 0
+		is_capital = no
+	}
+	
+	immediate = {
+		set_planet_flag = sexy_titanic_life
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = sexyplanet_mod.4.a
+		Trigger = {
+			OWNER = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_pop = {
+			limit = {
+				is_growing = no
+				NOR = {
+					has_modifier = xeno_beast_fun
+					has_modifier = xeno_beast_rape
+				}
+			}
+			If = {
+				limit = {
+					OR = {
+						pop_has_ethic = ethic_xenophile
+						pop_has_ethic = ethic_fanatic_xenophile
+					}
+				}
+				add_modifier = {
+					modifier = xeno_beast_fun
+					days = 100
+				}
+				
+				else = {
+					add_modifier = {
+						modifier = xeno_beast_rape
+						days = 100
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.4.b
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		random_pop = {
+			limit = {
+				is_growing = no
+				NOR = {
+					has_modifier = xeno_beast_fun
+					has_modifier = xeno_beast_rape
+				}
+				OR = {
+					pop_has_ethic = ethic_xenophile
+					pop_has_ethic = ethic_fanatic_xenophile
+				}
+			}
+			add_modifier = {
+				modifier = xeno_beast_fun
+				days = 100
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.4.c
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_pop = {
+			limit = {
+				is_growing = no
+				NOR = {
+					has_modifier = xeno_beast_fun
+					has_modifier = xeno_beast_rape
+				}
+			}
+			add_modifier = {
+				modifier = xeno_beast_rape
+				days = 100
+			}	
+		}
+	}
+}
+
+#Titanic Rising
+planet_event = {
+	id = sexyplanet_mod.5
+	title = "sexyplanet_mod.5.name"
+	diplomatic = yes
+	desc = {
+		text = "sexyplanet_mod.5.desc"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.5.desc_phile"
+#		picture_event_data = {
+#			room = titanic_sex_fun_room
+#		}
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.5.desc_phobe"
+#		picture_event_data = {
+#			room = titanic_sex_scared_room
+#		}
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+			room = large_xeno_sex_room
+		}
+	
+	trigger = {
+		has_owner = yes
+		original_owner = yes
+		is_homeworld = no
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = "titanic_life"
+		NOT = { has_planet_flag = sexy_titanic_life_2 }
+		has_ground_combat = no
+		num_pops > 0
+		is_capital = no
+		has_planet_flag =  sexy_titanic_life 
+	}
+	
+	immediate = {
+		set_planet_flag = sexy_titanic_life_2
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = sexyplanet_mod.5.a
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 100
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.5.b
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 365
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 40
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.5.c
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_pop = {
+			limit = {
+				is_growing = no
+				NOR = {
+					has_modifier = xeno_beast_fun
+					has_modifier = xeno_beast_rape
+				}
+			}
+			add_modifier = {
+				modifier = xeno_beast_rape
+				days = 365
+			}	
+		}
+		enable_special_project = {
+			name = "raunchy_titanic_life_removal_mean"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			set_planet_flag = raunchy_titanic_life_removal_mean
+		}
+		add_modifier = {
+			modifier = "eat_the_titans"
+			days = -1
+		}
+	}
+		
+}
+
+#Raunchy Titans Contained
+planet_event = {
+	id = sexyplanet_mod.101
+	title = "sexyplanet_mod.101.name"
+	desc = "sexyplanet_mod.101.desc"
+	diplomatic = yes
+	show_sound = event_air_raid_siren
+	location = ROOT
+	
+	picture_event_data = {
+		room = raunchy_titan_room
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_planet_flag = raunchy_titanic_life_contained
+	}
+	
+#	option = {
+#		name = 
+#	
+#	}
+	
+	option = {
+		name = sexyplanet_mod.101.c
+		Trigger = {
+			has_planet_flag = raunchy_titanic_life_removal_mean
+		}
+	}
+
+}
+
+#Enraged Raunchy Titans
+planet_event = {
+	id = sexyplanet_mod.102
+	title = "sexyplanet_mod.102.name"
+	desc = "sexyplanet_mod.102.desc"
+	picture = GFX_evt_ground_combat
+	show_sound = event_air_raid_siren
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_country = {
+			name = "NAME_Titanic_Life"
+			type = faction
+			effect = {
+				establish_communications_no_message = root.owner
+			}
+		}
+		create_species = {
+			name = "NAME_Titans"
+			class = random_non_machine
+			portrait = random
+			traits = random
+		}
+		create_army = {
+			name = "NAME_Enraged_Guardian"
+			owner = last_created
+			species = last_created
+			type = "titanic_guardian_army"
+		}
+		create_army = {
+			name = "NAME_Enraged_Titan"
+			owner = last_created
+			species = last_created
+			type = "titanic_guardian_army"
+		}
+		create_army = {
+			name = "NAME_Enraged_Titan"
+			owner = last_created
+			species = last_created
+			type = "titanic_guardian_army"
+		}
+		IF = {
+			LIMIT = {
+				has_planet_flag = raunchy_titanic_life_removal_mean
+			}
+			remove_modifier = "eat_the_titans"
+			remove_planet_flag = raunchy_titanic_life_removal_mean
+		}
+	}
+	
+	option = {
+		name = TERRIBLE
+		custom_tooltip = raunchy_titanic_uprising_tooltip
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 5
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				add_modifier = {
+							modifier = xeno_beast_rape
+							days = 365
+				}
+			}
+		}
+	}
+}
+
+#Titanic Changes
+planet_event = {
+	id = sexyplanet_mod.6
+	title = "sexyplanet_mod.6.name"
+	diplomatic = yes
+	desc = {
+		text = "sexyplanet_mod.6.desc"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.6.desc_phile"
+#		picture_event_data = {
+#			room = titanic_sex_fun_room
+#		}
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.6.desc_phobe"	
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+			room = titanic_sex_scared_room
+		}
+	
+	trigger = {
+		has_owner = yes
+		original_owner = yes
+		is_homeworld = no
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = "titanic_life"
+		NOR = { 
+			has_planet_flag = sexy_titanic_life_3 
+			has_planet_flag = raunchy_titanic_life_contained
+		}
+		has_ground_combat = no
+		num_pops > 0
+		is_capital = no
+		has_planet_flag =  sexy_titanic_life_2 
+	}
+	
+	immediate = {
+		set_planet_flag = sexy_titanic_life_3
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	#Let nature take its course option	
+	option = {
+		name = sexyplanet_mod.6.a
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 100
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	#Let nature take its course xenophile option
+	option = {
+		name = sexyplanet_mod.6.b
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 365
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 40
+						}
+					}
+				}
+			}
+		}
+	}
+#Deal with the titans option	
+	option = {
+		name = sexyplanet_mod.6.c
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 100
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 100
+						}
+					}
+				}
+			}
+		}
+		enable_special_project = {
+			name = "raunchy_titanic_life_removal"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			set_planet_flag = raunchy_titanic_life_removal
+		}
+	}
+#Deal with the titans xenophile option
+	option = {
+		name = sexyplanet_mod.6.d
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 365
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 40
+						}
+					}
+				}
+			}
+		}
+		enable_special_project = {
+			name = "raunchy_titanic_life_removal_nice"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			set_planet_flag = raunchy_titanic_life_removal_nice
+		}
+	}
+#Deal with the titans xenophobe option	
+	option = {
+		name = sexyplanet_mod.6.e
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_pop = {
+			limit = {
+				is_growing = no
+				NOR = {
+					has_modifier = xeno_beast_fun
+					has_modifier = xeno_beast_rape
+				}
+			}
+			add_modifier = {
+				modifier = xeno_beast_rape
+				days = 365
+			}	
+		}
+		enable_special_project = {
+			name = "raunchy_titanic_life_removal_mean"
+			location = this
+			owner = root
+		}
+		hidden_effect = {
+			set_planet_flag = raunchy_titanic_life_removal_mean
+		}
+		add_modifier = {
+			modifier = "eat_the_titans"
+			days = -1
+		}
+	}
+}
+
+#Titanic Evolution
+planet_event = {
+	id = sexyplanet_mod.7
+	title = "sexyplanet_mod.7.name"
+	diplomatic = yes
+	desc = {
+		text = "sexyplanet_mod.7.desc"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.7.desc_phile"
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.7.desc_phobe"	
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+			room = titanic_sex_fun_room
+		}
+	
+	trigger = {
+		has_owner = yes
+		original_owner = yes
+		is_homeworld = no
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = "titanic_life"
+		NOT = { 
+			has_planet_flag = raunchy_titanic_life_contained
+		}
+		has_ground_combat = no
+		num_pops > 0
+		is_capital = no
+		has_planet_flag =  sexy_titanic_life_3 
+	}
+	
+	immediate = {
+		set_planet_flag = sexy_titanic_life_4
+	}
+	
+	mean_time_to_happen = {
+		months = 60 #5 years
+	}
+	
+	option = {
+		name = sexyplanet_mod.7.a
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 100
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 100
+						}
+					}
+				}
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				is_robot_pop = no
+				is_sapient = yes
+			}
+			if = {
+				limit = {
+					NOR = { 
+						has_trait = trait_adaptive_reproductive_organs 
+						has_trait = trait_intercompatible_womb
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_adaptive_reproductive_organs
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.7.b
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 365
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 40
+						}
+					}
+				}
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				is_robot_pop = no
+				is_sapient = yes
+			}
+			if = {
+				limit = {
+					NOR = { 
+						has_trait = trait_adaptive_reproductive_organs 
+						has_trait = trait_intercompatible_womb
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_adaptive_reproductive_organs
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.7.c
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		random_pop = {
+			limit = {
+				is_growing = no
+				NOR = {
+					has_modifier = xeno_beast_fun
+					has_modifier = xeno_beast_rape
+				}
+			}
+			add_modifier = {
+				modifier = xeno_beast_rape
+				days = 365
+			}	
+		}
+		every_owned_pop = {
+			limit = {
+				is_robot_pop = no
+				is_sapient = yes
+			}
+			if = {
+				limit = {
+					NOR = { 
+						has_trait = trait_adaptive_reproductive_organs 
+						has_trait = trait_intercompatible_womb
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_adaptive_reproductive_organs
+				}
+			}
+		}
+	}	
+}
+
+#Titanic Fun
+planet_event = {
+	id = sexyplanet_mod.8
+	title = "sexyplanet_mod.8.name"
+	diplomatic = yes
+	desc = {
+		text = "sexyplanet_mod.8.desc"
+		trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.8.desc_phile"
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}  
+		}
+	}
+	desc = {
+		text = "sexyplanet_mod.8.desc_phobe"	
+		trigger = { 
+			owner = { 
+				OR = { 
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}  
+		}
+	}
+	show_sound = event_swarm_started
+	location = ROOT
+	
+	picture_event_data = {
+			room = titanic_sex_fun_room
+		}
+	
+	trigger = {
+		has_owner = yes
+		original_owner = yes
+		is_homeworld = no
+		owner = { 
+			is_ai = no 
+			NOR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		has_modifier = "titanic_life"
+		NOT = { 
+			has_planet_flag = raunchy_titanic_life_contained
+		}
+		has_ground_combat = no
+		num_pops > 0
+		is_capital = no
+		has_planet_flag =  sexy_titanic_life_4 
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexyplanet_mod.8.a
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 100
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 100
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_pop = {
+				limit = {
+					is_robot_pop = no
+					is_sapient = yes
+				}
+				if = {
+					limit = {
+						NOR = { 
+							has_trait = trait_adaptive_reproductive_organs 
+							has_trait = trait_intercompatible_womb
+						}
+					}
+					modify_species = {
+						species = this
+						add_trait = trait_adaptive_reproductive_organs
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.8.b
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 365
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 40
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_pop = {
+				limit = {
+					is_robot_pop = no
+					is_sapient = yes
+				}
+				if = {
+					limit = {
+						NOR = { 
+							has_trait = trait_adaptive_reproductive_organs 
+							has_trait = trait_intercompatible_womb
+						}
+					}
+					modify_species = {
+						species = this
+						add_trait = trait_adaptive_reproductive_organs
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_mod.8.c
+		Trigger = {
+			OWNER = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 40
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 365
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_pop = {
+				limit = {
+					is_robot_pop = no
+					is_sapient = yes
+				}
+				if = {
+					limit = {
+						NOR = { 
+							has_trait = trait_adaptive_reproductive_organs 
+							has_trait = trait_intercompatible_womb
+						}
+					}
+					modify_species = {
+						species = this
+						add_trait = trait_adaptive_reproductive_organs
+					}
+				}
+			}
+		}
+	}	
+}

@@ -1,0 +1,880 @@
+###########################################################################
+############# Written by Darkspleen for Make Space Sexy Again #############
+###########################################################################
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+
+# Cockpit Tentacles Anomaly
+namespace = sexy_planet
+
+ship_event = {				
+	id = sexy_planet.1				
+	title = sexy_planet.1.name			
+	desc = sexy_planet.1.desc		
+	picture = GFX_tentacles_cockpit	
+	show_sound = event_swarm_started	
+	location = root				
+
+	is_triggered_only = yes		
+
+	option = {
+		name = sexy_planet.1.a 
+		Leader = {
+			add_experience = 100		
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
+
+#Tentacles Swarm Anomaly
+ship_event = {
+	id = sexy_planet.2
+	title = sexy_planet.2.name
+	desc = sexy_planet.2.desc
+	picture = GFX_tentacles_swarm
+	show_sound = event_swarm_started
+	location = root
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = sexy_planet.2.a
+		Leader = {
+			add_experience = 200
+			}
+			
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+				}
+			
+			}
+		}
+		
+	option = {
+		name = sexy_planet.2.b
+		trigger = { owner = { OR = {
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			} } }
+		leader = { add_experience = 200}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+				}
+			}
+		}
+		
+		option = {
+		name = sexy_planet.2.c
+		trigger = { owner = { OR = {
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+			} } }
+		leader = { add_experience = 200}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+				}
+			}
+		}
+}
+
+# Tentacled Lifeforms
+
+ship_event = {
+	id = sexy_planet.3
+	title = sexy_planet.3.name
+	desc = sexy_planet.3.desc
+	picture = GFX_tentacles_drag
+	show_sound = event_swarm_started
+	location = root
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_planet.3.a
+		
+		leader = { add_experience = 200 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+				}
+			}
+		hidden_effect = {
+			FROM = {
+				add_modifier = {
+					modifier = "tentacled_lifeforms"
+					days = -1
+				}
+				random_tile = {
+					limit = {
+						AND = {
+							has_grown_pop = no
+							has_growing_pop = no
+							has_blocker = no
+						}
+					}
+					set_blocker = "tb_tentacle"
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_planet.3.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+	
+		leader = { add_experience = 200 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+				}
+			}
+		hidden_effect = {
+			FROM = {
+				add_modifier = {
+					modifier = "tentacled_lifeforms"
+					days = -1
+				}
+				random_tile = {
+					limit = {
+						AND = {
+							has_grown_pop = no
+							has_growing_pop = no
+							has_blocker = no
+						}
+					}
+					set_blocker = "tb_tentacle"
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_planet.3.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	
+		leader = { add_experience = 200 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+				}
+			}
+	}
+}
+
+#namespace = sexy_planet_hard
+
+# The Xeno Terror
+
+ship_event = {				
+	id = sexy_planet.4				
+	title = sexy_planet_hard.1.name			
+	desc = sexy_planet_hard.1.desc		
+	picture = GFX_xeno_terror	
+	show_sound = event_swarm_started	
+	location = root
+
+	is_triggered_only = yes		
+
+	option = {
+		name = sexy_planet_hard.1.a 
+		Leader = { add_experience = 100 }
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	option = {
+		name = sexy_planet_hard.1.b
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			}
+		}
+		
+		Leader = { add_experience = 100 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+			if = {
+				limit = {
+					has_tech_option = tech_morphogenetic_field_mastery
+				}
+				add_tech_progress = {
+					tech = tech_morphogenetic_field_mastery
+					progress = 0.1
+				}
+				else = {
+					add_research_option = tech_morphogenetic_field_mastery
+				}
+			}
+		}
+	}
+	option = {
+		name = sexy_planet_hard.1.c
+		trigger = { owner = { OR = {
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			} } }
+				
+		Leader = { add_experience = 100}
+		owner = {
+			add_influence = -100
+			if = {
+				limit = {
+					has_tech_option = tech_morphogenetic_field_mastery
+				}
+				add_tech_progress = {
+					tech = tech_morphogenetic_field_mastery
+					progress = 0.1
+				}
+				else = {
+					add_research_option = tech_morphogenetic_field_mastery
+				}
+			}
+		}
+		from = {
+			change_pc = pc_nuked
+			hidden_effect = {
+				reset_planet = yes	
+				destroy_colony = yes
+			}
+		}
+	}
+
+	option = {
+		name = sexy_planet_hard.1.d
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		
+		Leader = { add_experience = 150 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			if = {
+				limit = {
+					has_tech_option = tech_morphogenetic_field_mastery
+				}
+				add_tech_progress = {
+					tech = tech_morphogenetic_field_mastery
+					progress = 0.5
+				}
+				else = {
+					add_research_option = tech_morphogenetic_field_mastery
+				}
+			}
+		}
+		
+		from = {
+			change_pc = pc_nuked
+			hidden_effect = {
+				reset_planet = yes	
+				destroy_colony =  yes 
+			}
+		}
+	}
+}
+
+namespace = nuclear_sex
+
+# Nuclear Sex
+ship_event = {
+	id = nuclear_sex.1
+	title = nuclear_sex.1.name
+	desc = nuclear_sex.1.desc
+	picture = GFX_ruins_xeno_rape
+	show_sound = event_swarm_started
+	location = root
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nuclear_sex.1.a
+		
+		Leader = { add_experience = 100 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = nuclear_sex.1.b
+		trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+		}
+		Leader = { add_experience = 100 }
+		owner = {
+			add_modifier = {
+				modifier = biology_insights
+				days = 1780
+			}
+		}
+		root = {
+			add_modifier = {
+				modifier = embarrassed_crew
+				days = 1780
+			}
+		}
+	}
+	
+	option = {
+		name = nuclear_sex.1.c
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			}
+		}
+		
+		Leader = { add_experience = 100 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+
+namespace = sexy_asteroid
+
+# The Mad Scientist's Tentacled Creation
+ship_event = {
+	id = sexy_asteroid.1
+	title = sexy_asteroid.1.name
+	desc = sexy_asteroid.1.desc
+	picture = GFX_mad_scientist_tentacles
+	show_sound = event_ship_bridge
+	location = root
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_asteroid.1.a
+		
+		Leader = { add_experience = 150 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_influence = -100
+		}
+	}
+	
+	option = {
+		name = sexy_asteroid.1.b
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			}
+		}
+		
+		Leader = { add_experience = 150 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_asteroid.1.c
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			}
+		}
+		Leader = { add_experience = 150 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_asteroid.1.d
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		
+		Leader = { add_experience = 150 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier3influencereward
+				min = @tier3influencemin
+				max = @tier3influencemax
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_asteroid.1.e
+		trigger = {
+			owner = { 
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		
+		Leader = { add_experience = 150 }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin
+				max = @tier2influencemax
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+		}
+	}
+}
+
+
+# The Cyber Shop [EDITED by mk40]
+ship_event = {
+	id = sexy_asteroid.2
+	title = sexy_asteroid.2.name
+	desc = sexy_asteroid.2.desc
+	picture = GFX_cyber_dick_1
+	show_sound = event_ship_bridge
+	location = root
+	
+	is_triggered_only = yes
+
+	immediate = {
+		from = { orbital_deposit_tile = { clear_deposits = yes } }
+	}
+	
+	#tax source
+	option = {
+		name = sexy_asteroid.2.a
+		FROM = {
+			orbital_deposit_tile = {
+				add_deposit = d_vast_energy_deposit
+			}
+		}
+	}
+	
+	#reverse engineer
+	option = {
+		name = sexy_asteroid.2.b
+		trigger = { 
+			owner = { 
+				AND = {
+					OR = {
+						has_ethic = ethic_materialist
+						has_ethic = ethic_fanatic_materialist
+					}
+					NOT = { has_technology = tech_cyber_sextoys }
+				}
+			} 
+		}
+		
+		FROM = {
+			orbital_deposit_tile = {
+				add_deposit = d_rich_engineering_deposit
+			}
+		}
+		
+		owner = {
+			add_research_option = tech_cyber_sextoys
+			add_tech_progress = {
+			tech = tech_cyber_sextoys
+			progress = 0.15
+			}
+		}			
+	}
+	
+	#reverse engineer (already got tech)
+	option = {
+		name = sexy_asteroid.2.b2
+		trigger = { 
+			owner = { 
+				AND = {
+					OR = {
+						has_ethic = ethic_materialist
+						has_ethic = ethic_fanatic_materialist
+					}
+					has_technology = tech_cyber_sextoys 
+				} 
+			} 
+		}
+		
+		FROM = {
+			orbital_deposit_tile = {
+				add_deposit = d_rich_engineering_deposit
+			}
+		}					
+	}	
+
+	#bring further equality	
+	option = {
+		name = sexy_asteroid.2.c
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				} 
+			} 
+		}
+		
+		FROM = {
+			orbital_deposit_tile = {
+				add_deposit = d_vast_engineering_deposit
+				add_deposit = d_vast_society_deposit
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+	
+	#disrupts the natural order		
+	option = {
+		name = sexy_asteroid.2.d
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				} 
+			} 
+		}
+		
+		FROM = {
+			orbital_deposit_tile = {
+				add_deposit = d_vast_mineral_deposit
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin
+				max = @tier2influencemax
+			}
+		}
+		
+	}
+}
+
+namespace = slime_asteroid
+
+# Slime Tentacles Lab
+# Redone by MK40
+ship_event = {
+	id = slime_asteroid.1
+	title = slime_asteroid.1.name
+	desc = slime_asteroid.1.desc
+	picture = GFX_tentacles_slime_lab
+	show_sound = event_swarm_started
+	location = root
+	
+	is_triggered_only = yes
+			
+	immediate = {
+		from = { orbital_deposit_tile = { clear_deposits = yes } }
+	}
+
+	option = {
+		name = slime_asteroid.1.a
+		FROM = { 
+			orbital_deposit_tile = { 
+				add_deposit = d_slime_deposit
+			}
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin 
+				max = @tier1materialmax
+			}
+		}
+	}
+	
+	option = {
+		name = slime_asteroid.1.b
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				} 
+			} 
+			
+		}
+		FROM = { 
+			orbital_deposit_tile = { 
+				add_deposit = d_slime_deposit 
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = slime_asteroid.1.c
+		trigger = { 
+			owner = { 
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				} 
+			} 
+		}
+		FROM = { 
+			orbital_deposit_tile = { 
+				add_deposit = d_slime_deposit 
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = slime_asteroid.1.d
+		trigger = { 
+			owner = { 
+				AND = {
+					OR = {
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
+					NOT = { has_technology = tech_slime_vats }
+				}
+			} 
+		}
+		FROM = { 
+			orbital_deposit_tile = { 
+				add_deposit = d_slime_deposit 
+			}
+		}
+		owner = {
+			add_research_option = tech_slime_vats
+			add_tech_progress = {
+			tech = tech_slime_vats
+			progress = 0.15
+			}
+		}
+	}	
+}
+
+
+namespace = slug_planet
+# Slug Planet Anomaly
+ship_event = {				
+	id = slug_planet.1				
+	title = slug_planet.1.name			
+	desc = slug_planet.1.desc		
+	diplomatic = yes
+	show_sound = event_swarm_started	
+	location = root				
+	is_triggered_only = yes		
+	
+	picture_event_data = {
+		room = slug_sex_room
+	}
+
+	option = {
+		name = sexy_planet.1.a 
+		Leader = {
+			add_experience = 100		
+		}
+		
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}

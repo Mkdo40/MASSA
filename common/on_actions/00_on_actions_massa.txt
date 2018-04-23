@@ -1,0 +1,156 @@
+# No scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		massa_pop.1
+		massa_pop.2
+		sexycolony_gate.4
+	}
+}
+# No scope, like on_game_start
+on_yearly_pulse = {
+	events = {
+		interstellar_exchange.100	
+		sexycolony_gate.2
+	}
+}
+
+# No scope, like on_game_start
+on_five_year_pulse = {
+	events = {
+		sexycolony_gate.1
+	}
+}
+
+# This = Planet scope
+# From = Country
+# FromFrom = Pop
+on_purge_complete = {
+	events = {
+	
+	}
+}	
+
+# a new leader is generated for an empire, to be available for recruitment
+# scope: country, from: leader
+on_leader_spawned = {
+	events = {
+		trait_leader.1
+		sexy_leader.1
+		sexy_leader.2
+	}
+}	
+	
+# A planets controller becomes a country not the same as the owner.
+# Root = Planet
+# From = Planet Owner
+# FromFrom = Planet Controller (the one occupying)
+on_planet_occupied = {
+	events = {
+	}
+	
+}
+
+# Triggers country_event for the attacker upon victory
+# (Before controller is switched)
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+on_planet_attackers_win = {
+	events = { 
+	}
+	random_events = {
+		70 = sexyplanet_war.gate
+		30 = sadist_raid_gate.1
+	}
+	
+}
+
+
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_won = {
+	events = {
+	}
+	random_events = {
+		80 = null_event.2
+		20 = sexy_fleet.2
+	}
+}
+
+# This = owner of fleet 1 (combatant)
+# From = owner of fleet 2 (destroyed)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_perp = {
+	events = {
+	}
+	random_events = {
+		80 = null_event.2
+		20 = sexy_fleet.2
+	}
+}	
+
+# Triggers country_event for the defender upon defeat
+# This = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+on_planet_defenders_lose = {
+	events = {}
+}	
+
+# Called during empire initialization when starting a new game if has_secondary_species game rule is true.
+# Called before empire_init_create_capital_pops.
+# scope: planet
+# from: secondary species
+empire_init_create_capital_secondary_pops = {
+	events = {
+		massa_civic.1	# secondary species: assign trait_behavior_masochistic, then create pops
+		# at this point the species might have changed (because we added traits), so FROM might not be the secondary species anymore
+	}
+}
+	
+# X years has passed since a planet was colonized (won't trigger on empire homeworld)
+on_colony_1_year_old = {
+	events = {
+		sexyplanet_mod.1 #Sexyplanet Modifiers Gatekeeper
+	}
+
+	random_events = {
+		300 = 0
+
+		#### Colony Events & Chains
+		#10 = sexycolony.1 #Invasive Tentacles
+		#10 = sexycolony.2 #Xeno Zoo Breakout
+	}
+}
+
+# called during empire initialization when starting a new game
+# scope: country
+empire_init_add_technologies = {
+	events = {
+		 massa_start.1
+	}
+}
+
+on_game_start_country = {
+	events = {
+		massa_start.2
+	}
+}
+
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		massa_start.3
+	}
+}
+
+# A planet has been colonized.
+# Scope = Planet
+on_colonized = {
+	events = {
+		massa_tentacle.1
+	}
+}

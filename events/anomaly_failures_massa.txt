@@ -1,0 +1,73 @@
+############################
+#
+# Anomaly Failure Events
+#
+# Written by Darkspleen
+#
+############################
+
+namespace = sexy_failure
+
+# ROOT = ship scope
+# FROM = planet scope
+
+# Pirate Abduction (Planet)
+ship_event = {
+	id = sexy_failure.1
+	title = sexy_failure.1.name
+	desc = sexy_failure.1.desc
+	picture = GFX_pirate_abduction
+	show_sound = event_red_alert
+	location = FROMFROM
+	
+	is_triggered_only = yes
+			
+	option = {
+		name = sexy_failure.1.a
+		this = {
+			add_modifier = {
+				modifier = horrified_crew
+				days = 365
+			}
+		}
+	}
+}
+
+#Slaver Attack
+ship_event = {
+	id = sexy_failure.2
+	title = sexy_failure.2.name
+	desc = sexy_failure.2.desc
+	picture = GFX_pirate_slaver
+	show_sound = event_red_alert
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		fromfrom = {
+			fleet = { kill_leader = {type = scientist show_notification = no} destroy_fleet = this }
+		}
+	}
+	
+	option = {
+		name = sexy_failure.2.a
+		owner = { add_influence = -50 }
+	}
+}
+
+#Fun Outdoors
+ship_event = {
+	id = sexy_failure.3
+	title = sexy_failure.3.name
+	desc = sexy_failure.3.desc
+	picture = GFX_outdoor_sex_1
+	show_sound = event_ship_bridge
+	location = FROMFROM
+	
+	is_triggered_only = yes
+
+	option = {
+		name = sexy_failure.3.a
+	}
+}

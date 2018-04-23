@@ -1,0 +1,132 @@
+﻿l_english:
+
+ ###########################################################################
+ ############# Written by Darkspleen for Make Space Sexy Again #############
+ ###########################################################################
+
+ ####################################
+ # Technology  						#
+ ####################################
+ 
+ tech_tb_tentacle:0 "Tentacle Removal"
+ tech_tb_tentacle_desc:0 "Specialized poisons, building codes, and new search-and-destroy patterns allow us to utilize areas previously inhabited by tentacled lifeforms."
+ 
+ tech_slime_vats: "Slime Vats"
+ tech_slime_vats_desc: "The biomass byproducts of slimes can be quite useful as a renewable building material, though the slimes themselves can be somewhat unruly if not provided with slaves to play with."
+ tech_sexbots: "Sexoids"
+ tech_sexbots_desc: "Redesigned and improved for adult entertainment, this series of droids units are capable of emulating love emotions and providing an optimal sexual pleasure."
+ tech_cyber_sextoys: "Cyber Sextoys"
+ tech_cyber_sextoys_desc: "Designed to deliver an intense pleasure, this range of sextoys is what we do the best in term of adult entertainment."
+ tech_cyber_milker: "Cyber Milking"
+ tech_cyber_milker_desc: "The implementation of hormone supplements and milking machines allows our slaves to produce enough milk to suppliment our food supplies."
+ tech_nudity_worship: "Nudity Worship"
+ tech_nudity_worship_desc: "..."
+ tech_sex_slavery: "Sexual Slavery"
+ tech_sex_slavery_desc: "Slaves can legally be forced to perform sexual acts for their masters."
+ tech_prostitution_industry: "Interstellar Prostitution Industry"
+ tech_prostitution_industry_desc: "New business models, contraceptives, 'xeno-escorts', and new sextoys allows for the creation of a new kind of prostitution industry."
+ tech_repopulation_effort: "Repopulation Effort"
+ tech_repopulation_effort_desc: "A better understanding of how our citizens think allows us to further encourage them to produce offspring."
+ tech_xeno_pornography: "Xeno Pornography"
+ tech_xeno_pornography_desc: "New business models, contraceptives, 'xeno-actors', and new sextoys allows for the creation of a new kind of pornography."
+ tech_aphrodisiacs_perfumes: "Aphrodisiacs Perfumes"
+ tech_aphrodisiacs_perfumes_desc: "Perfumes that possess aphrodisiac-like qualities will not only make it easier for our diplomats to be successful at the negotiating table, but also encourage people to migrate to our colonies."
+ tech_red_district: "Pleasure District"
+ tech_red_district_desc: "Sometimes called 'red light districts', pleasure districts are the place an individual can go to meet all of their bodily needs, regardless of their species."
+ tech_temple_of_love: "Temple of Love"
+ tech_temple_of_love_desc: "The Temple of Love is where individuals go to learn how to love not only themselves but, more importantly, love others."
+ tech_slave_market: "Slave Market"
+ tech_slave_market_desc: "Buy, sell, or browse, the slave market meets all of an individual's slavery-related needs."
+ tech_interspecies_reproduction: "Interspecies Reproduction"
+ tech_interspecies_reproduction_desc: "Genetic modification and gene theropy allows reproduction between different species to occur."
+ tech_xeno_preservation_initiative: "Alien Preservation Center"
+ tech_xeno_preservation_initiative_desc: "..."
+ tech_slave_milking_facility: "Milking Facility"
+ tech_slave_milking_facility_desc: "These designated milking facilities are designed to get the most milk out of our cowgirls."
+ tech_sexbot_hardware: "Improved Sex Androids Hardware"
+ tech_sexbot_hardware_desc: "A set of upgrades destined to improve the hardware of the Sex Androids"
+ 
+ TECH_UNLOCK_SEXBOTS_TITLE:0 "§HUnlocks Trait:§! $trait_robot_sexbot$"
+ TECH_UNLOCK_SEXBOTS_DESC:1 "§HSexual Hardware:§!\nOwner Pop Happiness: §G+15%§!"
+ TECH_UNLOCK_INTERSPECIES_REPRODUCTION_TITLE:0 "§HUnlocks Trait:§! $trait_adaptive_reproductive_organs$"
+ TECH_UNLOCK_INTERSPECIES_REPRODUCTION_DESC:1 "§HAdaptive Reproductive Organs:§!\nAllows to select the §BInterspecies Supported Reproduction§! policy.\nOther Species Happiness: §G+10%§!"
+ 
+ 
+ ####################################
+ # Buildings  						#
+ ####################################
+ 
+ building_slime_vats:0 "Slime Vats"
+ building_slime_vats_desc: "The biomass byproducts of slimes can be quite useful as a renewable building material, though the slimes themselves can be somewhat unruly if not provided with slaves to play with.\n\n§PThis facility causes slave unhappiness. It will instead cause citizen unhappiness if no slaves are on the planet."
+ building_slave_market:0 "Slave Market"
+ building_slave_market_desc:0 "Buy, sell, or browse, the slave market meets all of an individual's slavery-related needs.\n\n§RRequires at least four slaves on planet."
+ building_slave_milking_facility:0 "Milking Facility"
+ building_slave_milking_facility_desc:0 "These designated milking facilities are designed to get the most milk out of cowgirls.\n\n§EThis building produces different bonus yields depending on which prostitution policy is active.\n\n+2£food, +0.1 dairy with§! §WSlavery Prostitution§! §E\n+3£energy, +0.05 dairy with§! §WIndustrialized Prostitution§! §E\n+3£unity, with§! §WWorship Prostitution§! §Eor§! §WSupported Prostitution§!\n\n§PThis facility causes slave unhappiness. It will instead cause citizen unhappiness if no slaves are on the planet."
+ building_megamilking_facility:0 "Megamilking Facility"
+ building_megamilking_facility_desc:0 "A heavily industrialized milking facility with endless rows of cramped stalls and restrained girls, designed to maximize output at the cost of slave happiness.\n\n§EReceives double the policy bonus compared to the standard Milking Facility. Also increases the Dairy yields of ranches adjacent to this facility.§!\n\n§PWarning: This building causes considerably more unhappiness than regular milking facilities!§!"
+ building_cowgirl_ranch:0 "Cowgirl Ranch"
+ building_cowgirl_ranch_desc:0 "An extension of the milking facility to house additional cowgirls.\n\n§ECan only be built adjacent to milking facilities§!"
+ building_creamery:0 "Creamery"
+ building_creamery_desc:0 "A distribution center for foodstuffs made from the hormone-filled milk of cowgirls, which helps render consumers more complaint and docile, not to mention more fertile."
+ building_temple_of_love:0 "Temple of Love"
+ building_temple_of_love_desc:0 "The Temple of Love is where individuals go to learn how to love not only themselves but, more importantly, love others."
+ building_basilia_of_love:0 "Basilia of Love"
+ building_basilia_of_love_desc:0 "An even grander place of worship for planets with larger populations of worshippers."
+ building_cathedral_of_venus:0 "Cathedral of Beauty"
+ building_cathedral_of_venus_desc:0 "A massive cathedral surrounded by tranquil gardens, dedicated to the worship of love and beauty."
+ building_cathedral_of_mars:0 "Cathedral of Strength"
+ building_cathedral_of_mars_desc:0 "An imposing structure designed to teach masters and slaves alike about the necessity of dominance and submission."
+ building_cathedral_of_minerva:0 "Cathedral of Wisdom"
+ building_cathedral_of_minerva_desc:0 "A grand academy of where the wisest teachers of the tantric arts teach their craft."
+ building_cathedral_of_vulcan:0 "Cathedral of Artificers"
+ building_cathedral_of_vulcan_desc:0 "A sprawling campus of workshops and foundries for crafting innovative technologies for both work and pleasure."
+ building_cathedral_of_ruler:0 "The Golden Throne"
+ building_cathedral_of_ruler_desc:0 "A continent-sized palace district, staffed by the many personal harems of The Ruler.\n\n§PThis obscenely extravagant palace will require the redirecting of massive amounts of resources to the capital, leaving the rest of the nation in relative poverty as a result.\n"
+ building_red_district:0 "Pleasure District"
+ building_red_district_desc:0 "Sometimes called 'red light distrcits', pleasure districts are the place an individual can go to meet all of their bodily needs, regardless of their species.\n\n§EThis building produces different bonus yields depending on which prostitution policy is active.\n\n+6£energy with Slavery Prostitution\n+3£energy with Industrialized Prostitution\n+2£unity with Supported Prostitution\n\n\§PThis facility causes slave unhappiness."
+ building_xeno_preservation_center:0 "Alien Preservation Center"
+ building_xeno_preservation_center_desc:0 "A lab where endangered species of xenos are brought back from the brink of extinction using interspecies reproduction."
+ 
+ 
+ ####################################
+ # Armies 							# 
+ ####################################
+ 
+ army_slime:0 "Slime Army"
+ army_slime_plural:0 "Slime Armies"
+ army_slime_desc:0 "Packs of vat-grown slimes that are physically weak, but very harmful to the enemy's moral. A cadre of scientists control these creatures from a secured position behind our lines."
+ 
+ 
+ ####################################
+ # Resources 						#
+ ####################################
+ 
+ d_slime_deposit:0 "Slime discovered\n"
+ sr_slime:0 "Slime"
+ sr_slime_desc:0 "Slime-like creatures that are capable of photosynthesis."
+ 
+ sr_dairy:0 "Cowgirl Milk"
+ sr_dairy_desc:0 "The nutrient-milk rich product of cowgirls. The high concentration of hormones within helps subtly make its consumers both more aroused and more docile, though not quite to same extent as those that produced the milk."
+ 
+ ####################################
+ # Misc 							#
+ ####################################
+ 
+ buildable_sexrobot_pop:0 "$SEXROBOT_POP_SPECIES$"
+ buildable_sexrobot_pop_desc:1 "$trait_robotic_2_desc$"
+ 
+ SEXROBOT_POP_SPECIES:0 "Sexoid"
+ SEXROBOT_POP_SPECIES_plural:0 "Sexoids"
+ SEXROBOT_POP_SPECIES_adj:0 "Sexoid"
+ 
+ ####################################
+ # Edicts 							#
+ ####################################
+ 
+ #Planetary Edicts
+ edict_synthetic_sexual_selection:0 "Synthetic Sexual Selection"
+ edict_synthetic_sexual_selection_desc:1 "Allows our colonial government to force undesirable species to bare the young of more desirable species."
+ edict_repopulation_effort_edict:0 "Repopulation Effort"
+ edict_repopulation_effort_edict_desc:1 "A better understanding of how our citizens think allows us to further encourage them to produce offspring."
+
+

@@ -1,0 +1,43 @@
+namespace = sexy_leader
+
+#Female Leadership Only Spawn
+country_event = {
+	id = sexy_leader.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	Trigger = {
+		has_policy_flag = gender_leadership_female
+		FROM = {
+			gender = male
+		}
+	}
+
+	Immediate = {
+		FROM = {
+			set_is_female = true
+			set_name = random
+		}
+	}
+}
+
+#Male Leadership Only Spawn
+country_event = {
+	id = sexy_leader.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	Trigger = {
+		has_policy_flag = gender_leadership_male
+		FROM = {
+			gender = female
+		}
+	}
+
+	Immediate = {
+		FROM = {
+			set_is_female = false
+			set_name = random
+		}
+	}
+}

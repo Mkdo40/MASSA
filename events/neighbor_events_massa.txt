@@ -1,0 +1,542 @@
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+
+@tier01unityreward = -6
+@tier01unitymin = -40
+@tier01unitymax = -100
+@tier1unityreward = 6
+@tier1unitymin = 40
+@tier1unitymax = 100
+@tier2unityreward = 12
+@tier2unitymin = 80
+@tier2unitymax = 175
+@tier3unityreward = 18
+@tier3unitymin = 125
+@tier3unitymax = 250
+@tier4unityreward = 24
+@tier4unitymin = 150
+@tier4unitymax = 300
+
+############################
+#Events Linked to Neighbors#
+############################
+
+namespace = sexy_neighbor
+
+# sexy_neighbor gate
+country_event = {
+	id = sexy_neighbor.1
+	hide_window = yes
+
+	
+	Trigger = {
+		any_neighbor_country = {
+			has_communications = root
+			NOR = {
+				is_at_war_with = ROOT
+				is_subject = yes
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+			OR = {
+				NOT = { has_policy_flag = prostitution_prohibited }
+			}
+			
+		}
+		NOT = { has_authority = auth_machine_intelligence }
+	}
+	
+	mean_time_to_happen = {
+		months = 60 #5 years
+	}
+	
+	immediate = {
+		random_events = {
+			50 = { sexy_neighbor_prositution.1  }
+			50 = { sexy_neighbor_prositution.2  }
+		}
+		IF = {
+			LIMIT = {
+				has_country_flag = longer_event_wait
+			}
+			set_timed_country_flag = {
+				flag = had_neighbor_exchange
+				days = 3650 #10 years
+			}
+			ELSE = {
+				set_timed_country_flag = {
+					flag = had_neighbor_exchange
+					days = 1825 #5 years
+				}
+			}
+		}
+	}	
+}
+
+##############################
+#Neighbor Prostitution Events#
+##############################
+
+namespace = sexy_neighbor_prositution
+
+#Xeno Clients
+country_event = {
+	id = sexy_neighbor_prositution.1
+	title = sexy_neighbor_prositution.1.name
+	desc = sexy_neighbor_prositution.1.desc
+	diplomatic = yes
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = xeno_clients_room
+	}
+	
+	trigger = {
+		is_ai = no
+		NOT = { has_policy_flag = prostitution_prohibited }
+        any_neighbor_country = {
+			has_communications = root
+			NOR = {
+				is_at_war_with = ROOT
+				is_subject = yes
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+			NOT = { has_policy_flag = prostitution_prohibited }		
+		}   
+	}
+	
+	Immediate = {
+		random_neighbor_country = {
+			LIMIT = {
+				has_communications = root
+				NOR = {
+					is_at_war_with = ROOT
+					is_subject = yes
+					has_authority = auth_machine_intelligence
+					has_authority = auth_hive_mind
+				}
+				NOT = { has_policy_flag = prostitution_prohibited }
+			}
+			save_event_target_as = neighbor_target
+		}
+		THIS = {
+			save_event_target_as = prost_country
+		}
+	}
+	
+	option = {
+		name = sexy_neighbor_prositution.1.a
+		trigger = { this = { NOR = {
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			} } }
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_authorized
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 40
+			}
+			break = yes
+		}
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_supported
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 80
+			}
+			break = yes
+		}	
+		IF = {
+			LIMIT = {
+				THIS = {
+					OR = {
+						has_policy_flag = prostitution_industrialized
+						has_policy_flag = prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 120
+			}
+			break = yes
+		}
+		
+	}
+	
+	option = {
+		name = sexy_neighbor_prositution.1.b
+		trigger = { this = { OR = {
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+			} } }
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_authorized
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 120
+			}
+			break = yes
+		}
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_supported
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 240
+			}
+			break = yes
+		}	
+		IF = {
+			LIMIT = {
+				THIS = {
+					OR = {
+						has_policy_flag = prostitution_industrialized
+						has_policy_flag = prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 365
+			}
+			break = yes
+		}
+	}
+	
+	option = {
+		name = sexy_neighbor_prositution.1.c
+		trigger = { this = { OR = {
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			} } }
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_authorized
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			break = yes
+		}
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_supported
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			break = yes
+		}	
+		IF = {
+			LIMIT = {
+				THIS = {
+					OR = {
+						has_policy_flag = prostitution_industrialized
+						has_policy_flag = prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			break = yes
+		}			
+	}
+	
+	option = {
+		name = sexy_neighbor_prositution.1.d
+		TRIGGER = {
+			THIS = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_authorized
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 40
+			}
+			break = yes
+		}
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_supported
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 80
+			}
+			break = yes
+		}	
+		IF = {
+			LIMIT = {
+				THIS = {
+					OR = {
+						has_policy_flag = prostitution_industrialized
+						has_policy_flag = prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			add_modifier = {
+				modifier = booming_prostitution_industry
+				days = 365
+			}
+			break = yes
+		}		
+		
+	}
+	
+	option = {
+		name = sexy_neighbor_prositution.1.e
+		TRIGGER = {
+			THIS = {
+				has_civic = civic_sex_slaves
+			}
+		}
+		
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
+		}
+		add_modifier = {
+			modifier = booming_prostitution_industry
+			days = 730
+		}
+	}
+}
+
+#Money Can Buy Happiness
+country_event = {
+	id = sexy_neighbor_prositution.2
+	title = sexy_neighbor_prositution.2.name
+	desc = sexy_neighbor_prositution.2.desc
+	diplomatic = yes
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = xeno_prostitutes_room
+	}
+	
+	trigger = {
+		is_ai = no
+        any_neighbor_country = {
+			has_communications = root
+			NOR = {
+				is_at_war_with = ROOT
+				is_subject = yes
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+			NOT = { has_policy_flag = prostitution_prohibited }		
+		}   
+	}
+	
+	Immediate = {
+		random_neighbor_country = {
+			LIMIT = {
+				has_communications = root
+				NOR = {
+					is_at_war_with = ROOT
+					is_subject = yes
+					has_authority = auth_machine_intelligence
+					has_authority = auth_hive_mind
+				}
+				NOT = { has_policy_flag = prostitution_prohibited }
+			}
+			save_event_target_as = neighbor_target
+		}
+		THIS = {
+			save_event_target_as = prost_country
+		}
+	}
+	
+	option = {
+		name = sexy_neighbor_prositution.2.a
+		trigger = { this = { NOT = {
+			has_policy_flag = prostitution_prohibited
+			} } }
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_authorized
+				}
+			}
+			add_energy = -100
+			add_modifier = {
+				modifier = booming_xeno_prostitution
+				days = 30
+			}
+			break = yes
+		}
+		IF = {
+			LIMIT = {
+				THIS = {
+					has_policy_flag = prostitution_supported
+				}
+			}
+			add_energy = -100
+			add_modifier = {
+				modifier = booming_xeno_prostitution
+				days = 80
+			}
+			break = yes
+		}	
+		IF = {
+			LIMIT = {
+				THIS = {
+					OR = {
+						has_policy_flag = prostitution_industrialized
+						has_policy_flag = prostitution_slavery
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier01materialreward
+				min = @tier01materialmin
+				max = @tier01materialmax
+			}
+			add_modifier = {
+				modifier = xeno_prostitution
+				days = 80
+			}
+			break = yes
+		}
+		
+	}
+	
+	option = {
+		name = sexy_neighbor_prositution.2.b
+		trigger = { this = {
+			has_policy_flag = prostitution_prohibited
+		} }
+		add_energy = -100
+		add_unity = -100
+		add_modifier = {
+			modifier = booming_xeno_prostitution
+			days = 60
+		}
+	}
+}

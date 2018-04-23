@@ -1,0 +1,283 @@
+spriteTypes = {	
+
+
+	spriteType = {
+		name = "GFX_tentacles_cockpit"
+		texturefile = "gfx/event_pictures/tentacles_cockpit.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_tentacles_swarm"
+		texturefile = "gfx/event_pictures/tentacles_swarm.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_tentacles_swarm_2"
+		texturefile = "gfx/event_pictures/tentacles_swarm_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_tentacles_slime_lab"
+		texturefile = "gfx/event_pictures/tentacles_slime_lab.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_cyber_dick_1"
+		texturefile = "gfx/event_pictures/cyber_dick_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_cyber_dick_2"
+		texturefile = "gfx/event_pictures/cyber_dick_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_scientist_captured_primitives"
+		texturefile = "gfx/event_pictures/scientist_captured_primitives.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_tentacles_pet"
+		texturefile = "gfx/event_pictures/tentacles_pet.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_tentacles_police"
+		texturefile = "gfx/event_pictures/tentacles_police.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_interstellar_exchange"
+		texturefile = "gfx/event_pictures/interstellar_exchange.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_xeno_terror"
+		texturefile = "gfx/event_pictures/xeno_terror.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_xeno_terror_alt"
+		texturefile = "gfx/event_pictures/xeno_terror_alt.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_mad_scientist_tentacles"
+		texturefile = "gfx/event_pictures/mad_scientist_tentacles.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_large_robot_sex"
+		texturefile = "gfx/event_pictures/large_robot_sex.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_woman_xeno_beast"
+		texturefile = "gfx/event_pictures/woman_xeno_beast.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_ruins_xeno_rape"
+		texturefile = "gfx/event_pictures/ruins_xeno_rape.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_pirate_abduction"
+		texturefile = "gfx/event_pictures/pirate_abduction.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_tentacles_drag"
+		texturefile = "gfx/event_pictures/tentacles_drag.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_plant_impreg"
+		texturefile = "gfx/event_pictures/plant_impreg.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_military_gangbang"
+		texturefile = "gfx/event_pictures/military_gangbang.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+		spriteType = {
+		name = "GFX_futa_sex"
+		texturefile = "gfx/event_pictures/futa_sex.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_dryads_sex"
+		texturefile = "gfx/event_pictures/dryads_sex.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_pirate_slaver"
+		texturefile = "gfx/event_pictures/pirate_slaver.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_xeno_gangrape_1"
+		texturefile = "gfx/event_pictures/xeno_gangrape_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_xeno_gangrape_1_alt"
+		texturefile = "gfx/event_pictures/xeno_gangrape_1_alt.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_dick_worship"
+		texturefile = "gfx/event_pictures/dick_worship.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_gangrape_1"
+		texturefile = "gfx/event_pictures/gangrape_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_consensual_sex_1"
+		texturefile = "gfx/event_pictures/consensual_sex_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_slave_line"
+		texturefile = "gfx/event_pictures/slave_line.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_human_mounts"
+		texturefile = "gfx/event_pictures/human_mounts.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_domestic_slave"
+		texturefile = "gfx/event_pictures/domestic_slave.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_group_sex"
+		texturefile = "gfx/event_pictures/group_sex.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_group_sex_2"
+		texturefile = "gfx/event_pictures/group_sex_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_big_test"
+		texturefile = "gfx/event_pictures/big_test.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_tech_tb_tentacle"
+		texturefile = "gfx/interface/icons/technology/tech_tb_tentacle.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_tb_tentacle_01"
+		texturefile = "gfx/interface/icons/tile_blockers/tb_tentacle_01.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+		spriteType = {
+		name = "GFX_outdoor_sex_1"
+		texturefile = "gfx/event_pictures/outdoor_sex_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_sexbots"
+		texturefile = "gfx/event_pictures/sexbots_event.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+
+	spriteType = {
+		name = "GFX_raunchy_titan_small"
+		texturefile = "gfx/event_pictures/raunchy_titan_small.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	
+	spriteType = {
+		name = "GFX_sexy_modification"
+		texturefile = "gfx/event_pictures/sexy_modification.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+}
+	

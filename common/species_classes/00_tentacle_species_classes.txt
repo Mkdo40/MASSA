@@ -1,0 +1,31 @@
+################################################
+# MASSA - Tentacle Class					   #
+# Author: Mk40							   	   #
+################################################
+
+PRE_TEN = {
+	archetype = PRESAPIENT
+	playable = { always = no }
+	randomized = no
+	portraits = { "ten01" }
+	gender = no
+	graphical_culture = molluscoid_01
+	move_pop_sound_effect = "molluscoid_pops_move"	
+	uplifted_into = "TEN"
+	uplifted_portraits = 
+	{
+		"ten01"
+	}
+
+}
+
+TEN = {
+	archetype = BIOLOGICAL
+	playable = { always = no }
+	randomized = no
+	portraits = { "ten01" }
+	gender = no
+	graphical_culture = molluscoid_01
+	move_pop_sound_effect = "molluscoid_pops_move"	
+
+}

@@ -1,0 +1,58 @@
+﻿l_german:
+
+ ###########################################################################
+ ############# Written by Darkspleen for Make Space Sexy Again #############
+ ###########################################################################
+
+ ####################################
+ # Empire Modifiers 
+ ####################################
+ 
+ biology_insights: "Einblicke in die Biologie"
+ futa_outlawed: "Futas verboten"
+ contraceptive_boom: "Verhütungsboom"
+ festival_of_love_outlawed: "Festival der Liebe ist verboten"
+ military_recreational_sex_study: "Militärische Entspannungs-Sex-Studie"
+ xeno_businesses_accepted: "Xeno-Unternehmen akzeptiert"
+ booming_prostitution_industry: "Boomende Prostitutionsindustrie"
+ 
+ ####################################
+ # Planet Modifiers 
+ ####################################
+ 
+ tentacled_lifeforms: "Tentakel-Lebensformen"
+ tentacled_lifeforms_desc: "Lebensformen mit herausragenden Tentakelmerkmalen bewohnen diese Welt."
+ aggressive_tentacled_lifeforms: "Aggressive Tentakel-Lebensformen"
+ aggressive_tentacled_lifeforms_desc: "Die Tentakel-Lebensformen auf diesem Planeten sind feindlich."
+ coexisting_tentacled_lifeforms: "Koexistierende  Tentakel-Lebensformen"
+ coexisting_tentacled_lifeforms_desc: "Die Tentakel-Lebensformen auf diesem Planeten koexistieren mit den Bewohnern."
+ festival_of_love: "Festival der Liebe"
+ festival_of_love_desc: "Die Bürger dieses Planeten sind in einer planetenweiten Orgie involviert."
+ 
+ ####################################
+ # Ship/Fleet Modifiers 
+ ####################################
+ 
+ embarrassed_crew: "Verlegene Besatzung"
+ horrified_crew: "Entsetzte Besatzung"
+ 
+ ####################################
+ # Pop Modifiers
+ ####################################
+ xeno_beast_rape: "Von Xeno-Biest vergewaltigt"
+ xeno_beast_fun: "Hatte Spaß mit Xeno Biest"
+ sadomasochist_fun: "Erfreute sich an BDSM"
+ abused_by_sadist: "Wurde von einem Sadisten missbraucht"
+ adaptive_cross_fertilised:0 "Intimpartner"
+ adaptive_cross_fertilised_xphi:0 "Intimpartner"
+ sex_slave: "Sexsklave"
+ in_heat: "Dieser POP ist in Hitze."
+ 
+ ####################################
+ # Opinion Modifiers
+ ####################################
+ 
+ ##Civics
+ 
+ opinion_orgasmic_diplomats_civic:1 "Orgasmische Diplomaten"
+ civic_invasive_copulation_evolution:1 "Invasive Reproduktoren"

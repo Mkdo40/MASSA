@@ -1,0 +1,352 @@
+
+namespace = neuter_purge_event
+
+
+#Neuter purge gatekeeper
+planet_event = {
+	id = neuter_purge_event.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	Trigger = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+		has_planet_flag = "synthetic_sexual_selection"
+		AND = {
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					is_being_purged = no
+					has_population_control = no
+					is_enslaved = no
+				}
+				count > 0
+			}
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					OR = {
+						is_being_purged = yes
+						has_population_control = yes
+					}
+				}
+				count > 0
+			}
+		}
+		Owner = {
+				has_technology = tech_gene_tailoring 
+			}
+	}
+	
+	Immediate = {
+		random_list = {
+			25 = { planet_event = { id = neuter_purge_event.2 } }
+			25 = { planet_event = { id = neuter_purge_event.3 } }
+			25 = { planet_event = { id = neuter_purge_event.4 } }
+			25 = { planet_event = { id = neuter_purge_event.5 } }
+		}
+	}
+	
+}
+#Pop willingly reproduces with citizen pop
+planet_event = {
+	id = neuter_purge_event.2
+	title = neuter_purge_event.2.name
+	desc = neuter_purge_event.2.desc
+	diplomatic = yes
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	Trigger = {
+		AND = {
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					is_being_purged = no
+					has_population_control = no
+					is_enslaved = no
+				}
+				count > 0
+			}
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					has_population_control = yes
+				}
+				count > 0
+			}
+		}
+	}
+	
+	picture_event_data = {
+		room = xeno_cosensual_sex_room
+	}
+	
+	immediate = {
+		random_pop = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				is_being_purged = no
+				has_population_control = no
+				is_enslaved = no
+			}
+			save_event_target_as = massa_sexing_pop
+		}
+	}
+	
+	option = {
+		name = neuter_purge_event.2.a
+		random_pop = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				OR = {
+					is_being_purged = yes
+					has_population_control = yes
+				}
+			}
+			kill_pop = yes
+		}
+		random_tile = {
+			limit = {
+				has_pop = no
+				has_blocker = no
+			}
+			create_pop = {
+				species = event_target:massa_sexing_pop.species
+			} 
+			#change_species = event_target:massa_sexing_pop.species
+		}
+	}
+}
+
+planet_event = {
+	id = neuter_purge_event.3
+	title = neuter_purge_event.3.name
+	desc = neuter_purge_event.3.desc
+	diplomatic = yes
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	Trigger = {
+		AND = {
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					is_being_purged = no
+					has_population_control = no
+					is_enslaved = no
+				}
+				count > 0
+			}
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					OR = {
+						is_being_purged = yes
+						has_population_control = yes
+					}
+				}
+				count > 0
+			}
+		}
+	}	
+	
+	picture_event_data = {
+		room = toad_gangbang_room
+	}
+	
+	immediate = {
+		random_pop = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				is_being_purged = no
+				has_population_control = no
+				is_enslaved = no
+			}
+			save_event_target_as = massa_sexing_pop
+		}
+	}
+	
+	option = {
+		name = neuter_purge_event.3.a
+		random_pop = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				OR = {
+					is_being_purged = yes
+					has_population_control = yes
+				}
+			}
+			kill_pop = yes
+		}
+		random_tile = {
+			limit = {
+				has_pop = no
+				has_blocker = no
+			}
+			create_pop = {
+				species = event_target:massa_sexing_pop.species
+			} 
+			#change_species = event_target:massa_sexing_pop.species
+		}
+	}
+}
+
+planet_event = {
+	id = neuter_purge_event.4
+	title = neuter_purge_event.3.name
+	desc = neuter_purge_event.3.desc
+	diplomatic = yes
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	Trigger = {
+		AND = {
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					is_being_purged = no
+					has_population_control = no
+					is_enslaved = no
+				}
+				count > 0
+			}
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					is_being_purged = yes
+				}
+				count > 0
+			}
+		}
+	}
+	
+	picture_event_data = {
+		room = bound_baby_oven_room
+	}
+	
+	immediate = {
+		random_pop = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				is_being_purged = no
+				has_population_control = no
+				is_enslaved = no
+			}
+			save_event_target_as = massa_sexing_pop
+		}
+	}
+	
+	option = {
+		name = neuter_purge_event.3.a
+		random_pop = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				OR = {
+					is_being_purged = yes
+					has_population_control = yes
+				}
+			}
+			kill_pop = yes
+		}
+		random_tile = {
+			limit = {
+				has_pop = no
+				has_blocker = no
+			}
+			create_pop = {
+				species = event_target:massa_sexing_pop.species
+			} 
+			#change_species = event_target:massa_sexing_pop.species
+		}
+	}
+}
+
+planet_event = {
+	id = neuter_purge_event.5
+	title = neuter_purge_event.3.name
+	desc = neuter_purge_event.3.desc
+	diplomatic = yes
+	show_sound = event_default
+	is_triggered_only = yes
+	
+	Trigger = {
+		AND = {
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					is_being_purged = no
+					has_population_control = no
+					is_enslaved = no
+				}
+				count > 0
+			}
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					is_being_purged = yes
+				}
+				count > 0
+			}
+		}
+	}
+	
+	picture_event_data = {
+		room = incubator_room
+	}
+	
+	immediate = {
+		random_pop = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				is_being_purged = no
+				has_population_control = no
+				is_enslaved = no
+			}
+			save_event_target_as = massa_sexing_pop
+		}
+	}
+	
+	option = {
+		name = neuter_purge_event.3.a
+		random_pop = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				OR = {
+					is_being_purged = yes
+					has_population_control = yes
+				}
+			}
+			kill_pop = yes
+		}
+		random_tile = {
+			limit = {
+				has_pop = no
+				has_blocker = no
+			}
+			create_pop = {
+				species = event_target:massa_sexing_pop.species
+			} 
+			#change_species = event_target:massa_sexing_pop.species
+		}
+	}
+}

@@ -1,0 +1,110 @@
+﻿l_german:
+
+ ###########################################################################
+ ############# Written by Darkspleen for Make Space Sexy Again #############
+ ###########################################################################
+
+ ####################################
+ # Technology  						#
+ ####################################
+ 
+ tech_tb_tentacle:0 "Tentakelentfernung"
+ tech_tb_tentacle_desc:0 "Spezialisierte Gifte, Bauvorschriften und neue Such- und Zerstörungsmuster ermöglichen es uns, Gebiete zu nutzen, die zuvor von Tentakel-Lebensformen bewohnt waren."
+ 
+ tech_slime_vats: "Schleimbottich"
+ tech_slime_vats_desc: "Eine gründliche Untersuchung der Schleimbiologie hat uns Einblicke gegeben, wie man sie für unsere eigenen Zwecke anbauen kann."
+ tech_sexbots: "Sexroboter"
+ tech_sexbots_desc: "Diese Modifikationen, die dazu bestimmt sind, sexuelles Vergnügen zu bieten, verändern das Aussehen unserer Roboter, so dass sie den Körpern unserer Spezies in ihren intimsten Details ähneln. Ihre verbesserten neuronalen Prozessoren erlauben es ihnen, Liebesemotionen zu emulieren, um die Erfahrung zu verbessern."
+ tech_cyber_sextoys: "Cyber Sextoys"
+ tech_cyber_sextoys_desc: "Diese Palette von Sexspielzeugen wurde für ein intensives Vergnügen entwickelt und ist unser bestes Produkt in Sachen Erwachsenenunterhaltung."
+ tech_cyber_milker: "Cyber Melken"
+ tech_cyber_milker_desc: "Die Implementierung von Hormonpräparaten und Melkmaschinen ermöglicht unseren Sklaven, genug Milch zu produzieren, um unsere Nahrungsmittelvorräte zu ergänzen."
+ tech_nudity_worship: "Nacktheit Anbetung"
+ tech_nudity_worship_desc: "..."
+ tech_sex_slavery: "Sexuelle Sklaverei"
+ tech_sex_slavery_desc: "Sklaven können legal gezwungen werden, sexuelle Handlungen für ihre Herren durchzuführen."
+ tech_prostitution_industry: "Interstellare Prostitutionsindustrie"
+ tech_prostitution_industry_desc: "Neue Geschäftsmodelle, Verhütungsmittel, "Xeno-Escorts" und neue Sexspielzeuge ermöglichen die Schaffung einer neuen Art von Prostitutionsindustrie."
+ tech_repopulation_effort: "Wiederbevölkerungsanstrengungen"
+ tech_repopulation_effort_desc: "Ein besseres Verständnis davon, wie unsere Bürger denken, ermöglicht es uns, sie weiter zu ermutigen, Nachkommen zu zeugen."
+ tech_xeno_pornography: "Xeno Pornographie"
+ tech_xeno_pornography_desc: "Neue Geschäftsmodelle, Verhütungsmittel, "Xeno-Actors" und neue Sexspielzeuge ermöglichen die Schaffung einer neuen Art von Pornografie."
+ tech_aphrodisiacs_perfumes: "Aphrodisierende Parfums"
+ tech_aphrodisiacs_perfumes_desc: "Parfums, die aphrodisierende Eigenschaften besitzen, werden es unseren Diplomaten nicht nur erleichtern, am Verhandlungstisch erfolgreich zu sein, sondern auch Individuen dazu ermutigen, in unsere Kolonien auszuwandern."
+ tech_red_district: "Lustviertel"
+ tech_red_district_desc: "Gelegentlich als "Rotlichtviertel" bezeichnet, sind Vergnügungsviertel der Ort, an dem ein Individuum all seinen körperlichen Bedürfnissen nachkommen kann, unabhängig von seiner Spezies."
+ tech_temple_of_love: "Tempel der Liebe"
+ tech_temple_of_love_desc: "Im Tempel der Liebe lernen Individuen, wie sie nicht nur sich selbst lieben, sondern vor allem andere lieben."
+ tech_slave_market: "Sklavenmarkt"
+ tech_slave_market_desc: "Kaufen, verkaufen oder stöbern, der Sklavenmarkt erfüllt alle Bedürfnisse der Sklaverei."
+ tech_interspecies_reproduction: "Interspezies-Reproduktion"
+ tech_interspecies_reproduction_desc: "Genetische Veränderung und Gentherapie ermöglicht die Reproduktion zwischen verschiedenen Arten."
+ tech_xeno_preservation_initiative: "Alien Schutzzenter"
+ tech_xeno_preservation_initiative_desc: "Ein Labor, in dem vom Aussterben bedrohte Arten von Xenos mit der Reproduktion zwischen den Arten zurückgebracht werden."
+ tech_slave_milking_facility: "Sklavenmelkanlage"
+ tech_slave_milking_facility_desc: "Diese ausgewiesenen Melkanlagen sind so ausgelegt, dass sie die meiste Milch aus unseren Sklaven holen."
+ tech_sexbot_hardware: "Improved Sex Androids Hardware"xxx
+ tech_sexbot_hardware_desc: "A set of upgrades destined to improve the hardware of the Sex Androids"
+ 
+ TECH_UNLOCK_SEXBOTS_TITLE:0 "§HSchaltet folgende Eigenschaft frei:§! $trait_robot_sexbot$"
+ TECH_UNLOCK_SEXBOTS_DESC:1 "§HSexuelle Hardware:§!\nBesitzer-Pop Zuefriedenheit: §G+15%§!\nZufriedenheit: §G+5%§!"
+ TECH_UNLOCK_INTERSPECIES_REPRODUCTION_TITLE:0 "§HSchaltet folgende Eigenschaft frei:§! $trait_adaptive_reproductive_organs$"
+ TECH_UNLOCK_INTERSPECIES_REPRODUCTION_DESC:1 "§HAdaptive Reproduktionsorgane:§!\nAllows to select the §BArtenübergreifende Reproduktion§!.\nZufriedenheit anderer Arten: §G+10%§!"
+ 
+ 
+ ####################################
+ # Buildings  						#
+ ####################################
+ 
+ building_slime_vats:0 "Schleimbottich"
+ building_slime_vats_desc:0 "Diese spezialisierten Bottiche sind in der Lage, schnell wachsende Schleimrudel zu züchten."
+ building_slave_market:0 "Sklavenmarkt"
+ building_slave_market_desc:0 "Kaufen, verkaufen oder stöbern, der Sklavenmarkt erfüllt alle Bedürfnisse der Sklaverei."
+ building_slave_milking_facility:0 "Sklavenmelkanlage"
+ building_slave_milking_facility_desc:0 "Diese ausgewiesenen Melkanlagen sind so ausgelegt, dass sie die meiste Milch aus unseren Sklaven holen."
+ building_temple_of_love:0 "Tempel der Liebe"
+ building_temple_of_love_desc:0 "Im Tempel der Liebe lernen Individuen, wie sie nicht nur sich selbst lieben, sondern vor allem andere lieben."
+ building_red_district:0 "Lustviertel"
+ building_red_district_desc:0 "Gelegentlich als "Rotlichtviertel" bezeichnet, sind Vergnügungsviertel der Ort, an dem ein Individuum all seinen körperlichen Bedürfnissen nachkommen kann, unabhängig von seiner Spezies."
+ building_xeno_preservation_center:0 "Alien Schutzzenter"
+ building_xeno_preservation_center_desc:0 "Ein Labor, in dem vom Aussterben bedrohte Arten von Xenos mit der Reproduktion zwischen den Arten zurückgebracht werden."
+ 
+ 
+ ####################################
+ # Armies 							# 
+ ####################################
+ 
+ army_slime:0 "Schleimarmee"
+ army_slime_plural:0 "Schleimarmeen"
+ army_slime_desc:0 "Rudel von in Bottichen gezüchteten Schleimbiestern, die körperlich schwach sind, aber sehr schädlich für die Moral des Feindes. Ein Kader von Wissenschaftlern kontrolliert diese Kreaturen aus einem Bunker hinter unseren Linien."
+ 
+ 
+ ####################################
+ # Resources 						#
+ ####################################
+ 
+ d_slime_deposit:0 "Slime Depot\n"
+ sr_slime:0 "Schleim"
+ sr_slime_desc:0 "Schleimartige Kreaturen, die Photosynthese betreiben können."
+ 
+ 
+ ####################################
+ # Misc 							#
+ ####################################
+ 
+ buildable_sexrobot_pop:0 "$SEXROBOT_POP_SPECIES$"
+ buildable_sexrobot_pop_desc:1 "$trait_robotic_2_desc$"
+ 
+ SEXROBOT_POP_SPECIES:0 "Sex Roboter"
+ SEXROBOT_POP_SPECIES_plural:0 "Sex Roboter"
+ SEXROBOT_POP_SPECIES_adj:0 "Sex Robotisch"
+ 
+ ####################################
+ # Edicts 							#
+ ####################################
+ 
+ #Planetary Edictsxxx
+ edict_synthetic_sexual_selection:0 "Synthetische sexuelle Selektion"
+ edict_synthetic_sexual_selection_desc:1 "Erlaubt unserer Kolonialregierung, unerwünschte Arten zu zwingen, die Jungen von wünschenswerteren Arten auszutragen."
+ edict_repopulation_effort_edict:0 "Wiederbevölkerungsanstrengungen"
+ edict_repopulation_effort_edict_desc:1 "Ein besseres Verständnis davon, wie unsere Bürger denken, ermöglicht es uns, sie weiter zu ermutigen, Nachkommen zu zeugen."

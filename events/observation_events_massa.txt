@@ -1,0 +1,1817 @@
+############################
+#
+# Observation Post Events
+#
+# Written by Darkspleen
+#
+############################
+
+namespace = sexy_observation
+
+@tier1influencecontact = 7
+@tier1influencecontactxenophile = 8
+@tier1influencecontactmin = 20
+@tier1influencecontactmax = 80
+
+@tier2influencecontact = 10
+@tier2influencecontactxenophile = 12
+@tier2influencecontactmin = 40
+@tier2influencecontactmax = 100
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+@tier5materialreward = 48
+@tier5materialmin = 700
+@tier5materialmax = 4000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+@tier5influencereward = 36
+@tier5influencemin = 250
+@tier5influencemax = 500
+@tier6influencereward = 48
+@tier6influencemin = 300
+@tier6influencemax = 600
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+@tier5researchreward = 48
+@tier5researchmin = 300
+@tier5researchmax = 1000
+
+@tier1unityreward = 6
+@tier1unitymin = 40
+@tier1unitymax = 100
+@tier2unityreward = 12
+@tier2unitymin = 80
+@tier2unitymax = 175
+@tier3unityreward = 18
+@tier3unitymin = 125
+@tier3unitymax = 250
+@tier4unityreward = 24
+@tier4unitymin = 150
+@tier4unitymax = 300
+
+
+### PASSIVE OBSERVATION ###
+
+### Sexy Rogue Scientists
+
+# Missing Sexy Scientists (HIDDEN)
+planet_event = {
+	id = sexy_observation.1
+	hide_window = yes
+	
+	trigger = {
+		has_observation_outpost = yes
+		observation_outpost = { has_mission = passive_observation }
+		observation_outpost_owner = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			AND = { 
+				NOT = { has_country_flag = sexy_rogue_scientists_chain }
+				is_ai = no
+			}
+		}
+		owner = {
+			is_country_type = primitive
+			OR = {
+				has_country_flag = stone_age
+				has_country_flag = bronze_age
+				has_country_flag = iron_age
+				has_country_flag = late_medieval_age
+				has_country_flag = renaissance_age
+				has_country_flag = steam_age
+			}
+		}
+		NOT = { has_planet_flag = missing_sexy_scientists_planet }
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	immediate = {
+		observation_outpost_owner = {
+			limit = { 
+				is_ai = no
+				NOT = { has_country_flag = sexy_rogue_scientists_chain }
+			}
+			country_event = { id = sexy_observation.2 }
+		}
+		set_planet_flag = missing_sexy_scientists_planet
+	}
+}
+
+# Missing Sexy Scientists
+country_event = {
+	id = sexy_observation.2
+	title = "sexy_observation.2.name"
+	desc = "sexy_observation.2.desc"
+	picture = GFX_evt_landing_ship
+	show_sound = event_ship_thrusters
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "sexy_observation.2.a"
+		hidden_effect = {
+			random_list = {
+				5 = { country_event = { id = sexy_observation.3 days = 10 random = 5 } }
+				20 = { 
+					set_country_flag = captured_sexy_scientists_origin_1
+					set_country_flag = sexy_rogue_scientists_chain
+				}
+				75 = {
+					set_country_flag = enslaved_scientists_origin_1
+					set_country_flag = sexy_rogue_scientists_chain
+				}
+			}
+		}
+	}
+}
+
+# Missing Sexy Scientists found Dead
+country_event = {
+	id = sexy_observation.3
+	title = "sexy_observation.3.name"
+	desc = "sexy_observation.3.desc"
+	picture = GFX_evt_alien_nature
+	show_sound = event_alien_nature
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "sexy_observation.3.a"
+		add_modifier = {
+			modifier = missing_scientist
+			days = 360
+		}
+	}
+}
+
+# Reports of a Sexy Cult (HIDDEN)
+planet_event = {
+	id = sexy_observation.4
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = missing_sexy_scientists_planet
+		owner = { is_country_type = primitive }
+		has_observation_outpost = yes
+		observation_outpost_owner = {
+			has_country_flag = captured_sexy_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	immediate = {
+		remove_planet_flag = missing_sexy_scientists_planet
+		observation_outpost_owner = {
+			country_event = { id = sexy_observation.5 }
+		}
+	}
+}
+
+# Reports of a Sexy Cult
+country_event = {
+	id = sexy_observation.5
+	title = "sexy_observation.5.name"
+	desc = "sexy_observation.5.desc"
+	picture = GFX_dick_worship
+	show_sound = event_primitive_civilization
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_observation.5.a
+		hidden_effect = {
+			FROM = { 
+				set_planet_flag = sexy_cult_reported
+				owner = {
+					if = {
+						limit = { has_country_flag = stone_age }
+						remove_country_flag = stone_age
+					}				
+					if = {
+						limit = { has_country_flag = bronze_age }
+						remove_country_flag = bronze_age
+					}
+					if = {
+						limit = { has_country_flag = iron_age }
+						remove_country_flag = iron_age
+					}
+					if = {
+						limit = { has_country_flag = late_medieval_age }
+						remove_country_flag = late_medieval_age
+					}
+					if = {
+						limit = { has_country_flag = renaissance_age }
+						remove_country_flag = renaissance_age
+					}
+					if = {
+						limit = { has_country_flag = steam_age }
+						remove_country_flag = steam_age
+					}
+					change_government = {
+						civics = {
+							civic = civic_increasing_urbanization
+							civic = civic_atmospheric_pollution
+						}
+					}
+					set_country_flag = industrial_age
+					set_primitive_age = industrial_age
+				}
+			}
+		}
+	}
+}
+
+# Sexy Scientist Makes Himself Known (HIDDEN)
+planet_event = {
+	id = sexy_observation.6
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = sexy_cult_reported
+		owner = { is_country_type = primitive }
+		observation_outpost_owner = {
+			has_country_flag = captured_sexy_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	immediate = {
+		remove_planet_flag = sexy_cult_reported
+		set_planet_flag = sexy_scientist_revealed
+		observation_outpost_owner = {
+			limit = { has_country_flag = captured_sexy_scientists_origin_1 }
+			country_event = { id = sexy_observation.7 }
+		}
+	}
+}
+
+# Sexy Scientist Makes Himself Known
+country_event = {
+	id = sexy_observation.7
+	title = TRANSMISSION
+	desc = "sexy_observation.7.desc"
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		portrait = root
+		planet_background = from
+		graphical_culture = from
+		room = personality_erudite_explorers_room
+		city_level = from
+	}
+	
+	option = {
+		name = sexy_observation.7.a
+		response_text = sexy_observation.7.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = sexy_observation.7.b
+		response_text = sexy_observation.7.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = sexy_observation.7.c
+		response_text = sexy_observation.7.c.response
+	}
+}
+
+# Rogue Sexy Scientist Consolidates Power (HIDDEN)
+planet_event = {
+	id = sexy_observation.8
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = sexy_scientist_revealed
+		owner = { is_country_type = primitive }
+		has_observation_outpost = yes
+		observation_outpost_owner = {
+			has_country_flag = captured_sexy_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	immediate = {
+		remove_planet_flag = sexy_scientist_revealed
+		observation_outpost_owner = {
+			limit = { has_country_flag = captured_sexy_scientists_origin_1 }
+			country_event = { id = sexy_observation.9 }
+		}
+	}
+}
+
+# Rogue Sexy Scientist Consolidates Power
+country_event = {
+	id = sexy_observation.9
+	title = "sexy_observation.9.name"
+	desc = "sexy_observation.9.desc"
+	picture = GFX_evt_colony_settlement
+	show_sound = event_planetary_riot
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				owner = {
+					remove_country_flag = industrial_age
+					set_country_flag = machine_age
+					set_primitive_age = machine_age
+				}
+			}
+		}
+	}
+	
+	option = { # Support Operation
+		name = "sexy_observation.9.a"
+		from = {
+			enable_special_project = {
+				name = "EXTRACT_ROGUE_SEXY_SCIENTIST"
+				location = this
+				owner = root
+			}
+		}
+	}
+	option = { # Deny Operation
+		name = "sexy_observation.9.b"
+	}
+}
+
+# Successful Extraction
+ship_event = {
+	id = sexy_observation.10
+	title = "sexy_observation.10.name"
+	desc = "sexy_observation.10.desc"
+	picture = GFX_evt_colony_settlement # CHANGE TO BURNING SETTLEMENT
+	show_sound = event_ground_battle
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "sexy_observation.10.a"
+		hidden_effect = {
+			FROMFROM = {
+				random_list = {
+					33 = { set_planet_flag = extraction_sexy_civil_war }
+					33 = { set_planet_flag = extraction_sexy_regression }
+					33 = { set_planet_flag = extraction_sexy_continued_development }
+				}
+			}
+		}
+	}
+}
+
+# Planet Descends into Civil War (HIDDEN)
+planet_event = {
+	id = sexy_observation.11
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = extraction_sexy_civil_war
+		owner = { is_country_type = primitive }
+		observation_outpost_owner = {
+			has_country_flag = captured_sexy_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	immediate = {
+		remove_planet_flag = extraction_sexy_civil_war
+		observation_outpost_owner = {
+			limit = { has_country_flag = captured_sexy_scientists_origin_1 }
+			country_event = { id = sexy_observation.12 }
+		}
+	}
+}
+
+# Planet Descends into Civil War
+country_event = {
+	id = sexy_observation.12
+	title = "sexy_observation.12.name"
+	desc = "sexy_observation.12.desc"
+	picture = GFX_gangrape_1
+	show_sound = event_ground_battle
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "sexy_observation.12.a"
+	}
+}
+
+# Planet Regresses (HIDDEN)
+planet_event = {
+	id = sexy_observation.13
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = extraction_sexy_regression
+		owner = { is_country_type = primitive }
+		observation_outpost_owner = {
+			has_country_flag = captured_sexy_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	immediate = {
+		remove_planet_flag = extraction_sexy_regression
+		observation_outpost_owner = {
+			limit = { has_country_flag = captured_sexy_scientists_origin_1 }
+			country_event = { id = sexy_observation.14 }
+		}
+	}
+}
+
+# Planet Regresses
+country_event = {
+	id = sexy_observation.14
+	title = "sexy_observation.14.name"
+	desc = "sexy_observation.14.desc"
+	picture = GFX_consensual_sex_1
+	show_sound = event_primitive_civilization
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			owner = {
+				remove_country_flag = machine_age
+				random_list = {
+					50 = { 
+						set_country_flag = steam_age 
+						set_primitive_age = steam_age
+					}
+					50 = { 
+						set_country_flag = renaissance_age 
+						set_primitive_age = renaissance_age
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "sexy_observation.14.a"
+	}
+}
+
+# Observation Outpost Destroyed (Scientist Extracted) (HIDDEN)
+planet_event = {
+	id = sexy_observation.15
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = extraction_sexy_continued_development
+		owner = { is_country_type = primitive }
+		has_observation_outpost = yes
+		observation_outpost_owner = {
+			has_country_flag = captured_sexy_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	immediate = {
+		remove_planet_flag = extraction_sexy_continued_development
+		owner = { set_country_flag = extraction_sexy_teched_up }
+		observation_outpost_owner = {
+			limit = { has_country_flag = captured_sexy_scientists_origin_1 }
+			country_event = { id = sexy_observation.16 }
+		}
+	}
+}
+
+# Observation Outpost Destroyed (Scientist Extracted) 
+country_event = {
+	id = sexy_observation.16
+	title = "sexy_observation.16.name"
+	desc = "sexy_observation.16.desc"
+	picture = GFX_evt_exploding_ship
+	show_sound = event_ship_explosion
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			owner = {
+				country_event = { id = primitive.16 }
+			}
+		}
+	}
+	
+	option = {
+		name = "sexy_observation.16.a"
+		hidden_effect = {
+			remove_country_flag = captured_sexy_scientist_origin_1
+			set_country_flag = extracted_sexy_holy_savior
+		}
+	}
+}
+
+# Aliens demand Holy Savior (HIDDEN)
+country_event = {
+	id = sexy_observation.17
+	hide_window = yes
+	
+	trigger = {
+		has_country_flag = extraction_sexy_teched_up
+		is_primitive = no
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		remove_country_flag = extraction_sexy_teched_up
+		random_country = {
+			limit = { has_country_flag = extracted_sexy_holy_savior }
+			country_event = { id = sexy_observation.18 }
+			remove_country_flag = extracted_sexy_holy_savior
+		}
+	}
+}
+
+# Aliens demand Holy Savior
+country_event = {
+	id = sexy_observation.18
+	title = TRANSMISSION
+	desc = "sexy_observation.18.desc"
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_observation.18.a
+		response_text = sexy_observation.18.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = sexy_observation.18.b
+		response_text = sexy_observation.18.b.response
+	}
+	option = {
+		name = sexy_observation.18.c
+		response_text = sexy_observation.18.c.response
+		hidden_effect = {
+			country_event = { id = sexy_observation.19 days = 20 random = 10 }
+		}
+	}
+}
+
+# Holy Savior Returned
+country_event = {
+	id = sexy_observation.19
+	title = TRANSMISSION
+	desc = "sexy_observation.19.desc"
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_observation.19.a
+	}
+}
+
+# Observation Outpost Destroyed (Scientist Not Extracted) 
+country_event = {
+	id = sexy_observation.20
+	title = "sexy_observation.16.name"
+	desc = "sexy_observation.20.desc"
+	picture = GFX_evt_exploding_ship
+	show_sound = event_ship_explosion
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			owner = {
+				country_event = { id = primitive.16 }
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_observation.16.a
+	}
+}
+
+# Rogue Scientists Captured by Natives (HIDDEN)
+planet_event = {
+	id = sexy_observation.21
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = missing_sexy_scientists_planet
+		owner = { is_country_type = primitive }
+		has_observation_outpost = yes
+		observation_outpost_owner = {
+			has_country_flag = enslaved_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+		remove_planet_flag = missing_sexy_scientists_planet
+		observation_outpost_owner = {
+			country_event = { id = sexy_observation.22 }
+		}
+	}
+}
+
+# Rogue Scientists Captured by Natives
+country_event = {
+	id = sexy_observation.22
+	title = "sexy_observation.22.name"
+	desc = "sexy_observation.22.desc"
+	picture = GFX_scientist_captured_primitives
+	show_sound = event_primitive_civilization
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_observation.22.a
+		hidden_effect = {
+			FROM = { 
+				set_planet_flag = sexy_scientists_captured
+			}
+		}
+	}
+}
+
+# Sexy Scientists Sold (HIDDEN)
+planet_event = {
+	id = sexy_observation.23
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = sexy_scientists_captured
+		owner = { is_country_type = primitive }
+		observation_outpost_owner = {
+			has_country_flag = enslaved_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	immediate = {
+		remove_planet_flag = sexy_scientists_captured
+		set_planet_flag = sexy_scientists_sold
+		observation_outpost_owner = {
+			limit = { has_country_flag = enslaved_scientists_origin_1 }
+			country_event = { id = sexy_observation.24 }
+		}
+	}
+}
+
+# Sexy Scientists Sold
+country_event = {
+	id = sexy_observation.24
+	title = "sexy_observation.24.name"
+	desc = "sexy_observation.24.desc"
+	picture = GFX_slave_line
+	show_sound = event_primitive_civilization
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_observation.24.a
+	}
+}
+
+# Fun with Sexy Scientists (HIDDEN)
+planet_event = {
+	id = sexy_observation.25
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = sexy_scientists_sold
+		owner = { is_country_type = primitive }
+		observation_outpost_owner = {
+			has_country_flag = enslaved_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		Days = 5
+	}
+	
+	immediate = {
+		remove_planet_flag = sexy_scientists_sold
+		set_planet_flag = sexy_scientists_fun_1
+		observation_outpost_owner = {
+			limit = { has_country_flag = enslaved_scientists_origin_1 }
+			country_event = { id = sexy_observation.26 }
+		}
+	}
+}
+
+# Scientist Mounts
+country_event = {
+	id = sexy_observation.26
+	title = "sexy_observation.26.name"
+	desc = "sexy_observation.26.desc"
+	picture = GFX_human_mounts
+	show_sound = event_primitive_civilization
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_observation.26.a
+		Trigger = {
+			owner = {
+				NOR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_observation.26.b
+		Trigger = {
+			Owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		add_influence = -50
+	}
+	
+	option = {
+		name = sexy_observation.26.c
+		Trigger = {
+			owner = {
+				Or = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
+
+# Domestic Scientist Slaves (HIDDEN)
+planet_event = {
+	id = sexy_observation.27
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = sexy_scientists_fun_1
+		owner = { is_country_type = primitive }
+		observation_outpost_owner = {
+			has_country_flag = enslaved_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		Days = 5
+	}
+	
+	immediate = {
+		remove_planet_flag = sexy_scientists_fun_1
+		set_planet_flag = sexy_scientists_fun_2
+		observation_outpost_owner = {
+			limit = { has_country_flag = enslaved_scientists_origin_1 }
+			country_event = { id = sexy_observation.28 }
+		}
+	}
+}
+
+# Domestic Scientist Slaves
+country_event = {
+	id = sexy_observation.28
+	title = "sexy_observation.28.name"
+	desc = "sexy_observation.28.desc"
+	picture = GFX_domestic_slave
+	show_sound = event_primitive_civilization
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexy_observation.28.a
+	}
+	
+	option = {
+		name = sexy_observation.28.b
+		trigger = {
+			owner = {
+				Or = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+}
+
+# Breeding the Scientists (HIDDEN)
+planet_event = {
+	id = sexy_observation.29
+	hide_window = yes
+	
+	trigger = {
+		has_planet_flag = sexy_scientists_fun_2
+		owner = { is_country_type = primitive }
+		observation_outpost_owner = {
+			has_country_flag = enslaved_scientists_origin_1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	immediate = {
+		remove_planet_flag = sexy_scientists_fun_2
+		set_planet_flag = sexy_scientists_breeding
+		observation_outpost_owner = {
+			limit = { has_country_flag = enslaved_scientists_origin_1 }
+			country_event = { id = sexy_observation.30 }
+		}
+		this = { save_event_target_as = enslaved_scientists_planet }
+	}
+}
+
+# Breeding the Scientists
+country_event = {
+	id = sexy_observation.30
+	title = "sexy_observation.30.name"
+	desc = "sexy_observation.30.desc"
+	picture = GFX_group_sex
+	show_sound = event_primitive_civilization
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	
+	THIS = {
+		owner_main_species = {
+			save_event_target_as = empirespecies
+		}
+	}
+	
+	
+	option = { # Support Operation
+		name = "sexy_observation.30.a"
+		from = {
+			enable_special_project = {
+				name = "EXTRACT_ENSLAVED_SCIENTISTS"
+				location = this
+				owner = root
+			}
+		}
+	}
+	
+	option = { # Support Operation
+		name = "sexy_observation.30.b"
+		Trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		from = {
+			enable_special_project = {
+				name = "EXTRACT_ENSLAVED_SCIENTISTS"
+				location = this
+				owner = root
+			}
+		}
+	}
+	
+	option = { # Deny Operation
+		name = "sexy_observation.30.c"
+#		country_event = { id = sexy_observation.32 days = 300 } #Bugged
+	}
+}
+
+# Successful Extraction
+ship_event = {
+	id = sexy_observation.31
+	title = "sexy_observation.31.name"
+	desc = "sexy_observation.31.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "sexy_observation.31.a"
+		owner = { 
+			add_monthly_resource_mult = {
+					resource = unity
+					value = @tier2unityreward
+					min = @tier2unitymin
+					max = @tier2unitymax
+			}
+		}
+		hidden_effect = {
+			FROMFROM = {
+				set_planet_flag = scientists_extracted
+			}
+		}
+	}
+}
+
+# Scientists not Extracted
+country_event = {
+	id = sexy_observation.32
+	title = "sexy_observation.32.name"
+	desc = "sexy_observation.32.desc"
+	picture = GFX_slave_line
+	show_sound = event_primitive_civilization
+	location = FROMFROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:enslaved_scientists_planet = {
+			best_tile_for_pop = {
+				create_pop = {
+					species = event_target:empirespecies.species
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexy_observation.32.a
+	}
+}
+
+### AGGRESSIVE OBSERVATION ###
+
+### Close Encounters of the Probing Kind (HIDDEN)
+planet_event = {
+	id = sexy_observation.201
+	hide_window = yes
+	
+	trigger = {
+		has_observation_outpost = yes
+		observation_outpost = { has_mission = specimen_collection }
+		observation_outpost_owner = { 
+			is_ai = no
+			NOT = {
+				has_relation_flag = {
+					who = root.owner
+					flag = probe_droids
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	immediate = {
+		owner = { save_event_target_as = prim_civ }
+		observation_outpost_owner = {
+			country_event = { id = sexy_observation.202 }
+			set_relation_flag = {
+				who = event_target:prim_civ
+				flag = probe_droids
+			}
+		}
+	}
+}
+
+# Close Encounters of the Probing Kind
+country_event = {
+	id = sexy_observation.202
+	title = "sexy_observation.202.name"
+	desc = "sexy_observation.202.desc"
+	diplomatic = yes
+	show_sound = event_laboratory_sound
+	location = FROM
+
+	is_triggered_only = yes
+	
+		picture_event_data = {
+		room = probing_droids_room
+	}
+	
+	option = {
+		name = "sexy_observation.202.a"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+}
+
+###  Breeding Experiments (HIDDEN)
+planet_event = {
+	id = sexy_observation.203
+	hide_window = yes
+	
+	trigger = {
+		has_observation_outpost = yes
+		observation_outpost = { has_mission = specimen_collection }
+		observation_outpost_owner = { 
+			is_ai = no
+			NOT = {
+				has_relation_flag = {
+					who = root.owner
+					flag = breeding_experiments
+				}
+			}
+			has_relation_flag = {
+				who = root.owner
+				flag = probe_droids
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		owner = { save_event_target_as = prim_civ }
+		observation_outpost_owner = {
+			country_event = { id = sexy_observation.204 }
+			set_relation_flag = {
+				who = event_target:prim_civ
+				flag = breeding_experiments
+			}
+		}
+	}
+}
+
+# Breeding Experiments
+country_event = {
+	id = sexy_observation.204
+	title = "sexy_observation.204.name"
+	desc = "sexy_observation.204.desc"
+	diplomatic = yes
+	show_sound = event_laboratory_sound
+	location = FROM
+
+	is_triggered_only = yes
+	
+		picture_event_data = {
+		room = breeding_experiments_room
+	}
+	
+	option = {
+		name = "sexy_observation.204.a"
+		TRIGGER = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+	option = {
+		TRIGGER = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		name = "sexy_observation.204.b"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+	option = {
+		TRIGGER = {
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		name = "sexy_observation.204.c"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+	}
+}
+
+###  Probing/Xenosex Gate (HIDDEN)
+planet_event = {
+	id = sexy_observation.205
+	hide_window = yes
+	
+	trigger = {
+		has_observation_outpost = yes
+		observation_outpost = { has_mission = specimen_collection }
+		observation_outpost_owner = { 
+			is_ai = no
+			NOR = {
+				has_relation_flag = {
+					who = root.owner
+					flag = breeding_experiments_continued
+				}
+				has_relation_flag = {
+					who = root.owner
+					flag = probing_continued
+				}
+			}
+			has_relation_flag = {
+				who = root.owner
+				flag = breeding_experiments
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	immediate = {
+		owner = { save_event_target_as = prim_civ }
+		random_list = {
+			30 = {
+				observation_outpost_owner = {
+					country_event = { id = sexy_observation.206 }
+					set_relation_flag = {
+						who = event_target:prim_civ
+						flag = probing_continued
+					}
+				}			
+			}
+			70 = {
+				observation_outpost_owner = {
+					country_event = { id = sexy_observation.209 }
+					set_relation_flag = {
+						who = event_target:prim_civ
+						flag = breeding_experiments_continued
+					}
+				}			
+			}
+		}
+	}
+}
+
+# Probing Continued
+country_event = {
+	id = sexy_observation.206
+	title = "sexy_observation.206.name"
+	desc = "sexy_observation.206.desc"
+	diplomatic = yes
+	show_sound = event_laboratory_sound
+	location = FROM
+
+	is_triggered_only = yes
+	
+		picture_event_data = {
+		room = probing_continued_room
+	}
+	
+	option = {
+		name = "sexy_observation.206.a"
+		TRIGGER = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+	option = {
+		TRIGGER = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		name = "sexy_observation.206.b"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+	option = {
+		TRIGGER = {
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		name = "sexy_observation.206.c"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+	}
+}
+
+###  Masochistic Tendencies (HIDDEN)
+planet_event = {
+	id = sexy_observation.207
+	hide_window = yes
+	
+	trigger = {
+		has_observation_outpost = yes
+		observation_outpost = { has_mission = specimen_collection }
+		observation_outpost_owner = { 
+			is_ai = no
+			NOT = {
+				has_relation_flag = {
+					who = root.owner
+					flag = masochistic_tendencies
+				}
+			}
+			has_relation_flag = {
+				who = root.owner
+				flag = probing_continued
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		owner = { save_event_target_as = prim_civ }
+		observation_outpost_owner = {
+			country_event = { id = sexy_observation.208 }
+			set_relation_flag = {
+				who = event_target:prim_civ
+				flag = masochistic_tendencies
+			}
+		}
+	}
+}
+
+# Masochistic Tendencies
+country_event = {
+	id = sexy_observation.208
+	title = "sexy_observation.208.name"
+	desc = "sexy_observation.208.desc"
+	diplomatic = yes
+	show_sound = event_laboratory_sound
+	location = FROM
+
+	is_triggered_only = yes
+	
+		picture_event_data = {
+		room = masochistic_tendencies_room
+	}
+	
+	immediate = {
+		FROM = {
+			owner = {
+				random_list = {
+					75 = { 
+						shift_ethic = "ethic_xenophile"
+						FROM = {
+							every_owned_pop = { pop_change_ethic = "ethic_xenophile" }
+							every_owned_pop = {
+								limit = {
+									is_robot_pop = no
+									is_sapient = yes
+								}
+								if = {
+									limit = {
+										NOT = { has_trait = trait_behavior_masochistic }
+									}
+									modify_species = {
+										species = this
+										add_trait = trait_behavior_masochistic
+									}
+								}
+							}
+						}
+					}
+					25 = {
+						shift_ethic = "ethic_fanatic_xenophile"
+						FROM = {
+							every_owned_pop = { pop_change_ethic = "ethic_xenophile" }
+							every_owned_pop = {
+								limit = {
+									is_robot_pop = no
+									is_sapient = yes
+								}
+								if = {
+									limit = {
+										NOT = { has_trait = trait_behavior_masochistic }
+									}
+									modify_species = {
+										species = this
+										add_trait = trait_behavior_masochistic
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "sexy_observation.208.a"
+		custom_tooltip = sexy_observation.208.a.tooltip
+	}
+}
+
+# Breeding Experiment Continued
+country_event = {
+	id = sexy_observation.209
+	title = "sexy_observation.209.name"
+	desc = "sexy_observation.209.desc"
+	diplomatic = yes
+	show_sound = event_laboratory_sound
+	location = FROM
+
+	is_triggered_only = yes
+	
+		picture_event_data = {
+		room = breeding_experiments_2_room
+	}
+	
+	option = {
+		name = "sexy_observation.209.a"
+		TRIGGER = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+	option = {
+		TRIGGER = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		name = "sexy_observation.209.b"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+	option = {
+		TRIGGER = {
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		name = "sexy_observation.209.c"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+	}
+}
+
+###  Breeding Experiments End(HIDDEN)
+planet_event = {
+	id = sexy_observation.210
+	hide_window = yes
+	
+	trigger = {
+		has_observation_outpost = yes
+		observation_outpost = { has_mission = specimen_collection }
+		observation_outpost_owner = { 
+			is_ai = no
+			NOT = {
+				has_relation_flag = {
+					who = root.owner
+					flag = breeding_experiments_end
+				}
+			}
+			has_relation_flag = {
+				who = root.owner
+				flag = breeding_experiments_continued
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		owner = { save_event_target_as = prim_civ }
+		observation_outpost_owner = {
+			country_event = { id = sexy_observation.211 }
+			set_relation_flag = {
+				who = event_target:prim_civ
+				flag = breeding_experiments_end
+			}
+		}
+	}
+}
+
+# Breeding Experiment End
+country_event = {
+	id = sexy_observation.211
+	title = "sexy_observation.211.name"
+	desc = "sexy_observation.211.desc"
+	diplomatic = yes
+	show_sound = event_laboratory_sound
+	location = FROM
+
+	is_triggered_only = yes
+	
+		picture_event_data = {
+		room = breeding_experiments_end_room
+	}
+	
+	option = {
+		name = "sexy_observation.211.a"
+		TRIGGER = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+	option = {
+		TRIGGER = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		name = "sexy_observation.211.b"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+	option = {
+		TRIGGER = {
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		name = "sexy_observation.211.c"
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+	}
+}
+
+### Sexy Modification (HIDDEN)
+planet_event = {
+	id = sexy_observation.212
+	hide_window = yes
+	
+	trigger = {
+		any_pop = {
+			OR = {
+				NOT = { pop_has_trait = trait_body_ample_mammary_glands }
+				NOT = { pop_has_trait = trait_physical_lustful_body }
+			}
+		}
+		has_observation_outpost = yes
+		observation_outpost = { has_mission = specimen_collection }
+		observation_outpost_owner = { 
+			is_ai = no
+			has_technology = tech_gene_tailoring
+			NOT = {
+				has_relation_flag = {
+					who = root.owner
+					flag = sexy_modification
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600 #50 years
+	}
+	
+	immediate = {
+		owner = { save_event_target_as = prim_civ }
+		root = { save_event_target_as = modification_location }
+		observation_outpost_owner = {
+			country_event = { id = sexy_observation.213 }
+			set_relation_flag = {
+				who = event_target:prim_civ
+				flag = sexy_modification
+			}
+		}
+	}
+}
+
+# Sexy Modification
+country_event = {
+	id = sexy_observation.213
+	title = "sexy_observation.213.name"
+	desc = "sexy_observation.213.desc"
+	diplomatic = yes
+	show_sound = event_laboratory_sound
+	location = FROM
+
+	is_triggered_only = yes
+	
+		picture_event_data = {
+		room = sexy_modification_room
+	}
+	
+	option = {
+		name = "sexy_observation.213.a"
+		from = {
+			enable_special_project = {
+				name = "SEXY_MODIFICATION_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+	
+	option = {
+		name = "sexy_observation.213.b"
+	}
+}
+
+# Sexy Modification Completed
+ship_event = {
+	id = sexy_observation.1213
+	title = "sexy_observation.1213.name"
+	desc = "sexy_observation.1213.desc"
+	diplomatic = yes
+	show_sound = event_laboratory_sound
+	location = FROMFROM
+
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = sexy_modification_room
+	}
+	
+	option = {
+		name = "sexy_observation.1213.a"
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+		FROMFROM = {
+			hidden_effect = {
+				random_list = {
+					50 = {
+						modifier = {
+							factor = 0
+							any_pop = {
+								OR = {
+									pop_has_trait = trait_physical_lustful_body
+									pop_has_trait = trait_body_meager_mammary_glands
+								}
+							}
+						}
+						every_owned_pop = {
+							limit = {
+								is_robot_pop = no
+								is_sapient = yes
+							}
+							modify_species = {
+								species = this
+								add_trait = trait_physical_lustful_body
+							}
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 0
+							any_pop = {				
+								pop_has_trait = trait_body_ample_mammary_glands
+							}
+						}
+						every_owned_pop = {
+							limit = {
+								is_robot_pop = no
+								is_sapient = yes
+							}
+							if = {
+								limit = {
+									pop_has_trait = trait_body_meager_mammary_glands
+								}
+								modify_species = {
+									species = this
+									remove_trait = trait_body_meager_mammary_glands
+									add_trait = trait_body_ample_mammary_glands
+								}
+								PREV = {
+									change_dominant_species = { species = last_created change_all = yes }
+								}
+								else = {
+									modify_species = {
+										species = this
+										add_trait = trait_body_ample_mammary_glands
+									}	
+									PREV = {
+										change_dominant_species = { species = last_created change_all = yes }
+									}									
+								}
+							}						
+
+						}
+					}				
+					
+				}
+			}			
+		}
+	}
+}
+
+### COVERT INFILTRATION
+
+#Lustful Machinations (HIDDEN)
+planet_event = {
+	id = sexy_observation.301
+	hide_window = yes
+	
+	trigger = {
+		has_observation_outpost = yes
+		observation_outpost = { 
+			has_mission = covert_infiltration
+			mission_progress > 0.1
+		}
+		observation_outpost_owner = {
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				has_country_flag = observation_lustful_machinations
+			}
+			has_technology = tech_cyber_sextoys
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		observation_outpost_owner = {
+			set_country_flag = observation_lustful_machinations
+			country_event = { id = sexy_observation.302 }
+		}
+	}
+}
+
+# Lustful Machinations
+country_event = {
+	id = sexy_observation.302
+	title = "sexy_observation.302.name"
+	desc = "sexy_observation.302.desc"
+	diplomatic = yes
+	show_sound = event_conversation
+	location = FROM
+	
+	picture_event_data = {
+		room = robot_spider_sex_room
+	}	
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			observation_outpost = { add_mission_progress = +0.2 }
+		}
+	}
+	
+	option = {
+		name = "sexy_observation.302.a"
+		tooltip = {
+			FROM = {
+				observation_outpost = { add_mission_progress = +0.2 }
+			}
+		}
+	}
+}

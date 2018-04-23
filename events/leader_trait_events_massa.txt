@@ -1,0 +1,43 @@
+namespace = trait_leader
+
+#Spawn Sadist Leader Traits
+country_event = {
+	id = trait_leader.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		from = {
+			species = {
+				has_trait = trait_behavior_sadistic
+			}
+			Not = {
+				has_trait = leader_trait_ruler_sadistic
+				has_trait = leader_trait_general_sadistic
+				has_trait = leader_trait_admiral_sadistic
+			}		
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_sadistic
+				add_ruler_trait = leader_trait_ruler_sadistic
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_sadistic
+				add_ruler_trait = leader_trait_ruler_sadistic
+				break = yes
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_ruler_trait = leader_trait_ruler_sadistic
+				break = yes
+			}
+		}
+	}
+}

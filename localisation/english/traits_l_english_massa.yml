@@ -1,0 +1,78 @@
+﻿l_english:
+
+######################
+### Species traits ###
+######################
+
+ # Presentient Traits
+ 
+ trait_presapient_tentacle_lifeform: "Tentacled Lifeforms"
+ trait_presapient_tentacle_lifeform_desc: "§LMembers of this species are noteworthy for their tentacle-like reproductive organs.§!\n"
+
+ # Traits
+ 
+ trait_behavior_sadistic: "Sadistic"
+ trait_behavior_sadistic_desc: "§LMembers of this species enjoy inflicting pain and humiliation on others. They enjoy dominating others, especially sexually. Will trigger unique §Yevents§!§!\n"
+ 
+ trait_behavior_masochistic: "Masochistic"
+ trait_behavior_masochistic_desc: "§LMembers of this species seek pain and humiliation and the pleasure they bring. They enjoy being dominated by others, especially sexually. Best when paired with §RSadistic§! pops.§!\n"
+
+ trait_adaptive_reproductive_organs: "Adaptive Reproductive Organs"
+ trait_adaptive_reproductive_organs_desc: "§LThe reproductive organs of this species has been genetically modified to allow interspecies procreation.§!\n"
+ TRAIT_ADAPTIVE_REPRODUCTIVE_ORGANS_EFFECT:2 "Allows to select the §BInterspecies Supported Reproduction§! policy.\n$MOD_POP_OTHER_SPECIES_OWNER_HAPPINESS$: §G+10%§!"
+
+trait_aggressively_adaptive_reproductive_organs: "Aggressively Adaptive Reproductive Organs"
+trait_aggressively_adaptive_reproductive_organs_desc: "§LThe reproductive organs of this species has been genetically modified to not only allow interspecies procreation, but do so in a way that lets this species gradually replace pops of species without the §YProles§! and §YTentacle§! traits.§! Pops that are enslaved or otherwise cannot reproduce will not replace other pops.\n"
+
+trait_seasonal_breeders: "Seasonal Breeders"
+trait_seasonal_breeders_desc: "§LMembers of this species have a set window during which they feel the need to breed, allowing them to focus on other tasks while not in their breeding season. During their breeding season they become less productive as they meet their instictual urge to reproduce.§!\n"
+
+trait_physical_lustful_body: "Lustful Body"
+trait_physical_lustful_body_desc: "§LThe physical appearance of this species acts as a very strong sexual stimuli, even for radically different species. Even the 'plainest' members of this species possess what other species would refer to as a 'bombshell body.'§!\n"
+ 
+trait_body_ample_mammary_glands: "Ample Mammary Glands"
+trait_body_ample_mammary_glands_desc: "§LThis species possesses abnormally large mammary glands. While this certainly makes the males of the species happy, and increases their sex drive, this unfortunately reduces the females' ability to do physical labor."§!\n"
+
+trait_body_meager_mammary_glands: "Meager Mammary Glands"
+trait_body_meager_mammary_glands_desc: "§LThe mammary glands of this species are, on average, remarkable small. While this certainly doesn't help the sex drive of the males of the species, nor does it make them happy, the small size of the mammary glands enables the females of the species to perform phsycial activities better."§!\n"
+ 
+ # Robot Traits
+ 
+ trait_android_1: "Sex Android"
+ trait_android_1_desc: "§LSex androids are an improved variant of the regular droids, they are designed to emulate love emotions and provide sexual pleasure to their owners or partners.§!\n"
+ 
+ trait_robot_sexbot: "Improved Sexual Hardware"
+ trait_robot_sexbot_desc: "§LAn upgrade destined to improve the body and the artificial sexual organs of the Sex Androids, allowing an optimal sexual experience.§!\n"
+ trait_robot_womb: "Synthetic Womb"
+ trait_robot_womb_desc: "§LAn artificial womb allowing Sex Androids to procreate with biological species.§!\n"
+  
+#####################
+### Leader Traits ###
+#####################
+
+ # Ruler Traits
+ # Purple §M for Expertise, Blue §B for Politics, $R for Personality and Green §G for Skills
+ leader_trait_ruler_sadistic: "Sadistic"
+ leader_trait_ruler_sadistic_desc: "§LThis ruler is known to be a §Rcruel§! individual.§!\n"
+ 
+ # Governor Traits
+ # Purple §M for Expertise, Blue §B for Politics, $R for Personality and Green §G for Skills
+
+ 
+ # Admiral Traits
+ # Purple §M for Expertise, Blue §B for Tactics, $R for Personality and Green §G for Skills
+ 
+ leader_trait_admiral_sadistic: "Sadistic"
+ leader_trait_admiral_sadistic_desc: "§LThis leader focuses on dealing as much damage as possible to the enemy. Sadistic admirals are prone to torturing and sexually assaulting defeated foes and the populations of worlds they are bombarding.§!\n"
+ 
+ # General Leader Traits
+ # Purple §M for Expertise, Blue §B for Tactics, $R for Personality and Green §G for Skills
+ leader_trait_general_sadistic: "Sadistic"
+ leader_trait_general_sadistic_desc: "§LThis leader focuses on dealing as much damage as possible to the enemy.§!\n"
+ 
+ # Some strings
+
+
+ #######################
+ ### Trait Modifiers ###
+ #######################

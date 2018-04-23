@@ -1,0 +1,30 @@
+################################################
+# MASSA - Armies							   #
+# Author: Mk40							   	   #
+################################################
+
+# Slime Armies
+army_slime = {
+	damage = 0.25
+	health = 1.50
+	morale = 8.0
+	morale_damage = 10.0
+	collateral_damage = 1.25
+	war_exhaustion = 0.25
+	time = 90
+	maintenance = 0.4
+	icon_frame = 8
+	has_species = no
+	
+	cost = {
+		minerals = 10
+		food = 25
+	}
+	
+	prerequisites = { "tech_slime_vats" }
+	allow = {
+		OR = {
+			has_building = "building_slime_vats"
+		}
+	}
+}

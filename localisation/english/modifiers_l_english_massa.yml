@@ -1,0 +1,58 @@
+﻿l_english:
+
+ ###########################################################################
+ ############# Written by Darkspleen for Make Space Sexy Again #############
+ ###########################################################################
+
+ ####################################
+ # Empire Modifiers 
+ ####################################
+ 
+ biology_insights: "Biology Insights"
+ futa_outlawed: "Futas Outlawed"
+ contraceptive_boom: "Contraceptive Boom"
+ festival_of_love_outlawed: "Festival of Love Outlawed"
+ military_recreational_sex_study: "Military Recreational Sex Study"
+ xeno_businesses_accepted: "Xeno Businesses Accepted"
+ booming_prostitution_industry: "Booming Prostitution Industry"
+ 
+ ####################################
+ # Planet Modifiers 
+ ####################################
+ 
+ tentacled_lifeforms: "Tentacled Lifeforms"
+ tentacled_lifeforms_desc: "Lifeforms with prominent tentacle characteristics inhabit this world."
+ aggressive_tentacled_lifeforms: "Aggressive Tentacled Lifeforms"
+ aggressive_tentacled_lifeforms_desc: "The tentacled lifeforms on this planet are hostile."
+ coexisting_tentacled_lifeforms: "Coexisting Tentacled Lifeforms"
+ coexisting_tentacled_lifeforms_desc: "The tentacled lifeforms on this planet coexist with the people."
+ festival_of_love: "Festival of Love"
+ festival_of_love_desc: "The citizens of this planet are engaged in a planetwide orgy."
+ 
+ ####################################
+ # Ship/Fleet Modifiers 
+ ####################################
+ 
+ embarrassed_crew: "Embarrassed Crew"
+ horrified_crew: "Horrified Crew"
+ 
+ ####################################
+ # Pop Modifiers
+ ####################################
+ xeno_beast_rape: "Raped by xeno beast"
+ xeno_beast_fun: "Had fun with xeno beast"
+ sadomasochist_fun: "Enjoyed BDSM"
+ abused_by_sadist: "Been abused by a sadist"
+ adaptive_cross_fertilised:0 "Sexual Partners"
+ adaptive_cross_fertilised_xphi:0 "Sexual Partners"
+ sex_slave: "Sex Slave"
+ in_heat: "This pop is in heat"
+ 
+ ####################################
+ # Opinion Modifiers
+ ####################################
+ 
+ ##Civics
+ 
+ opinion_orgasmic_diplomats_civic:1 "Orgasmic Diplomats"
+ civic_invasive_copulation_evolution:1 "Invasive Reproducers"

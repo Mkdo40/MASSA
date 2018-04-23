@@ -1,0 +1,23 @@
+﻿l_german:
+
+ ####################################
+ # Massa Civics
+ ####################################
+ civic_sadomasochist_evolution:0 "Sadomasochistische Evolution"
+ civic_sadomasochist_evolution_desc:0 "Eine zweite Art bildet einen integralen Bestandteil dieser Gesellschaft. Sie waren einmal so kultiviert wie wir und bildeten ihre eigenen Zivilisationen auf unerforschten Teilen des Planeten. Das war, bis wir ihre Spezies unseren Bedürfnissen angepasst hatten. Jetzt sind ihre Schmerzen unser Vergnügen und das gilt auch für sie selbst."
+ civic_sadomasochist_evolution_secondary_species:0 "Masochistische Spezies"
+
+ civic_tooltip_sadomasochist_evolution_effects:1 "Beginne das Spiel mit §Y4§! £pop Bevölkerungspops einer masochistischen Spezies."
+ 
+ civic_sex_slaves:0 "Institutionalisierte Sexsklaverei"
+ civic_sex_slaves_desc:0 "Unsere Gesellschaft hat eine sehr lange Tradition, Sklaven als sexuelle Begleiter zu benutzen. Dies hat dazu geführt, dass einige der Schattenseiten der Sklaverei verloren gegangen sind, während Sklaven und Besitzer glücklicher geworden sind. Sie können keine Prostitution Politik neben Prostitution Sklaverei haben, wenn zu Beginn des Spiels mit der Sex-Sklaverei Tech genommen werden."
+ 
+ civic_orgasmic_diplomats:0 "Orgasmische Diplomaten"
+ civic_orgasmic_diplomats_desc:0 "Sich einfach im selben Raum wie unsere Diplomaten zu befinden, kann andere an den Rand des Orgasmus bringen, ungeachtet ihrer Spezies oder sexuellen Orientierung. Wie kommt es dazu? Es spielt keine Rolle. Was wichtig ist, ist, dass es den Diplomaten anderer Länder egal ist, dass wir fremdenfeindlich sind."
+ civic_tooltip_orgasmic_diplomats_effects:0 "Du erleidest keinen diplomatischen Malus, weil du ein Xenophob bist. Nicht-Xenophobe erhalten einen Bonus auf ihre diplomatische Meinung."
+ 
+ civic_invasive_copulation_evolution:0 "Invasive Kopulation Evolution"
+ civic_invasive_copulation_evolution_desc:0 "Ihre Spezies entwickelte sich mit der Fähigkeit, sich nicht nur mit den meisten anderen Arten zu vermehren, sondern auch so, dass sie Ihre Art begünstigt."
+ civic_tooltip_invasive_copulation_evolution_effects:0 "Ihre Gründungsart beginnt das Spiel mit den §YAggressiv adaptiven Fortpflanzungsorganen§! Eigenschaft, die Ihrer Spezies schnellere Wachstumsraten ermöglicht, wenn sie auf Planeten mit Pops anderer Arten leben. Zusätzlich ersetzt sie Pops die keine §YProleten§ sind oder denen die §YTentakel§!-Fähigkeit fehlt."
+ 
+ #massa_civic_tooltip_authoritarian_xenophobe:0 "Is some degree of §YAuthoritarian§! or §YXenophobe§!"

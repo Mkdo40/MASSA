@@ -1,0 +1,20 @@
+spriteTypes = {
+
+	##########################################
+	### EVENT WINDOW
+
+	spriteType =
+	{
+		name = "GFX_event_picture_bg_triple"
+		texturefile = "gfx/interface/event_window/event_picture_bg_triple.dds"
+		transparencecheck = yes
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_event_frame_triple"
+		texturefile = "gfx/interface/situation_log/event_frame_triple.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask_triple.dds"
+		alwaystransparent = yes	
+	}
+}

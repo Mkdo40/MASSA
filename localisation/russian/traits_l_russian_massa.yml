@@ -1,0 +1,78 @@
+﻿l_russian:
+
+######################
+### Species traits ###
+######################
+
+ # Presentient Traits
+ 
+ trait_presapient_tentacle_lifeform: "Тентаклевый вид"
+ trait_presapient_tentacle_lifeform_desc: "§LЧлены этого вида заслуживают внимания своими щупальцеподобными репродуктивными органами.§!\n"
+
+ # Traits
+ 
+ trait_behavior_sadistic: "Садистические"
+ trait_behavior_sadistic_desc: "§LЧлены этого вида любят причинять боль и унижение другим. Они любят доминировать над другими, особенно сексуально. Будет инициировать уникальные §Yсобытия§!§!\n"
+ 
+ trait_behavior_masochistic: "Мазохистические"
+ trait_behavior_masochistic_desc: "§LЧлены этого вида ищут боль, унижение и удовольствие, которое они приносят. Им нравится когда над ними доминируют, особенно сексуально. Лучше всего в сочетании с §Rсадистическими§! видами.§!\n"
+
+ trait_adaptive_reproductive_organs: "Адаптивные половые органы"
+ trait_adaptive_reproductive_organs_desc: "§LРепродуктивные органы этого вида были генетически модифицированы, чтобы обеспечить межвидовое размножение.§!\n"
+ TRAIT_ADAPTIVE_REPRODUCTIVE_ORGANS_EFFECT:2 "Позволяет выбрать политику §BПоддержка межвидового размножения§!.\n$MOD_POP_OTHER_SPECIES_OWNER_HAPPINESS$: §G+10%§!"
+
+trait_aggressively_adaptive_reproductive_organs: "Агрессивно адаптированные половые органы "
+trait_aggressively_adaptive_reproductive_organs_desc: "§LРепродуктивные органы этого вида генетически модифицированы, чтобы не только допускать межвидовое размножение, но сделать это таким образом, чтобы этот вид постепенно заменял популяции видов без черт §YПролы§! и §YТентакли§!.§! Порабощенные или иначе подавленный вид при воспроизводстве не заменит другие виды.\n"
+
+trait_seasonal_breeders: "Сезонное размножение"
+trait_seasonal_breeders_desc: "§LУ членов этого вида есть временное окно, в течение которого они чувствуют необходимость размножаться, позволяя им сосредоточиться на других задачах вне сезона их размножения. В течение своего сезона размножения они становятся менее продуктивными, так как они следуют их побудительным желаниям к воспроизведению.§!\n"
+
+trait_physical_lustful_body: "Похотливое тело"
+trait_physical_lustful_body_desc: "§LФизическое тело этого вида действует как очень сильный сексуальный стимул даже для радикально разных видов. Даже 'самые неказистые' члены этого вида обладают тем, что другие виды называют телом сексбомбы.'§!\n"
+ 
+trait_body_ample_mammary_glands: "Большая грудь"
+trait_body_ample_mammary_glands_desc: "§LЭтот вид обладает аномально большими молочными железами. Хотя это, несомненно, делает самцов вида счастливыми и увеличивает их сексуальную активность, это, к сожалению, снижает способность женщин выполнять физический труд."§!\n"
+
+trait_body_meager_mammary_glands: "Маленькая грудь"
+trait_body_meager_mammary_glands_desc: "§LМолочные железы этого вида, в среднем, довольно маленькие. Хотя это, конечно же, не способствует сексуальному влечению самцов вида и не делает их счастливыми, малый размер молочных желез позволяет самкам вида выполнять физиологические действия лучше."§!\n"
+ 
+ # Robot Traits
+ 
+ trait_android_1: "Секс Андроид"
+ trait_android_1_desc: "§LСексуальные андроиды - это улучшенный вариант обычных дроидов, они призваны имитировать любовные эмоции и оказывать сексуальное удовольствие их владельцам или партнерам.§!\n"
+ 
+ trait_robot_sexbot: "Улучшенное сексуальное оборудование"
+ trait_robot_sexbot_desc: "§LМодификация, предназначенная для улучшения тела и искусственных половых органов андроидов, позволяющая получить оптимальный сексуальный опыт.§!\n"
+ trait_robot_womb: "Синтетическая матка"
+ trait_robot_womb_desc: "§LИскусственная матка, позволяющая секс-андроидам размножаться с биологическими видами.§!\n"
+  
+#####################
+### Leader Traits ###
+#####################
+
+ # Ruler Traits
+ # Purple §M for Expertise, Blue §B for Politics, $R for Personality and Green §G for Skills
+ leader_trait_ruler_sadistic: "Садист"
+ leader_trait_ruler_sadistic_desc: "§LЭтот лидер известен как §Rжестокий§! персонаж.§!\n"
+ 
+ # Governor Traits
+ # Purple §M for Expertise, Blue §B for Politics, $R for Personality and Green §G for Skills
+
+ 
+ # Admiral Traits
+ # Purple §M for Expertise, Blue §B for Tactics, $R for Personality and Green §G for Skills
+ 
+ leader_trait_admiral_sadistic: "Садист"
+ leader_trait_admiral_sadistic_desc: "§LЭтот лидер сосредотачивается на нанесении как можно большего урона врагу. Садистские адмиралы склонны к пыткам и сексуальным атакам побежденных врагов и популяций миров, которые они бомбардируют.§!\n"
+ 
+ # General Leader Traits
+ # Purple §M for Expertise, Blue §B for Tactics, $R for Personality and Green §G for Skills
+ leader_trait_general_sadistic: "Садист"
+ leader_trait_general_sadistic_desc: "§LЭтот лидер фокусируется на нанесении как можно большего урона врагу.§!\n"
+ 
+ # Some strings
+
+
+ #######################
+ ### Trait Modifiers ###
+ #######################

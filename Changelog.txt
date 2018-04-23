@@ -1,0 +1,164 @@
+v 0.17.2
+-Russian localization added (Thanks slyvan19!)
+-Trait icons redone by MK40
+-Policies Reworked
+-Buildings reworked by MK40 (I take no credit for the buildings #CreditWhereCreditDue)
+-Most massa buildings now have a lower base yield
+-Most slave-related buildings now generate unrest for slaves
+-Red light district now exclusive to non-slavers
+-Added Megamilking Facility
+-Added Dairy Ranch
+-Added Creamery
+-Added upgrade chain to Temple of Love, which ends in a empire-unique Cathedral wonder
+-Slime Vats now produce minerals, and boost adjacent mineral production
+-Added dairy resource. Hormone-ridden cowgirl milk which increases food, and docility of population (gov ethics attraction)
+-Neighbor events now have a mandatory 5 year cooldown (10 if you have longer waits activated) on top of their 5 year MTTH
+-(FIX) Slug Planet anomaly should actually work now
+
+v 0.17.1
+-Leadership Gender policies added
+-Breeding Season is now a hidden event
+-German localization has been updated (Thanks Abominus!)
+-Enhanced compatability with theMan221's Sexual Traits mod
+-Sadistic Celebration event can now only be triggered once in a 30 day period for each fleet
+-(Fix) Added the missing condition that prevent to build both the Temple of Love and Pleasure District on the same planet
+-(Fix) Replaced "has_technology = tech_gene_tailoring " by "has_technology = tech_repopulation_effort" for the Repopulation effort edict
+-(Fix) Adaptive reproductive organs and Aggressively reproductive organs are now opposite traits
+-(Fix) Non-sadistic species should no longer spawn rulers with the Sadistic trait
+-(Fix) Invasive Copulation should now only work on species that can reproduce. No more fucking robots out of existence!
+
+v 0.17
+-Added Masochist Fun Event
+-Added Raunchy Titans event chain
+-Added Xeno Clients event
+-Added Slug Planet anomaly
+-Added new aggressive observation events
+-Added a WIP version of the Sadist Raid event (no localization added as of yet)
+-Added Sadist traits for Admirals, Generals, and Rulers (all leaders of a species that has the sadistic trait will get this leader trait)
+-Added Orgasmic Diplomats and Invasive Copulation Evolution civics
+-Added Seasonal Breeders trait
+-The Sadistic trait for admirals has been toned down a bit
+-Sadomasochist Evolution Civic now gives the secondary species the traits masochistic and adaptive reproductive organs, as well as giving the empire the interpecies reproduction tech
+-Pops withe the adaptive reproductive organs trait now gain growth buffs for pops of other species (basically a copy of the trait from the Asari Civilization mod)
+-Made some changes to the interspecies reproduction trait
+-Added two edicts that allow you to add en extra 2 years of wait time between some of the events
+-Spoils of War should now only fire after you have taken a planet during a battle (needs more testing)
+-Sexbots now require BOTH the droid workers and sexbots tech to build
+-New portraits for the Sexbots (still VERY much a WIP) (Thanks MK40!)
+-Removed the nudity restrictions for the prostitution polcies
+-Added Synthetic Womb trait for sexbots, though it currently does nothing (MK40)
+-Changed the description of the Improved Sex Androids Hardware tech and Improved Sexual Hardware trait (Thanks Mk40!)
+-Made some changes to the Sadistic trait icon (Thanks Mk40!)
+-Buildings have been rebalanced
+-Removed any nudity policies requirement.
+-Nudity Worship tech now give: +10% Gov ethic attraction, +5% unity.
+-Repopulation Effort tech now add a new planetary edict.
+-Added Repopulation Effort edict: +50 Growth speed, -50 Ressource output. (1 Year)
+-Removed the nudity and sexual relationship policies
+
+v 0.16.9
+By Darkspleen:
+-Added Sadist Fun event
+-Added Sadistic Celebration event
+-Increased slime army health and morale damage
+-The Robot Rape event now requires you to have BOTH the robotic workers tech as well as a non sapient robot pop
+-Reworked my purging events and edict
+-Removed my neuterization policies
+-Changed the xenophile option of the Interstellar Exchange event
+-Pacifist option for Festival of Love event should now work
+
+By Mk40:
+- Added 15 new unique techs.
+- Added 5 new building.
+- Added 4 new policies categories (Nudity, Prostitution, Sexual Relations and Interspecies Copulation).
+- Added Sexbot event.
+
+
+v 0.16.3
+-Invasive Tentacles event chance is reduced to 5% per year for each planet with more than 3 pops
+-Invasive Tentacles event influence gain/loss decreased by a factor of ten
+-Updated German localization (again) (Thanks Abominus!)
+-Xeno Zoo Breakout should now be limited to firing on any given planet once every 3 years (will still fire on different planets)
+-Made some changes to how the Futa Sadists event operates (It actually does stuff now! Still a wip)
+-The neuter-purge events should no longer fire after colonizing a planet with primitives (I have no idea why it was operating that way)
+
+v 0.16.2
+-Added Sadomasochist Evolution Civic (Still a work in progress but playable)
+-Added new Sadistic and Masochists traits (Still a work in progress but playable)
+-Added Futa Sadists event (linked to the sadistic trait)
+-Editted the Xeno Zoo Breakout event - There is now only one option and whether the pop is raped or enjoyed it depends on the pops' ethics, not the empire's. Also it now actually affects three different pops
+-Disabled the pacificist option for the Festival of Love event. Will put it back in once the new DLC is live
+-Added Outdoor Fun anomaly failure event and randomized the failure events for several of the anomalies
+-Updated German localization (Thanks Abominus!)
+
+v0.16.1
+-Fixed a ton of things
+-Couldn't get the purge events to function properly, so I changed it to a planetary edict. We'll see how that works and goes from there.
+-Apparently I didn't actually add the Sexbot Event before (and still haven't)
+
+v 0.16
+-Added Neuterization Legislation Policies (currently does nothing but will in the future)
+-Added Science Gone Wrong Event
+-Edited the Cyber Sex Shop event (by mk40)
+-Added new tentacle tile blocker and related tech (Thanks mk40!)
+-The Lusty Plants event now adds tile blockers
+-Added a few new options to the Futa Rising event suggested by mk40
+-Added a few new options to the Festival of Love event suggested by mk40
+-Added a few new options to the Unit Recreational Parties event suggested by mk40
+-Added a new option to the Interstellar Exchange event suggested by mk40
+
+v 0.15.3
+-Made some fixes to the Sexy Scientists events
+-Added an option to the Spoils of War event that will prevent you from triggering it for the next five years
+-Tentacle Portraits updated (Thanks mk40!)
+-Made some fixes to the Sexy Rogue Scientists event chain
+
+v 0.15.2
+-Fixed events should function properly this time
+
+v 0.15.1
+-Interstellar Exchange fixed
+-Robot Rape and Unit Recreational Parties should now no longer fire for two years after one has occured
+-Signifigantly reduced the odds of either the Robot Rape or Unit Recreational Parties events firing
+-Unit Recreational Parties should no longer fire for empires with the gestalt consciousness ethic
+-Influence gain and loss from Robot Rape has been reduced. Spiritualists are no longer forced to kill all of their robot pops, but fantatic spiritualists still must
+-Influence gain/loss for the Spoils of War event has been reduced to 10 to 1 (this only affects militarists and pacificists)
+-Added the Festival of Love event
+-Added the Futa Rising event (enabled after you research Gene Tailoring)
+-There is now a chance of no event occuring each year
+-Colony events should function properly now
+
+
+v 0.15
+-The Raunchy Slime event has been redone by MK40 and now includes a militarist option that unlocks a unique military unit. He has also made a new strategic resource, technology, and building
+-Added Abominus' German translation. (Do note that this includes only the features of the mod as of v 0.14a)
+-Added 'Spoils of War' events
+-Added Sexy Rogue Scientist event chain
+-Made some fixes and corrections pointed out by LordLovecraft
+-Added LordLovecraft's fanatic purifier's option to the Interstellar Exchange event and also set it up so it will no longer fire before encountering another species (code also thanks to LordLovecraft)
+-The Robot Rape event should no longer fire for empires with the gestalt consciousness ethic
+-Reworked how the Invasive Tentacles and Xeno Zoo Breakout events are fired. The Xeno Zoo Breakout event should now fire once every five years and the Invasive Tentacles event now has a 10% chance to fire every five years (the exact timing of when they will occur is randomized)
+-Added a prototype of mk40's tentacle portrait (functional but still very much a work in progress). This protrait is only available via events and won't show up in the empire creation menu.
+
+v 0.14a
+
+-MK40 has re-editted most of the event pics
+-Should now be compatible with both Real Space and Planet Diversity
+-Added The Tentacled Natives colony event
+-New anomaly critical failure added
+
+v 0.13a
+
+-Added the Tentacled Lifeforms anomaly event
+-Fixed Unit Recreational Parties
+-Set colony events so they'll actually be called
+-The Interstellar Exchange, In Heat, and Captured By Primitives (not implemented yet) event GFX have been redone by MK40
+
+v 0.12a
+
+-Changed bi-annual call of country events to annually
+-Added Robot Rapists event
+-Added Unit Recreational Parties event
+-Added Xeno Zoo Breakout event
+-Added Nuclear Sex event
+-Added the Pirate Abduction anomaly failure event

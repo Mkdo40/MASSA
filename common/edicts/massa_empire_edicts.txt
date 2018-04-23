@@ -1,0 +1,68 @@
+##########################################################################
+# Empire edicts
+##########################################################################
+
+@Edict0Cost = 0
+@Edict1Cost = 100
+@Edict2Cost = 200
+@Edict3Cost = 300
+
+@EdictDuration = 3600
+
+##########################################################################
+# Event edicts
+##########################################################################
+
+country_edict = {
+	name = "add_event_wait"
+	modifier = {
+		
+	}
+
+	cost = { influence = @Edict0Cost }
+
+	length = 1
+
+	potential = {
+		NOT = {
+			has_country_flag = longer_event_wait
+		}
+	}
+
+	allow = {
+	}
+	
+	effect = {
+		set_country_flag = longer_event_wait
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+country_edict = {
+	name = "remove_event_wait"
+	modifier = {
+		
+	}
+
+	cost = { influence = @Edict0Cost }
+
+	length = 1
+
+	potential = {
+		has_country_flag = longer_event_wait
+	}
+
+	allow = {
+	}
+	
+	effect = {
+		remove_country_flag = longer_event_wait
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}

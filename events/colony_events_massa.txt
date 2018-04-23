@@ -1,0 +1,1008 @@
+############################
+#
+# Colony Events
+#
+# Written by Darkspleen
+#
+############################
+
+@tier1influencecontact = 7
+@tier1influencecontactxenophile = 8
+@tier1influencecontactmin = 20
+@tier1influencecontactmax = 80
+
+@tier2influencecontact = 10
+@tier2influencecontactxenophile = 12
+@tier2influencecontactmin = 40
+@tier2influencecontactmax = 100
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+@tier5materialreward = 48
+@tier5materialmin = 700
+@tier5materialmax = 4000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+@tier5influencereward = 36
+@tier5influencemin = 250
+@tier5influencemax = 500
+@tier6influencereward = 48
+@tier6influencemin = 300
+@tier6influencemax = 600
+
+@tier1unityreward = 6
+@tier1unitymin = 100
+@tier1unitymax = 500
+@tier2unityreward = 12
+@tier2unitymin = 150
+@tier2unitymax = 1000
+@tier3unityreward = 18
+@tier3unitymin = 250
+@tier3unitymax = 1500
+@tier4unityreward = 24
+@tier4unitymin = 350
+@tier4unitymax = 2000
+@tier5unityreward = 48
+@tier5unitymin = 700
+@tier5unitymax = 4000
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+@tier5researchreward = 48
+@tier5researchmin = 300
+@tier5researchmax = 1000
+
+
+namespace = sexycolony
+
+#Invasive Tentacles
+planet_event = {
+	id = sexycolony.1
+	title = sexycolony.1.name
+	desc = sexycolony.1.desc
+	picture = GFX_tentacles_police
+	show_sound = event_swarm_started
+	location = root
+	
+	trigger = {
+		has_owner = yes
+		owner ={
+			is_ai = no
+		}
+		has_ground_combat = no
+		is_occupied_flag = no
+		count_pops = {
+			limit = { is_non_sapient_robot = no }
+			count > 3
+		}	
+	}
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = sexycolony.1.a
+		
+			add_modifier = {
+				modifier = scared_population
+				days = 100
+			}
+		
+	}
+	
+	option = {
+		name = sexycolony.1.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		
+			add_modifier = {
+				modifier = fear_as_control_militarist
+				days = 100
+			}
+			add_modifier = {
+				modifier = hostile_animal_life
+				days = 50
+			}
+		
+		owner = { add_influence = 10 }
+	}
+	
+	option = {
+		name = sexycolony.1.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		
+			add_modifier = {
+				modifier = society_animal_life
+				days = 100
+			}
+		
+	}
+	
+	option = {
+		name = sexycolony.1.d
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		
+			add_modifier = {
+				modifier = scared_population
+				days = 100
+			}
+			add_modifier = {
+				modifier = hostile_animal_life
+				days = 100
+			}
+		
+		owner = { add_influence = 20 }
+		
+	}
+	
+	option = {
+		name = sexycolony.1.e
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+		
+		
+			add_modifier = {
+				modifier = spiritualist_attraction
+				days = 100
+			}
+			add_modifier = {
+				modifier = food_rich_planet
+				days = 100
+			}
+		
+	}
+}
+
+#Xeno Zoo Breakout
+planet_event = {
+	id = sexycolony.2
+	title = sexycolony.2.name
+	desc = sexycolony.2.desc
+	picture = GFX_woman_xeno_beast
+	show_sound = event_swarm_started
+	location = root
+	
+	trigger = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+		count_pops = {
+			limit = { is_non_sapient_robot = no }
+			count > 3
+		}	
+		NOT = {
+			has_planet_flag = had_xeno_zoo_breakout
+		}
+		has_building = building_xeno_zoo
+	}
+
+#	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = sexycolony.2.a
+		set_timed_planet_flag = { flag = had_xeno_zoo_breakout days = 1095 }# 3 years
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = xeno_beast_fun
+							has_modifier = xeno_beast_rape
+						}
+					}
+					count < 3
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					NOR = {
+						has_modifier = xeno_beast_fun
+						has_modifier = xeno_beast_rape
+					}
+				}
+				If = {
+					limit = {
+						OR = {
+							pop_has_ethic = ethic_xenophile
+							pop_has_ethic = ethic_fanatic_xenophile
+						}
+					}
+					add_modifier = {
+						modifier = xeno_beast_fun
+						days = 100
+					}
+					
+					else = {
+						add_modifier = {
+							modifier = xeno_beast_rape
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Futa sadists
+planet_event = {
+	id = sexycolony.3
+	title = sexycolony.3.name
+	desc = sexycolony.3.desc
+	diplomatic = yes
+	show_sound = event_swarm_started
+	location = root
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = futa_sadists_room
+	}
+	is_triggered_only = yes
+	
+	trigger = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+		Owner = { has_technology = tech_gene_tailoring }
+		AND = {
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					pop_has_trait = trait_behavior_sadistic 
+					is_enslaved = no
+				}
+				count > 2
+			}
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					OR = {
+						NOT = { pop_has_trait = trait_behavior_sadistic }
+						AND = {
+							pop_has_trait = trait_behavior_sadistic
+							is_enslaved = yes
+						}
+					}
+				}
+				count > 2
+			}
+		}	
+	}
+
+#	immediate = {
+#		owner = { 
+#			country_event = { id = sexycolony.4 }
+#		}
+	option = {
+		name = sexycolony.3.a
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						is_enslaved = no
+						pop_has_trait = trait_behavior_sadistic
+						has_modifier = sadomasochist_fun
+					}
+					count < 2
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					pop_has_trait = trait_behavior_sadistic
+					is_enslaved = no
+					NOT = {
+						has_modifier = sadomasochist_fun
+					}
+				}
+				add_modifier = {
+					modifier = sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+		While = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_behavior_sadistic }
+							enslaved_sadist = yes
+						}
+					}
+					count < 2
+				}
+			}
+			random_pop = {
+				limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_behavior_sadistic }
+							enslaved_sadist = yes
+						}
+				}
+				IF = {
+					limit = {
+						pop_has_trait = trait_behavior_masochistic
+					}
+					add_modifier = {
+								modifier = sadomasochist_fun
+								days = 100
+							}
+					else = {
+						add_modifier = {
+							modifier = abused_by_sadist
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Sadist Fun 1
+planet_event = {
+	id = sexycolony.4
+	title = sexycolony.4.name
+	desc = sexycolony.4.desc
+	diplomatic = yes
+	show_sound = event_swarm_started
+	location = root
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = bound_woman_dildo_room
+	}
+	is_triggered_only = yes
+	
+	trigger = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+		AND = {
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					pop_has_trait = trait_behavior_sadistic 
+					is_enslaved = no
+				}
+				count > 2
+			}
+			count_pops = {
+				limit = {
+					is_growing = no
+					is_non_sapient_robot = no
+					OR = {
+						NOT = { pop_has_trait = trait_behavior_sadistic }
+						enslaved_sadist = yes
+					}
+				}
+				count > 2
+			}
+		}	
+	}
+
+	option = {
+		name = sexycolony.4.a
+		Trigger = {
+			owner = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_egalitarian
+						has_ethic = ethic_fanatic_egalitarian
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fantatic_pacifist
+					}
+				}
+			}
+		}
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						is_enslaved = no
+						pop_has_trait = trait_behavior_sadistic
+						has_modifier = sadomasochist_fun
+					}
+					count < 2
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					pop_has_trait = trait_behavior_sadistic
+					is_enslaved = no
+					NOT = {
+						has_modifier = sadomasochist_fun
+					}
+				}
+				add_modifier = {
+					modifier = sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+		While = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_behavior_sadistic }
+							enslaved_sadist = yes
+						}
+					}
+					count < 2
+				}
+			}
+			random_pop = {
+				limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_behavior_sadistic }
+							enslaved_sadist = yes
+						}
+				}
+				IF = {
+					limit = {
+						pop_has_trait = trait_behavior_masochistic
+					}
+					add_modifier = {
+								modifier = sadomasochist_fun
+								days = 100
+							}
+					else = {
+						add_modifier = {
+							modifier = abused_by_sadist
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sexycolony.4.b
+		Trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fantatic_pacifist
+				}
+			}
+		}
+		OWNER = {
+			add_influence = -10
+		}
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						is_enslaved = no
+						pop_has_trait = trait_behavior_sadistic
+						has_modifier = sadomasochist_fun
+					}
+					count < 2
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					pop_has_trait = trait_behavior_sadistic
+					is_enslaved = no
+					NOT = {
+						has_modifier = sadomasochist_fun
+					}
+				}
+				add_modifier = {
+					modifier = sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+		While = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_behavior_sadistic }
+							enslaved_sadist = yes
+						}
+					}
+					count < 2
+				}
+			}
+			random_pop = {
+				limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+						OR = {
+							Not = { pop_has_trait = trait_behavior_sadistic }
+							enslaved_sadist = yes
+						}
+				}
+				IF = {
+					limit = {
+						pop_has_trait = trait_behavior_masochistic
+					}
+					add_modifier = {
+								modifier = sadomasochist_fun
+								days = 100
+							}
+					else = {
+						add_modifier = {
+							modifier = abused_by_sadist
+							days = 100
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Masochistic Fun
+planet_event = {
+	id = sexycolony.5
+	title = sexycolony.5.name
+	desc = sexycolony.5.desc
+	diplomatic = yes
+	show_sound = event_swarm_started
+	location = root
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = masochistic_fun_room
+	}
+	is_triggered_only = yes
+	
+	trigger = {
+		has_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+		count_pops = {
+			limit = {
+				is_growing = no
+				is_non_sapient_robot = no
+				pop_has_trait = trait_behavior_masochistic 
+				is_enslaved = no
+			}
+			count > 2
+		}	
+	}
+
+	option = {
+		name = sexycolony.5.a
+		while = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						is_enslaved = no
+						pop_has_trait = trait_behavior_masochistic
+						has_modifier = sadomasochist_fun
+					}
+					count < 2
+				}
+			}
+			random_pop = {
+				limit = {
+					is_growing = no
+					pop_has_trait = trait_behavior_masochistic
+					is_enslaved = no
+					NOT = {
+						has_modifier = sadomasochist_fun
+					}
+				}
+				add_modifier = {
+					modifier = sadomasochist_fun
+					days = 100
+				}
+			}
+		}
+		While = {
+			limit = {
+				count_pops = {
+					limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						OR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}
+						pop_has_trait = trait_behavior_sadistic
+					}
+					count < 2
+				}
+			}
+			random_pop = {
+				limit = {
+						is_growing = no
+						is_non_sapient_robot = no
+						NOR = {
+							has_modifier = sadomasochist_fun
+							has_modifier = abused_by_sadist
+						}			
+						pop_has_trait = trait_behavior_sadistic
+				}
+				add_modifier = {
+							modifier = sadomasochist_fun
+							days = 100
+				}
+			}
+		}
+	}
+}
+
+namespace = sexyplanet_war
+
+# Fires on on_planet_occupied from on_actions
+country_event = {
+	id = sexyplanet_war.gate
+	hide_window = yes
+	is_triggered_only = yes
+	
+	Trigger = {
+		THIS = {
+			Not = { has_country_flag = soldier_rapists_punished }
+		}
+	}
+		
+	immediate = {
+		THIS = {
+			country_event = { id = sexyplanet_war.1 }
+			save_event_target_as = planet_attacker
+		}
+		FROM = {
+			save_event_target_as = planet_owner
+		}
+		FROMFROM = {
+			save_event_target_as = attacked_planet
+		}
+	}
+	
+}
+
+#Spoils of War (Attacker)
+country_event = {
+	id = sexyplanet_war.1
+	title = "sexyplanet_war.1.name"
+	desc = "sexyplanet_war.1.desc"
+	picture = GFX_xeno_gangrape_1
+	show_sound = event_ground_battle
+	location = event_target:attacked_planet
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sexyplanet_war.1.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					event_target:planet_attacker = {
+						OR = {
+							has_ethic = ethic_pacifist
+							has_ethic = ethic_fanatic_pacifist
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					event_target:planet_attacker = {
+						OR = {
+							has_ethic = ethic_authoritarian
+							has_ethic = ethic_fanatic_authoritarian
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			event_target:planet_owner = {
+				country_event = { id = sexyplanet_war.2 }
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_war.1.b
+		Trigger = {
+			event_target:planet_attacker = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+		add_influence = 1
+		hidden_effect = {
+			event_target:planet_owner = {
+				country_event = { id = sexyplanet_war.2 }
+			}
+		}
+	}
+	
+	option = {
+		name = sexyplanet_war.1.c
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		event_target:planet_attacker = { 
+			country_event = { id = military_affairs.2 }
+		}
+	}
+}
+
+#Spoils of War (Defender)
+country_event = {
+	id = sexyplanet_war.2
+	title = "sexyplanet_war.2.name"
+	desc = "sexyplanet_war.2.desc"
+	picture = GFX_xeno_gangrape_1
+	show_sound = event_ground_battle
+	location = event_target:attacked_planet
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = sexyplanet_war.2.a
+		trigger = {
+			event_target:planet_owner = {
+				NOR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}			
+		}
+	}
+	
+	option = {
+		name = sexyplanet_war.2.b
+		Trigger = {
+			event_target:planet_owner = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+		add_influence = -1
+	}
+	
+	option = {
+		name = sexyplanet_war.2.c
+		Trigger = {
+			event_target:planet_owner = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+		add_influence = -1
+	}
+}
+
+namespace = sexycolony_gate
+#5 year pulse
+event = {
+	id = sexycolony_gate.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { is_ai = no }
+			every_owned_planet = {
+#				planet_event = { id = sexycolony.2 days = 850 random = 900 }
+				random_list = {
+					100 = { planet_event = { id = null_event.1 } }
+					1 = { planet_event = { id = sexycolony.1 days = 850 random = 900 } }
+					20 = { planet_event = { id = sexycolony.3 days = 850 random = 900 } }
+					20 = { planet_event = { id = sexycolony.4 days = 850 random = 900 } }
+				}
+			}
+		}
+	}
+}
+
+#1 year pulse
+event = {
+	id = sexycolony_gate.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { is_ai = no }
+			every_owned_planet = {
+				planet_event = { id = neuter_purge_event.1 days = 265 random = 100 }
+				random_list = {
+					75 = { planet_event = { id = null_event.1 } }
+					25 = { planet_event = { id = neuter_purge_event.1 days = 265 random = 100 } }
+				}
+			}
+		}
+	}
+}
+# ~5 Yearly planet Gatekeeper
+planet_event = {
+	id = sexycolony_gate.3
+	hide_window = yes
+	
+	Trigger = {
+		NOT = {
+			has_planet_flag = had_massa_yearly_event
+		}
+		OR = {
+			has_planet_flag =  sexy_titanic_life_4 
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	Immediate = {
+		set_timed_planet_flag = {
+			flag = had_massa_yearly_event
+			days = 1
+		}
+		
+		IF = {
+			LIMIT = {
+				has_planet_flag = sexy_titanic_life_4
+				has_ground_combat = no
+				num_pops > 0
+			}
+			planet_event = { id = sexyplanet_mod.8 }
+		}
+	}
+}
+
+#Monthly pulse
+event = {
+	id = sexycolony_gate.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { is_ai = no }
+			every_owned_planet = {
+				random_list = {
+					90 = { planet_event = { id = null_event.1 } }
+					10 = { planet_event = { id = neuter_purge_event.1 days = 5 random = 4 } }
+				}
+				random_list = {
+					95 = { planet_event = { id = null_event.1 } }
+					5 = { planet_event = { id = massa_pop.3 days = 5 random = 4 } }
+				}				
+			}
+		}
+	}
+}

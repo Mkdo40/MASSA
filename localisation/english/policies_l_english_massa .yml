@@ -1,0 +1,131 @@
+﻿l_english:
+
+ ###########################################################################
+ ############# Written by Darkspleen for Make Space Sexy Again #############
+ ###########################################################################
+
+ 
+ policy_prostitution_legislation: "Prostitution"
+ policy_prostitution_legislation_desc: "The legality of prostitution."
+ 
+ ### Prostitution is illegal.
+ prostitution_prohibited: "Prohibited"
+ prostitution_prohibited_name: "Prostitution Prohibited" 
+ prostitution_prohibited_desc: "Prostitution is fully outlawed." 
+ 
+ ### Prostitution is legal.
+ prostitution_authorized: "Allowed"
+ prostitution_authorized_name: "Prostitution Allowed"
+ prostitution_authorized_desc: "Prostitution is legal, but largely unregulated." 
+ 
+ ### Prostitution is legal and supported by the society. It's considered like any other jobs.
+ prostitution_supported: "Supported"
+ prostitution_supported_name: "Prostitution Supported"
+ prostitution_supported_desc: "Sexual release is viewed as a health need, and is provided as a public service by government institutions." 
+ 
+ ### Same as above, and also supported by big industrials groups.
+ prostitution_industrialized: "Industrialized"
+ prostitution_industrialized_name: "Prostitution Industrialized"
+ prostitution_industrialized_desc: "Sexual release is viewed as a commodity, and is provided by private companies with profit in mind." 
+ 
+ ### Prostitution is legal and enforced for slaves.
+ prostitution_slavery: "Slavery"
+ prostitution_slavery_name: "Prostitution Slavery"
+ prostitution_slavery_desc: "Slaves are forced to provide sexual services for free citizens."
+ 
+ prostitution_worship: "Worship"
+ prostitution_worship_name: "Prostitution Worship"
+ prostitution_worship_desc: "Sexual acts are considered an artform or expression of faith. \n\n§E Choosing this policy enables another policy tree where you can choose a patron deity$!"
+ 
+ policy_worship: "Sexual Patron Deity"
+ policy_worship_desc: "What sort of faith is promoted by the state."
+ 
+ worship_pantheon: "No Dominant Sect"
+ worship_pantheon_name: "No Dominant Sect"
+ worship_pantheon_desc: "No particular deity is the primary focus of worship in our society."
+ 
+ worship_venus: "Deity of Beauty"
+ worship_venus_name: "Deity of Beauty"
+ worship_venus_desc: "Acts of faith focus on the beauty of natural body, harmony, and cooperation with others.\n\n§E This sect abhors artifical constructs. Slaves are permitted, but only if they are kept happy and healthy.§!\n\n"
+ 
+ worship_mars: "Deity of War"
+ worship_mars_name: "Deity of War"
+ worship_mars_desc: "Acts of faith focus on dominance, punishment and breaking those that are unworthy.\n\n§E This sect advocates for all citizens to dedicate themselves fully to training and warfare, while massive numbers of slaves are used to fill almost all non-combat roles in society.§!\n\n"
+ 
+ worship_minerva: "Deity of Wisdom"
+ worship_minerva_name: "Deity of Wisdom"
+ worship_minerva_desc: "Acts of faith focus on knowledge and learning.\n\n§E This sect is more secularized than the others, and focuses on training great leaders and heros.§!\n\n"
+ 
+ worship_vulcan: "Deity of Artificers"
+ worship_vulcan_name: "Deity of Artificers"
+ worship_vulcan_desc: "Acts of faith focus on the creation of great works of beauty and desire.\n\n§E This sect is obsessed with the quality; all their society's works take longer to make, and cost more resources, but are stronger or run more efficiently. They also openly embrace robotics, which they use to create living works of art.§!\n\n"
+
+ worship_ruler: "Imperial Cult"
+ worship_ruler_name: "Imperial Cult"
+ worship_ruler_desc: "The ruler has proclaimed themsleves a living god. By extension, this makes the rest of their species of semi-divine origin, and thus entitled to special treatment over lesser species, and perhaps even inheritors to the galaxy itself. However, this causes great unrest among the faithful, who fear The Ruler is inviting divine retribution for such heresy... \n\n§P This policy unlocks a constructable wonder that multiplies all yields on the capital planet, but reduces the happiness and yields of all other planets. This policy only works well for very small empires.§!\n\n"
+ 
+ ### Heavily controlled and limited sexual relations in order to keep the population focused on energy, mineral and research production.
+ sexual_relationships_controlled: "Controlled"
+ sexual_relationships_controlled_name: "Sexual Relations Controlled" 
+ sexual_relationships_controlled_desc: "Sex is heavily controlled to 'allow' the population to focus on their jobs." 
+ 
+ ### Limited sexual relations in order to keep the population focused on energy, mineral and research production.
+ sexual_relationships_restricted: "Restricted"
+ sexual_relationships_restricted_name: "Sexual Relations Restricted"
+ sexual_relationships_restricted_desc: "The government has some limited oversight of an individual's sexual relations in order to 'allow' them to focus on their jobs."
+
+ ### No restriction.  
+ sexual_relationships_authorized: "Allowed"
+ sexual_relationships_authorized_name: "Sexual Relations Unrestricted"
+ sexual_relationships_authorized_desc: "There are no legal restrictions on an individual's sexual relations." 
+ 
+ ### Sexual relations are encouraged in order to increase the population growth.
+ sexual_relationships_encouraged: "Encouraged"
+ sexual_relationships_encouraged_name: "Sexual Relations Encouraged"
+ sexual_relationships_encouraged_desc: "The government and society encourages individuals to have more sexual relations in order to grow the population." 
+ 
+ ### Via a repopulation program, sexual relations are highly encouraged by the government in order to drastically increase the population growth.
+ sexual_relationships_reinforced: "Reinforced"
+ sexual_relationships_reinforced_name: "Sexual Relations Reinforced"
+ sexual_relationships_reinforced_desc: "Sexual relations are actively encouraged by the government in order to facilitate a rapid increase in population growth." 
+ 
+ policy_interspecies_copulation_legislation: "Interspecies Copulation"
+ policy_interspecies_copulation_legislation_desc: "Legislation regarding interspecies copulation."
+ 
+ ### Interspecies sexual relation are illegal.
+ interspecies_copulation_prohibited: "Prohibited "
+ interspecies_copulation_prohibited_name: "Interspecies Copulation Prohibited " 
+ interspecies_copulation_prohibited_desc: "Sexual relations between different species is illegal."
+
+ ### Interspecies sexual relation are legal. 
+ interspecies_copulation_authorized: "Allowed"
+ interspecies_copulation_authorized_name: "Interspecies Copulation Allowed"
+ interspecies_copulation_authorized_desc: "Sexual relations between different species is legal." 
+ 
+ ### Interspecies sexual relation are legal and encouraged.
+ interspecies_copulation_encouraged: "Encouraged"
+ interspecies_copulation_encouraged_name: "Interspecies Copulation Encouraged"
+ interspecies_copulation_encouraged_desc: "Sexual relations between different species is legal and encouraged." 
+ 
+ ### Same as above. Via a genetic modification, interspecies reproduction is allowed.
+ interspecies_copulation_supported: "Supported Reproduction"
+ interspecies_copulation_supported_name: "Interspecies Supported Reproduction"
+ interspecies_copulation_supported_desc: "Genetic modification and gene theropy allows reproduction between different species to occur." 
+ 
+ requires_prostitution_not_prohibited: "§RRequires §YProstitution Authorized§! policy.§!"
+ requires_interspecies_copulation_supported: "§RRequires §YInterspecies Supported Reproduction§! policy.§!"
+
+ policy_gender_leadership: "Leadership Gender"
+ policy_gender_leadership_desc: "Determines the sex of your country's leadership."
+ 
+ gender_leadership_default: "Default Gender Leadership"
+ gender_leadership_default_name: "Default Gender Leadership"
+ gender_leadership_default_desc: "Default option. Leaders can be either male or female."
+ 
+ gender_leadership_female: "Female Leadership"
+ gender_leadership_female_name: "Female Leadership"
+ gender_leadership_female_desc: "Only female leaders will spawn."
+ 
+ gender_leadership_male: "Male Leadership"
+ gender_leadership_male_name: "Male Leadership"
+ gender_leadership_male_desc: "Only male leaders will spawn."

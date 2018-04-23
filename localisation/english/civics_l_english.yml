@@ -1,0 +1,26 @@
+﻿l_english:
+
+ ####################################
+ # Massa Civics
+ ####################################
+ civic_sadomasochist_evolution:0 "Sadomasochist Evolution"
+ civic_sadomasochist_evolution_desc:0 "A second species forms an integral part of this society. They once were as sophisticated as us, forming their own civilizations on unexplored parts of the planet. That was until we bent their species to our will. Now their pain is our pleasure and their's too."
+ civic_sadomasochist_evolution_secondary_species:0 "Masochist Species"
+
+ civic_tooltip_sadomasochist_evolution_effects:1 "Start the game with §Y4§! £pop  Pops being of a masochist species."
+ 
+ civic_sex_slaves:0 "Institutionalized Sex Slavery"
+ civic_sex_slaves_desc:0 "Our society has a very long tradition of using slaves as sexual companions. This has resulted in the loss of some of the downsides of slavery while making both slave and owner happier. Cannot have any prostitution policy besides Prostitution Slavery. If taken at the start of the game begin with the Sex Slavery tech."
+ 
+ civic_orgasmic_diplomats:0 "Orgasmic Diplomats"
+ civic_orgasmic_diplomats_desc:0 "Simply being in the same room as our diplomats can bring others to the very edge of orgasm, regardless of their species or sexual orientation. "How does this occur? It doesn't matter. What does matter is that the diplomats of other countries don't care that we are xenophobic."
+ civic_tooltip_orgasmic_diplomats_effects:0 "You suffer no Diplomatic Malus for being a Xenophobe. Nonxenophobes get an bonus to their diplomatic opinion."
+ 
+ civic_invasive_copulation_evolution:0 "Invasive Copulation Evolution"
+ civic_invasive_copulation_evolution_desc:0 "Your species evolved with the ability to not only reproduce with most other species, but to do so in a way that favors your species."
+ civic_tooltip_invasive_copulation_evolution_effects:0 "Your main species begins the game with the §YAggressively Adaptive Reproductive Organs§! Trait, granting your species faster growth rates when on planets with pops of other species and the ability to gradually replace pops of species without the §YProles§! and §YTentacle§! traits."
+ 
+ #massa_civic_tooltip_authoritarian_xenophobe:0 "Is some degree of §YAuthoritarian§! or §YXenophobe§!"
+ 
+ civic_tentacled_symbiosis:0 "Tentacled Symbiosis"
+ civic_tentacled_symbiosis_desc: "Your civilization entered its space age after, arguably nonsapient, lifeforms entered its biosphere via asteroid."

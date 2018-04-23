@@ -1,0 +1,67 @@
+################################################
+# MASSA - Buildable Pops				   	   #
+# Author: Mk40							   	   #
+################################################
+
+#Sex Android
+buildable_sexrobot_pop = {
+		
+	prerequisites = {
+		"tech_sexbots"
+	}
+	cost = {
+		minerals = 100
+	}
+	
+	potential_build = {
+		NOT = {
+			has_country_flag = synthetic_age
+		}
+	}
+	
+	allow = {
+		NOR = { 
+			has_policy_flag = robots_outlawed 
+			has_policy_flag = prostitution_prohibited
+			has_authority = auth_hive_mind
+		}
+	}
+	
+	species = {
+		name = "SEXROBOT_POP_SPECIES"
+		name_list = "AI"
+		class = "ROBOT"
+		portrait = "sexbot_humanoid_01"
+		traits = {
+			trait = "trait_mechanical"
+			trait = "trait_android_1"
+		}
+		
+		new_pop_resource_requirement = {
+			type = robot_food 
+			value = 30.0			
+		}
+		pops_auto_growth = 1.0
+		pops_can_be_colonizers = no
+		pops_can_migrate = no
+		pops_can_reproduce = no
+		pops_can_join_factions = no
+		pop_maintenance = 1
+		can_generate_leaders = no
+		pops_can_be_slaves = no
+		pops_have_happiness = no
+		consumer_goods = no
+		pop_ethics = no
+
+	}
+#	portrait = {
+#		sd_hum_robot = { use_robot_portrait_sd_hum_robot = yes  }
+#		sd_mam_robot = { use_robot_portrait_sd_mam_robot = yes }
+#		sd_rep_robot = { use_robot_portrait_sd_rep_robot = yes }
+#		sd_avi_robot = { use_robot_portrait_sd_avi_robot = yes }
+#		sd_art_robot = { use_robot_portrait_sd_art_robot = yes }
+#		sd_mol_robot = { use_robot_portrait_sd_mol_robot = yes }
+#		sd_fun_robot = { use_robot_portrait_sd_fun_robot = yes }
+#		sd_pla_robot = { use_robot_portrait_sd_pla_robot = yes }
+#	}
+}
