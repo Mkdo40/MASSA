@@ -1263,9 +1263,9 @@ building_cathedral_of_vulcan = {
 			text = "already_have_monument_to_another_god"
 			planet = {
 				NOR = {
-					has_building = cathedral_of_beauty
-					has_building = cathedral_of_war
-					has_building = cathedral_of_wisdom
+					has_building = building_cathedral_of_venus
+					has_building = building_cathedral_of_mars
+					has_building = building_cathedral_of_minerva
 				}
 			}
 		}
@@ -1480,7 +1480,7 @@ building_red_district = {
 		owner = { 
 			OR = { 
 				has_authority = auth_machine_intelligence
-				NOT = { has_policy_flag = prostitution_slavery }
+				has_policy_flag = prostitution_slavery
 			}
 		}
 	}
