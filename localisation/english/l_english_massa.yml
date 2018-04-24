@@ -83,7 +83,7 @@
  building_cathedral_of_ruler:0 "The Golden Throne"
  building_cathedral_of_ruler_desc:0 "A continent-sized palace district, staffed by the many personal harems of The Ruler.\n\n§PThis obscenely extravagant palace will require the redirecting of massive amounts of resources to the capital, leaving the rest of the nation in relative poverty as a result.\n"
  building_red_district:0 "Pleasure District"
- building_red_district_desc:0 "Sometimes called 'red light distrcits', pleasure districts are the place an individual can go to meet all of their bodily needs, regardless of their species.\n\n§EThis building produces different bonus yields depending on which prostitution policy is active.\n\n+6£energy with Slavery Prostitution\n+3£energy with Industrialized Prostitution\n+2£unity with Supported Prostitution\n\n\§PThis facility causes slave unhappiness."
+ building_red_district_desc:0 "Sometimes called 'red light distrcits', pleasure districts are the place an individual can go to meet all of their bodily needs, regardless of their species.\n\n§EThis building produces different bonus yields depending on which prostitution policy is active.\n\n+6£energy with Slavery Prostitution\n+3£energy with Industrialized Prostitution\n+2£unity with Supported Prostitution\n\n§PThis facility causes slave unhappiness."
  building_xeno_preservation_center:0 "Alien Preservation Center"
  building_xeno_preservation_center_desc:0 "A lab where endangered species of xenos are brought back from the brink of extinction using interspecies reproduction."
  
