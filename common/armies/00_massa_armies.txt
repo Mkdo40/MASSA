@@ -5,14 +5,14 @@
 
 # Slime Armies
 army_slime = {
-	damage = 0.25
+	damage = 1.00
 	health = 1.50
-	morale = 8.0
-	morale_damage = 10.0
+	has_morale = no
+	morale_damage = 2.0
 	collateral_damage = 1.25
-	war_exhaustion = 0.25
+	war_exhaustion = 0.75
 	time = 90
-	maintenance = 0.4
+	maintenance = 0.5
 	icon_frame = 8
 	has_species = no
 	
